@@ -6,6 +6,7 @@
  
  Walter: Un Dios Griego.
  Ariel: Musico/matematico/filosofo/jardinero
+ Silvina: estudiante eterna que siempre buscar aprender cosas nuevas!
  
  
  Sitios referentes:
