@@ -1,0 +1,27 @@
+{
+  "name": "grupo_7_loquetepinte",
+  "version": "1.0.0",
+  "description": "E-commerce website",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arieljmateu/grupo_7_loquetepinte.git"
+  },
+  "author": "Walter Corti, Ariel Jeremias Mateu, Silvina Hardenack, Pablo Menichini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arieljmateu/grupo_7_loquetepinte/issues"
+  },
+  "homepage": "https://github.com/arieljmateu/grupo_7_loquetepinte#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
