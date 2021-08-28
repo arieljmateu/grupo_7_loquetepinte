@@ -14,3 +14,9 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.sendFile('views/index.html', {root: __dirname });
 });
+app.get('/login', (req, res) => {
+    res.sendFile('views/login.html', {root: __dirname });
+});
+app.get('/register', (req, res) => {
+    res.sendFile('views/register.html', {root: __dirname });
+});
