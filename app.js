@@ -23,3 +23,6 @@ app.get('/register', (req, res) => {
 app.get('/producto', (req, res) => {
     res.sendFile('views/producto.html', {root: __dirname });
 });
+app.get('/cart', (req, res) => {
+    res.sendFile('views/cart.html', {root: __dirname });
+});
