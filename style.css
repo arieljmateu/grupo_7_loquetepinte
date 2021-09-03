@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.fade-in {
+    opacity: 0.6;
+    transition: opacity 500ms;
+}
+
+.fade-in:hover {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 1;
+    transition: opacity 500ms;
+}
+
+.fade-out:hover {
+    opacity: 0.6;
+}
+
+
+/********* HEADER begin **********/
+.header-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.top-header {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.top-header .logo img {
+    height: 50px;
+}
+
+.top-header .search-container {
+    width: 50%;
+    display: none;
+}
+
+.top-header form {
+    position: relative;
+}
+
+.top-header .search-input {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 15px 35px 15px 15px;
+    width: 100%;
+}
+
+div.search-container button.submit {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+}
+
+.top-header .utilities {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    width: 200px;
+}
+
+.top-header .utilities .util-desc {
+    display: none;
+}
+
+.top-header i {
+    font-size: 24px;
+    display: block;
+    padding-bottom: 5px;
+}
+
+div.menu-icon a {
+    color: black;
+}
+
+div.menu-icon ul {
+    list-style-type: none;
+}
+
+nav.navbar {
+    background-color: white;
+    border: 1px solid gray;
+    display: none;
+}
+
+nav.navbar li {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    width: 10%;
+}
+
+header nav a {
+    color: black;
+}
+
+/********** HEADER end ******/
+
+
+main {
+    margin-top: 100px;
+}
+
+main div.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+}
+
+
+@media (min-width: 768px) {
+    /******* HEADER begin *******/
+    div.menu-icon {
+        display: none;
+    }
+
+    .top-header div.logo img {
+        height: 100px;
+    }
+
+    .top-header div.search-container {
+        display: block;
+    }
+
+    .top-header .utilities .util-desc {
+        display: block;
+    }
+
+    nav.navbar {
+        display: block;
+    }
+    /******* HEADER begin *******/
+
+
+    main {
+        margin-top: 150px;
+    }
+
+}
