@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lo que te pinte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="top-header">
+            <div class="menu-icon">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fas fa-bars" aria-hidden="true"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="logo">
+                <a href="/">
+                    <img src="images/logo-chico.png" alt="Logo">
+                </a>
+            </div>
+            <div class="search-container">
+                <form action="#" role="search" method="get">
+                    <input type="search" class="search-input" name="search" spellcheck="false" placeholder="Buscar..."><!--
+                    --><button type="submit" class="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <div class="utilities">
+                <div class="account-container">
+                    <i class="fas fa-user-circle" aria-hidden="true"></i>
+                    <span class="util-desc">Mi cuenta</span>
+                </div>
+                <div class="cart-container">
+                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                    <span class="util-desc">Mi carrito</span>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="productos">Productos</a></li>
+                <li><a href="nosotros">Nosotros</a></li>
+                <li><a href="contacto">Contacto</a></li>
+                <li><a href="blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <form class="cart-form" method="post">
+                <table class="cart" aria-label="Carrito">
+                    <thead>
+                        <tr>
+                            <th id="remove"></th>
+                            <th id="thumbnail"></th>
+                            <th id="name" class="product-name">Producto</th>
+                            <th id="price" class="product-price">Precio</th>
+                            <th id="quantity" class="product-quantity">Cantidad</th>
+                            <th id="Subtotal" class="product-subtotal">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="cart-item">
+                            <td class="product-remove">
+                                <a href="#remove"
+                                    class="remove" aria-label="Borrar este artículo"
+                                    data-product_id="8761"><i class="far fa-trash-alt fade-in" aria-hidden="true"></i></a>
+                            </td>
+                            <td class="product-thumbnail">
+                                <a href="#"><img
+                                        src="images/lapiz-12.jpg"
+                                        class="cart-product-thumbnail" alt=""></a>
+                            </td>
+                            <td class="product-name">
+                                <a class="fade-out" href="#">LAPICES MEGA GIOTTO X 12</a>
+                            </td>
+                            <td class="product-price redraw-title" data-title="Precio">
+                                <span class="">$867.00</span>
+                            </td>
+                            <td class="product-quantity redraw-title" data-title="Cantidad">
+                                <div class="quantity">
+                                    <form action="#" method="post">
+                                        <button data-quantity="pop" type="submit" value="-" class="quantity-button" name="pop">-</button>
+                                    </form>
+                                    <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
+                                    <form action="#" method="post">
+                                        <button data-quantity="push" type="submit" value="+" class="quantity-button" name="push">+</button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td class="product-subtotal redraw-title" data-title="Subtotal">
+                                <span class="amount">$867.00</span>
+                            </td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td class="product-remove">
+                                <a href="#remove"
+                                    class="remove" aria-label="Borrar este artículo"
+                                    data-product_id="8761"><i class="far fa-trash-alt fade-in" aria-hidden="true"></i></a>
+                            </td>
+                            <td class="product-thumbnail">
+                                <a href="#"><img
+                                        src="images/lapiz-12.jpg"
+                                        class="cart-product-thumbnail" alt=""></a>
+                            </td>
+                            <td class="product-name">
+                                <a class="fade-out" href="#">LAPICES MEGA GIOTTO X 12</a>
+                            </td>
+                            <td class="product-price redraw-title" data-title="Precio">
+                                <span class="">$867.00</span>
+                            </td>
+                            <td class="product-quantity redraw-title" data-title="Cantidad">
+                                <div class="quantity">
+                                    <form action="#" method="post">
+                                        <button data-quantity="pop" type="submit" value="-" class="quantity-button" name="pop">-</button>
+                                    </form>
+                                    <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
+                                    <form action="#" method="post">
+                                        <button data-quantity="push" type="submit" value="+" class="quantity-button" name="push">+</button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td class="product-subtotal redraw-title" data-title="Subtotal">
+                                <span class="amount">$867.00</span>
+                            </td>
+                        </tr>
+                        <tr class="cart-item">
+                            <td class="product-remove">
+                                <a href="#remove"
+                                    class="remove" aria-label="Borrar este artículo"
+                                    data-product_id="8761"><i class="far fa-trash-alt fade-in" aria-hidden="true"></i></a>
+                            </td>
+                            <td class="product-thumbnail">
+                                <a href="#"><img
+                                        src="images/lapiz-12.jpg"
+                                        class="cart-product-thumbnail" alt=""></a>
+                            </td>
+                            <td class="product-name">
+                                <a class="fade-out" href="#">LAPICES MEGA GIOTTO X 12</a>
+                            </td>
+                            <td class="product-price redraw-title" data-title="Precio">
+                                <span class="">$867.00</span>
+                            </td>
+                            <td class="product-quantity redraw-title" data-title="Cantidad">
+                                <div class="quantity">
+                                    <form action="#" method="post">
+                                        <button data-quantity="pop" type="submit" value="-" class="quantity-button" name="pop">-</button>
+                                    </form>
+                                    <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
+                                    <form action="#" method="post">
+                                        <button data-quantity="push" type="submit" value="+" class="quantity-button" name="push">+</button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td class="product-subtotal redraw-title" data-title="Subtotal">
+                                <span class="amount">$867.00</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6" class="">
+                                <div class="continue-shopping pull-left text-left">
+                                    <a class="button-continue-shopping button primary is-outline"
+                                        href="/productos/">
+                                        ←&nbsp;Seguir comprando </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="cart-totals">
+            <h2>Total del carrito</h2>
+            <table class="totals-table">
+                <tbody>
+                    <tr class="cart-subtotal">
+                        <th id="subtotal">Subtotal</th>
+                        <td data-title="Subtotal">
+                            $<span class="price">999.00</span>
+                        </td>
+                    </tr>
+                    <tr class="cart-discount">
+                        <th id="discount">Descuento</th>
+                        <td data-title="Descuento">
+                            $<span class="discount">0.00</span>
+                        </td>
+                    </tr>
+                    <tr class="cart-total">
+                        <th id="total">Total</th>
+                        <td data-title="Total">
+                            $<span class="total">999.00</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="to-checkout">
+                <a href="/checkout" class="checkout-button btn">Finalizar compra</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
