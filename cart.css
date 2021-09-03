@@ -1,0 +1,236 @@
+form.cart-form {
+    flex: 0 0 100%;
+    margin-bottom: 40px;
+    padding: 0 15px 40px;
+    position: relative;
+    min-height: 1px;
+    max-width: 100%;
+}
+
+table.cart {
+    border-collapse: collapse;
+    border-color: #ececec;
+    border-spacing: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+table.cart thead {
+    border-width: 3px;
+    display: none;
+}
+
+table.cart tbody,
+table.cart tr {
+    display: block;
+}
+
+table.cart a {
+    color: black;
+    text-align: left;
+}
+
+table.cart tr.cart-item {
+    border-bottom: 1px solid rgba(129, 129, 129, .2);
+    display: block;
+    margin-bottom: 25px;
+    min-height: 136px;
+    padding-bottom: 25px;
+    padding-left: 115px;
+    position: relative;
+}
+
+table.cart th.product-remove {
+    width: 40px;
+}
+
+table.cart th.product-remove,
+table.cart th.product-thumbnail {
+    font-size: 0;
+}
+
+table.cart td {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    text-align: right;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+table.cart td.product-remove {
+    border: none;
+    left: 40px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: absolute;
+    top: 110px;
+    z-index: 1;
+}
+
+table.cart td.product-thumbnail {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-height: 115px;
+    overflow: hidden;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    width: 90px;
+}
+
+table.cart td.product-thumbnail img {
+    max-width: 100px;
+    min-width: 100px;
+}
+
+table.cart td.product-quantity {
+    border-top: 1px dashed rgba(129, 129, 129, 0.2);
+    border-bottom: 1px dashed rgba(129, 129, 129, 0.2);
+}
+
+table.cart td.redraw-title::before {
+    content: attr(data-title);
+    color: #2d2a2a;
+    font-size: 11px;
+    font-weight: 600;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    float: left;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+div.quantity {
+    display: inline-flex;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+button.quantity-button {
+    background-color: transparent;
+    border: none;
+    color: #3483fa;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+}
+
+input.input-quantity {
+    -webkit-border-radius: 0;
+    -webkit-box-shadow: none;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: center;
+    width: 30px;
+}
+
+.product-remove {
+    width: 20px;
+    font-size: 20px;
+}
+
+.product-thumbnail {
+    width: 120px;
+}
+
+.cart-totals {
+    border: 3px solid #efefef;
+    padding: 25px;
+}
+
+.checkout-button {
+    background-color: #ad172b;
+}
+
+
+@media (min-width: 768px) {
+    table.cart thead {
+        display: table-header-group;
+    }
+
+    table.cart tbody,
+    table.cart tr {
+        display: revert;
+    }
+
+    table.cart tr.cart-item {
+        display: revert;
+    }
+
+    table.cart tr {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: middle;
+    }
+
+    table.cart th {
+        text-transform: capitalize;
+        padding: 15px 10px;
+        text-align: left;
+        line-height: 1.2;
+        color: #2d2a2a;
+        vertical-align: middle;
+        border: none;
+        border-bottom: 2px solid #EFEFEF;
+    }
+
+    table.cart td {
+        display: revert;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 5px;
+    }
+
+    table.cart td.product-remove {
+        position: static;
+        z-index: auto;
+    }
+
+    table.cart td.product-thumbnail {
+        position: inherit;
+    }
+
+    table.cart th.product-remove,
+    table.cart th.product-thumbnail {
+        font-size: revert;
+    }
+
+    table.cart td.redraw-title::before {
+        content: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    form.cart-form {
+        flex: 0 0 58%;
+        max-width: 58%;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    form.cart-form {
+        flex: 0 0 66%;
+        max-width: 66%;
+    }
+}
