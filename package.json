@@ -4,8 +4,10 @@
   "description": "E-commerce website",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "compile-html": "html-includes --src src/views --dest views",
+    "compile-html-watch": "html-includes --src src/views --dest views --watch",
+    "start": "npm run compile-html && node app.js",
+    "dev": "npm run compile-html-watch && nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "html-includes": "^4.4.1",
     "nodemon": "^2.0.12"
   }
 }

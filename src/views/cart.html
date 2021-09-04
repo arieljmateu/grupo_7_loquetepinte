@@ -10,49 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <header class="header-container">
-        <div class="top-header">
-            <div class="menu-icon">
-                <ul>
-                    <li>
-                        <a href="#"><i class="fas fa-bars" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="logo">
-                <a href="/">
-                    <img src="images/logo.png" alt="Logo">
-                </a>
-            </div>
-            <div class="search-container">
-                <form action="#" role="search" method="get">
-                    <input type="search" class="search-input" name="search" spellcheck="false" placeholder="Buscar..."><!--
-                    --><button type="submit" class="submit"><i class="fas fa-search" aria-hidden="true"></i></button>
-                </form>
-            </div>
-            <div class="utilities">
-                <div class="account-container">
-                    <i class="fas fa-user-circle" aria-hidden="true"></i>
-                    <span class="util-desc">Mi cuenta</span>
-                </div>
-                <div class="cart-container">
-                    <a href="/cart">
-                        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
-                        <span class="util-desc">Mi carrito</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <nav class="navbar">
-            <ul class="nav-list">
-                <li><a href="/">Inicio</a></li>
-                <li><a href="productos">Productos</a></li>
-                <li><a href="nosotros">Nosotros</a></li>
-                <li><a href="contacto">Contacto</a></li>
-                <li><a href="blog">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
+${require('./_header.html')}
     <main>
         <div class="container">
             <form class="cart-form" method="post">
@@ -207,9 +165,6 @@
             </div>
         </div>
     </main>
-
-    <footer>
-
-    </footer>
+${require('./_footer.html')}
 </body>
 </html>
