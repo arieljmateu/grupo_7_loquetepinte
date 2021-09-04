@@ -1,3 +1,8 @@
+:root {
+    --menu-color: #000;
+    --menu-bg-color: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +11,7 @@
 
 body {
     min-width: 320px;
+    font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -42,15 +48,16 @@ a {
 
 /********* HEADER begin **********/
 .header-container {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
+    background-color: white;
     z-index: 9999;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.15);
 }
 
 .top-header {
     align-items: center;
-    background-color: white;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
@@ -112,7 +119,6 @@ div.menu-icon ul {
 }
 
 nav.navbar {
-    background-color: white;
     border: 1px solid gray;
     display: none;
 }
@@ -124,15 +130,15 @@ nav.navbar li {
     width: 10%;
 }
 
-header nav a {
-    color: black;
+header a {
+    color: var(--menu-color);
 }
 
 /********** HEADER end ******/
 
 
 main {
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 main div.container {
@@ -166,10 +172,4 @@ main div.container {
         display: block;
     }
     /******* HEADER begin *******/
-
-
-    main {
-        margin-top: 150px;
-    }
-
 }
