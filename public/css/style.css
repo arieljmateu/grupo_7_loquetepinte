@@ -154,6 +154,44 @@ main div.container {
 }
 
 
+/********** FOOTER begin ******/
+footer {
+    background-color: orange;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.footMenu {
+    color:white;
+    font-size: 30px;
+    list-style-type: none;
+    margin-top: 120px;
+    padding-left:130px;
+}
+
+.footMenub {
+    color:white;
+    font-size: 30px;
+    list-style-type: none;
+    margin-top: 120px;
+}
+
+.logo_img{
+    height: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 500px;
+}
+
+.footlogo {
+    color: white;
+    font-size: 40px;
+    margin-top: 80px;
+}
+/********** FOOTER end   ******/
+
+
 @media (min-width: 768px) {
     /******* HEADER begin *******/
     div.menu-icon {
