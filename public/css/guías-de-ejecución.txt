@@ -1,0 +1,16 @@
+Paleta de colores
+Blanco: #ffffff;
+Negro: #000000;
+Azul:  #00008f;
+Gris  oscuro:  #666;
+Gris  claro:  #ebebeb;
+
+Tipografías
+Familia:  'Roboto';
+
+Tamaños Tipográficos
+Cuerpos  de  texto:  12px;
+Titulares: 24px;
+Precios: 18px;
+Descuentos: 16px;
+Descripciones: 16px
