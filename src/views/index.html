@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Este es el Link para que integre el Header y el Footer -->
-    <link rel = "stylesheet" href = "css/style.css>">
-    <!-- Este es el Link para que integre la Hoja de Estilo correspondiente -->
-    <link rel="stylesheet" href="css/index-styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Lo que te pinte</title>
 
-    <!-- Estos son los Links para que improte la Fuente Roboto de Google Fonts-->
+    <!-- Este es el Link para que integre el Header y el Footer -->
+    <link rel = "stylesheet" href = "css/style.css">
+    <!-- Este es el Link para que integre la Hoja de Estilo correspondiente -->
+    <link rel="stylesheet" href="css/index-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Estos son los Links para que importe la Fuente Roboto de Google Fonts-->
     <link rel = "preconnect" href = "https://fonts.googleapis.com">
 <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
 <link href = "https: //fonts.googleapis.com/css2? family = Roboto & display = swap "rel =" stylesheet ">
@@ -23,7 +22,7 @@
 ${require('./_header.html')}
 
     <main>
-       <section>
+       <nav>
            <img src = "./images/librería-comercial.jpg">
            <img src = "./images/artística.jpg">
            <img src = "./images/insumos-computación.jpg">
@@ -36,21 +35,21 @@ ${require('./_header.html')}
                <li><a href="#">Insumos Computación</a></li>
                <li><a href="#">Papelera</a></li>
            </ul>
-       </section> 
-       <section>
+       </nav> 
+       <div>
     <!-- Aca va el carrusel con las imágenes rectangulares -->
-       </section>
+       </div>
        <section>
-           <h3>ENTREGAMOS A DOMICILIO</h3>
-           <P>Hacemos envíos a todo el país</P>
-           <h3>ACEPTAMOS TODOS LOS MEDIOS DE PAGO</h3>
-           <P>Podés pagar en Efectivo, con Transferencia Bancaria, con Tarjeta de Débito y Crédito, y con Link de Pago</P>
-           <h3>GARANTIZAMOS LA SEGURIDAD EN TU COMPRA</h3>
-           <P>Tus datos estarán siempre protegidos</P>
+           <h3 class="títulos-info-comercial">ENTREGAMOS A DOMICILIO</h3>
+           <P class="datos-info-comercial">Hacemos envíos a todo el país</P>
+           <h3 class="títulos-info-comercial">ACEPTAMOS TODOS LOS MEDIOS DE PAGO</h3>
+           <P class="datos-info-comercial">Podés pagar en Efectivo, con Transferencia Bancaria, con Tarjeta de Débito y Crédito, y con Link de Pago</P>
+           <h3 class="títulos-info-comercial">GARANTIZAMOS LA SEGURIDAD EN TU COMPRA</h3>
+           <P class="datos-info-comercial">Tus datos estarán siempre protegidos</P>
        </section>
     </main>
 
-${require('./footer.html')}
+${require('./_footer.html')}
 </body>
 
 </html>
