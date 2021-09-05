@@ -6,7 +6,7 @@ Gris  oscuro:  #666;
 Gris  claro:  #ebebeb;
 
 Tipografías
-Familia:  'Roboto';
+Familia:  'Roboto', sans-serif;
 
 Tamaños Tipográficos
 Cuerpos  de  texto:  12px;
