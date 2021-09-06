@@ -1,21 +1,43 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: white;
-}
-
 main {
     min-width: 320px;
     font-family: "Roboto", sans-serif;
 }
 
 nav {
-
+/*Acá va el estilo de las fotos y sus Links*/
 }
 
-div {
+.contenedor-section1 {
+/*Acá va el estilo del carrusel con las marcas o banners*/
+}
 
+/*La sección 2 es la que tiene los 3 Cuadros con info al final del main*/
+.contenedor-section2 {
+    border: solid 3px red;
+}
+
+.cuadro1 {
+    width: 30%;
+    padding: 20px;
+    border: solid 3px #666;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.cuadro2 {
+    width: 30%;
+    padding: 20px;
+    border: solid 3px #666;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.cuadro3 {
+    width: 30%;
+    padding: 20px;
+    border: solid 3px #666;
+    background-color: #ffffff;
+    box-sizing: border-box;
 }
 
 .títulos-info-comercial {
