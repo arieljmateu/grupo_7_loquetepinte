@@ -1,13 +1,15 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+main{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    flex-wrap: wrap;
+    font-family: "Roboto", sans-serif;
     background-color: white;
 }
 
-body{
-    display: flex;
-    
+.mainbox{
+    flex-direction: row;
 }
 
 ul, li {
@@ -48,7 +50,7 @@ ul, li {
 }
 
 ul.slider {
-    padding: 10vh;
+    padding: 9.5vh;
 }
 
 nav ul {
@@ -63,6 +65,10 @@ nav ul li {
     flex-wrap: wrap;
     box-sizing: border-box;
 }
+ul.menu img{
+    height: 7vh;
+    width: 5vw;
+}
 
 nav a{
     text-decoration: none;
@@ -76,8 +82,4 @@ nav a{
     border-right: 1px solid #00324b;
     flex-wrap: wrap;
     position: relative;
-}
-
-section {
-    box-sizing: border-box;
 }
