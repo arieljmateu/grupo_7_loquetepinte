@@ -19,24 +19,27 @@ nav {
 .cuadro1 {
     width: 30%;
     padding: 20px;
-    border: solid 3px #666;
     background-color: #ffffff;
+    border: solid 3px #666;
+    margin: 15px;
     box-sizing: border-box;
 }
 
 .cuadro2 {
     width: 30%;
     padding: 20px;
-    border: solid 3px #666;
     background-color: #ffffff;
+    border: solid 3px #666;
+    margin: 15px;
     box-sizing: border-box;
 }
 
 .cuadro3 {
     width: 30%;
     padding: 20px;
-    border: solid 3px #666;
     background-color: #ffffff;
+    border: solid 3px #666;
+    margin: 15px;
     box-sizing: border-box;
 }
 
