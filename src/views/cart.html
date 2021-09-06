@@ -12,7 +12,7 @@
 <body>
 ${require('./_header.html')}
     <main>
-        <div class="container">
+        <div class="cart-container">
             <form class="cart-form" method="post">
                 <table class="cart" aria-label="Carrito">
                     <thead>
@@ -45,13 +45,9 @@ ${require('./_header.html')}
                             </td>
                             <td class="product-quantity redraw-title" data-title="Cantidad">
                                 <div class="quantity">
-                                    <form action="#" method="post">
-                                        <button data-quantity="pop" type="submit" value="-" class="quantity-button" name="pop">-</button>
-                                    </form>
+                                    <button type="submit" value="-" class="quantity-button" name="pop">-</button>
                                     <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
-                                    <form action="#" method="post">
-                                        <button data-quantity="push" type="submit" value="+" class="quantity-button" name="push">+</button>
-                                    </form>
+                                    <button type="submit" value="+" class="quantity-button" name="push">+</button>
                                 </div>
                             </td>
                             <td class="product-subtotal redraw-title" data-title="Subtotal">
@@ -77,13 +73,9 @@ ${require('./_header.html')}
                             </td>
                             <td class="product-quantity redraw-title" data-title="Cantidad">
                                 <div class="quantity">
-                                    <form action="#" method="post">
-                                        <button data-quantity="pop" type="submit" value="-" class="quantity-button" name="pop">-</button>
-                                    </form>
+                                    <button type="submit" value="-" class="quantity-button" name="pop">-</button>
                                     <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
-                                    <form action="#" method="post">
-                                        <button data-quantity="push" type="submit" value="+" class="quantity-button" name="push">+</button>
-                                    </form>
+                                    <button type="submit" value="+" class="quantity-button" name="push">+</button>
                                 </div>
                             </td>
                             <td class="product-subtotal redraw-title" data-title="Subtotal">
@@ -109,59 +101,54 @@ ${require('./_header.html')}
                             </td>
                             <td class="product-quantity redraw-title" data-title="Cantidad">
                                 <div class="quantity">
-                                    <form action="#" method="post">
-                                        <button data-quantity="pop" type="submit" value="-" class="quantity-button" name="pop">-</button>
-                                    </form>
+                                    <button type="submit" value="-" class="quantity-button" name="pop">-</button>
                                     <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
-                                    <form action="#" method="post">
-                                        <button data-quantity="push" type="submit" value="+" class="quantity-button" name="push">+</button>
-                                    </form>
+                                    <button type="submit" value="+" class="quantity-button" name="push">+</button>
                                 </div>
                             </td>
                             <td class="product-subtotal redraw-title" data-title="Subtotal">
                                 $<span class="amount">867.00</span>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="6" class="">
-                                <div class="continue-shopping pull-left text-left">
-                                    <a class="button-continue-shopping button primary is-outline"
-                                        href="/productos/">
-                                        ←&nbsp;Seguir comprando </a>
-                                </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="cart-actions">
+                    <div class="coupon-action">
+                        <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="Código de cupón">
+                        <button type="submit" class="btn" name="apply_coupon" value="Aplicar cupón">Aplicar cupón</button>
+                    </div>
+                    <button type="submit" class="btn" name="update_cart" value="Actualizar carrito" aria-disabled="false">Actualizar carrito</button>
+                </div>
             </form>
-        </div>
-        <div class="cart-totals">
-            <h2>Total del carrito</h2>
-            <table class="totals-table">
-                <tbody>
-                    <tr class="cart-subtotal">
-                        <th id="subtotal">Subtotal</th>
-                        <td data-title="Subtotal">
-                            $<span class="price">999.00</span>
-                        </td>
-                    </tr>
-                    <tr class="cart-discount">
-                        <th id="discount">Descuento</th>
-                        <td data-title="Descuento">
-                            $<span class="discount">0.00</span>
-                        </td>
-                    </tr>
-                    <tr class="cart-total">
-                        <th id="total">Total</th>
-                        <td data-title="Total">
-                            $<span class="total">999.00</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="to-checkout">
-                <a href="/checkout" class="checkout-button btn">Finalizar compra</a>
+            <div class="cart-totals-container">
+                <div class="cart-totals">
+                    <h2>Total del carrito</h2>
+                    <table class="totals-table">
+                        <tbody>
+                            <tr class="cart-subtotal">
+                                <th id="subtotal">Subtotal</th>
+                                <td data-title="Subtotal">
+                                    $<span class="price">999.00</span>
+                                </td>
+                            </tr>
+                            <tr class="cart-discount">
+                                <th id="discount">Descuento</th>
+                                <td data-title="Descuento">
+                                    $<span class="discount">0.00</span>
+                                </td>
+                            </tr>
+                            <tr class="cart-total">
+                                <th id="total">Total</th>
+                                <td data-title="Total">
+                                    $<span class="total">999.00</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="to-checkout">
+                        <a href="/checkout" class="btn w100">Finalizar compra</a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

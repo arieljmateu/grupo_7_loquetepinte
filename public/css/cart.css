@@ -1,7 +1,15 @@
+main {
+    padding-top: 50px;
+}
+
+.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 form.cart-form {
     flex: 0 0 100%;
-    margin-bottom: 40px;
-    padding: 0 15px 40px;
+    padding: 0 15px;
     position: relative;
     min-height: 1px;
     max-width: 100%;
@@ -13,7 +21,6 @@ table.cart {
     border-spacing: 0;
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 35px;
     width: 100%;
 }
 
@@ -52,21 +59,13 @@ table.cart th.product-thumbnail {
 }
 
 table.cart td {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    text-align: right;
     align-items: center;
-    padding: 0;
+    display: flex;
+    text-align: right;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-bottom: 5px;
+    padding: 0;
 }
 
 table.cart td.product-remove {
@@ -152,17 +151,52 @@ input.input-quantity {
     width: 120px;
 }
 
+.cart-actions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.cart-totals-container {
+    padding: 0 20px 20px;
+}
+
 .cart-totals {
     border: 3px solid #efefef;
     padding: 25px;
 }
 
-.checkout-button {
-    background-color: #ad172b;
+.cart-totals h2 {
+    text-align: center;
+}
+
+table.totals-table {
+    width: 100%;
+}
+
+table.totals-table th {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 15px 10px;
+    text-align: left;
+}
+
+table.totals-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.cart-totals th:last-child,
+.cart-totals td:last-child {
+    text-align: right;
 }
 
 
 @media (min-width: 768px) {
+    form.cart-form {
+        margin-bottom: 40px;
+        padding: 0 15px 40px;
+    }
+
     table.cart thead {
         display: table-header-group;
     }
@@ -229,8 +263,19 @@ input.input-quantity {
 
 
 @media (min-width: 1200px) {
+    /* probably in style.css
+    main {
+        width: 1222px;
+        margin: 0 auto;
+    } */
+
     form.cart-form {
         flex: 0 0 66%;
         max-width: 66%;
+    }
+
+    div.cart-totals-container {
+        flex: 0 0 33%;
+        max-width: 33%;
     }
 }

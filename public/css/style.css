@@ -1,4 +1,6 @@
 :root {
+    --button-color: #ebebeb;
+    --button-bg-color: #00008f;
     --menu-color: #000;
     --menu-bg-color: #fff;
 }
@@ -10,8 +12,13 @@
 }
 
 body {
-    min-width: 320px;
     font-family: "Roboto", sans-serif;
+    min-width: 320px;
+}
+
+main {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 a {
@@ -19,11 +26,17 @@ a {
 }
 
 .btn {
+    background-color: var(--button-bg-color);
+    border-radius: 8px;
+    color: var(--button-color);
     display: inline-block;
     font-weight: 600;
-    padding: 10px 0;
+    padding: 10px 10px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.w100 {
     width: 100%;
 }
 
@@ -139,19 +152,6 @@ header a {
 }
 
 /********** HEADER end ******/
-
-
-main {
-    margin-top: 30px;
-}
-
-main div.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
-}
 
 
 /********** FOOTER begin ******/
