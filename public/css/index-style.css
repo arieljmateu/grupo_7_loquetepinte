@@ -14,12 +14,18 @@ main {
 }
 
 .img-lib-esc {
+    display: flex;
     width: 15%;
     height: 15%;
     padding: 0%;
     border: solid 2px #ebebeb;
     margin: 10px;
     box-sizing: border-box;
+    flex-grow: 0.30;
+}
+
+#section1 {
+    flex-grow: 1;
 }
 
 .img-lib-com {
