@@ -1,19 +1,8 @@
-main{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    height: 100%;
-    flex-wrap: wrap;
-    font-family: "Roboto", sans-serif;
-    background-color: white;
-}
-
 .mainbox{
     display: flex;
     justify-content: space-around;
-    flex-direction: column;
-    height: 100%;
-    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: nowrap;
     font-family: "Roboto", sans-serif;
     background-color: white;
 }
@@ -50,11 +39,6 @@ ul.slider li:target {
 }
 
 
-
-ul, li {
-    box-sizing: border-box;
-}
-
 ul.slider {
     padding: 9.5vh;
 }
@@ -69,23 +53,10 @@ ul.slider {
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
-    box-sizing: border-box;
 }
 ul.menu img{
     height: 7vh;
     width: 5vw;
 }
 
-.minicar a{
-    text-decoration: none;
-    font-weight: bold;
-    color: #00324b;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.8;
-    flex-grow: 1;
-    text-align: center;
-    border-top: 5px solid #00324b;
-    border-right: 1px solid #00324b;
-    flex-wrap: wrap;
-    position: relative;
-}
+
