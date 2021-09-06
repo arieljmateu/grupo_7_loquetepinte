@@ -5,6 +5,8 @@
     flex-wrap: nowrap;
     font-family: "Roboto", sans-serif;
     background-color: white;
+    margin-top: 7%;
+    margin-bottom: 7%;
 }
 
 ul, li {
