@@ -3,44 +3,106 @@ main {
     font-family: "Roboto", sans-serif;
 }
 
-nav {
-/*Acá va el estilo de las fotos y sus Links*/
+.imágenes {
+    height: 400px;
+    padding: 0%;
+    border: solid 2px green;
+    margin: 10px 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.img-lib-esc {
+    width: 15%;
+    height: 15%;
+    padding: 0%;
+    border: solid 2px #ebebeb;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.img-lib-com {
+    width: 40px;
+    height: 40px;
+    padding: 0%;
+    border: solid 2px #ebebeb;
+    margin: 10px;
+    box-sizing: border-box;
+    background-image:url("/images/librería-comercial.jpg");
+}
+
+.img-art {
+    width: 40px;
+    height: 40px;
+    padding: 00%;
+    border: solid 2px #ebebeb;
+    margin: 10px;
+    box-sizing: border-box;
+    background-image: url("/images/artística.jpg");
+}
+    
+.img-ins-comp {
+    width: 40px;
+    height: 40px;
+    padding: 0%;
+    border: solid 2px #ebebeb;
+    margin: 10px;
+    box-sizing: border-box;
+    background-image: url("/images/insumos-computación.jpg");
+    }
+
+.img-pap {
+    width: 40px;
+    height: 40px;
+    padding: 0%;
+    border: solid 2px #ebebeb;
+    margin: 10px;
+    box-sizing: border-box;
+    background-image: url("images/papelera.jpg");
+}
+    
+/*section1 es la que tiene el carrusel con las marcas o banners con imágenes*/
 .contenedor-section1 {
-/*Acá va el estilo del carrusel con las marcas o banners*/
+    padding: 5%;
+    border: solid 3px orange;
+    margin: 10px 0px;
+    background-color: burlywood;
 }
 
-/*La sección 2 es la que tiene los 3 Cuadros con info al final del main*/
+/*section2 es la que tiene los 3 Cuadros con info al final del main*/
 .contenedor-section2 {
-    border: solid 3px red;
+    margin: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .cuadro1 {
-    width: 30%;
-    padding: 20px;
-    background-color: #ffffff;
-    border: solid 3px #666;
-    margin: 15px;
+    width: 32%;
+    padding: 15px 10px 10px 90px;
+    border: solid 2px #666;
+    margin: 5px;
     box-sizing: border-box;
+    background-color: #ffffff;
 }
 
 .cuadro2 {
-    width: 30%;
-    padding: 20px;
-    background-color: #ffffff;
-    border: solid 3px #666;
-    margin: 15px;
+    width: 32%;
+    padding: 10px 10px 10px 90px;
+    border: solid 2px #666;
+    margin: 5px;
     box-sizing: border-box;
+    background-color: #ffffff;
 }
 
 .cuadro3 {
-    width: 30%;
-    padding: 20px;
-    background-color: #ffffff;
-    border: solid 3px #666;
-    margin: 15px;
+    width: 32%;
+    padding: 15px 10px 10px 90px;
+    border: solid 2px #666;
+    margin: 5px;
     box-sizing: border-box;
+    background-color: #ffffff;
 }
 
 .títulos-info-comercial {
