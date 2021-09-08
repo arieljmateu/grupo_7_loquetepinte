@@ -164,7 +164,7 @@ footer {
 
 .footMenu {
     color:white;
-    font-size: 30px;
+    font-size: 17px;
     list-style-type: none;
     margin-top: 120px;
     padding-left:130px;
@@ -173,22 +173,21 @@ footer {
 
 .footMenub {
     color:white;
-    font-size: 30px;
+    font-size: 17px;
     list-style-type: none;
     margin-top: 120px;
 }
 
 .logo_img{
-    height: 20vh;
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 40vw;
+    height: 90px
 }
 
 .footlogo {
     color: black;
     font-size: 40px;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 /********** FOOTER end   ******/
 
