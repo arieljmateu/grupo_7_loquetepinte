@@ -1,3 +1,7 @@
+
+/*border: solid red 1px;*/
+
+
 .mainbox{
     display: flex;
     justify-content: space-around;
@@ -9,6 +13,8 @@
     margin-bottom: 7%;
 }
 
+
+
 ul, li {
     padding: 0;
     margin: 0;
@@ -16,17 +22,17 @@ ul, li {
 }
 ul.slider {
     position:relative; /*Necesitamos que el ul sea relativo*/
+
 }
 ul.slider li {
     opacity: 0; /*Ocultamos todos los <li>*/
-    transition: opacity .5s;
+    transition: opacity 0s;
     position: absolute; /*Posicionamos en absoluto los <li>*/
     left: 0px;
     top: 0px;
-    margin:50px;
-    padding:50px;
     border:2px solid red;
     background:#fff;
+    
 }
 ul.slider li:first-child {
     opacity: 1; /*Mostramos el primer <li>*/
@@ -34,15 +40,65 @@ ul.slider li:first-child {
 ul.slider li:target {
     opacity: 1; /*Mostramos el <li> al que apunta el enlace*/
 }
-.minicar {
-    position:relative;
-    top:200px;
-    left:50px;
-}
+
 
 
 ul.slider {
     padding: 9.5vh;
+}
+.sellingbox{
+    border: solid blue 1px;
+    display: flex;
+    flex-direction: row;
+    height: 30vh;
+    width: 55vw;
+    box-sizing: border-box;
+}
+
+.sellbox{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    border: solid orange 1px;
+}
+
+.subsellbox{
+    display: flex;
+    flex-direction: row;
+}
+
+.sellboxb{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    border: solid black 1px;
+}
+
+.Especificaciones{
+    border: solid red 1px;
+    padding: 10%;
+    margin: 10%;
+    height: 20%;
+    box-sizing: border-box;
+}
+
+.descripcion{
+    border: solid red 1px;
+    padding: 1%;
+    margin: 1%;
+    height: 50%;
+    box-sizing: border-box;
+}
+
+.minicar {
+    position:relative;
+    display: flex;
+    top: 27%;
+    border: solid red 1px;
 }
 
 .minicar ul {
