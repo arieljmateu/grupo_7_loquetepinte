@@ -76,8 +76,18 @@ ul.slider {
     margin: 2%;
 }
 
+.mediodepagodesplegable{
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
 .cuotas{
     margin: 2%;
+}
+
+.cuotasdesplegable{
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
 
@@ -85,6 +95,14 @@ ul.slider {
 .subsellbox{
     display: flex;
     flex-direction: row;
+}
+
+.quantity{
+    margin: 4%;
+}
+
+.comprar{
+    margin: 4%;
 }
 
 .sellboxb{
