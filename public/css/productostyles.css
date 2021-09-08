@@ -64,6 +64,24 @@ ul.slider {
     border: solid orange 1px;
 }
 
+.producto{
+    margin: 2%;
+}
+
+.precio{
+    margin: 2%;
+}
+
+.mediodepago{
+    margin: 2%;
+}
+
+.cuotas{
+    margin: 2%;
+}
+
+
+
 .subsellbox{
     display: flex;
     flex-direction: row;

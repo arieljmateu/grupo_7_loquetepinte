@@ -72,12 +72,12 @@
     </div>
  <section class="sellingbox">
     <div class= "sellbox">
-     <p>Producto</p>
+     <p Class= "producto">Producto</p>
 
-     <p>Precio</p>
+     <p Class= "precio">Precio</p>
     
-     <p>Medio de pago</p>
-     <select name="Medios de pago">
+     <p Class= "mediodepago">Medio de pago</p>
+     <select class="mediosdepago" name="Medios de pago">
          <option value="1">Tarjeta de credito</option> 
          <option value="2">Tarjeta de debito</option>
          <option value="3">Otras formas de pago</option> 
@@ -89,8 +89,8 @@
          <option value="2">6 cuotas sin interes</option>
          <option value="3">12 cuotas</option>
      </select>
-     <td class="product-quantity redraw-title" data-title="Cantidad">
-        <div class= "subsellbox">
+     
+     <div class= "subsellbox">
          <div class="quantity">
              <button type="submit" value="-" class="quantity-button" name="pop">-</button>
              <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
@@ -98,8 +98,8 @@
          </div>
         
          <button type="button"><a href="views/carrito.html">Agregar al carrito</a></button> 
-        </div>
-     </td> 
+     </div>
+     
     </div>
     <div class= "sellboxb">
      <div class= "Especificaciones">
