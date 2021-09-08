@@ -3,7 +3,7 @@ main {
     font-family: "Roboto", sans-serif;
 }
 
-.imágenes {
+.imagenes {
     height: 400px;
     padding: 0%;
     border: solid 2px green;
@@ -35,7 +35,7 @@ main {
     border: solid 2px #ebebeb;
     margin: 10px;
     box-sizing: border-box;
-    background-image:url("/images/librería-comercial.jpg");
+    background-image:url("/images/libreria-comercial.jpg");
 }
 
 .img-art {
@@ -45,7 +45,7 @@ main {
     border: solid 2px #ebebeb;
     margin: 10px;
     box-sizing: border-box;
-    background-image: url("/images/artística.jpg");
+    background-image: url("/images/artistica.jpg");
 }
     
 .img-ins-comp {
@@ -55,7 +55,7 @@ main {
     border: solid 2px #ebebeb;
     margin: 10px;
     box-sizing: border-box;
-    background-image: url("/images/insumos-computación.jpg");
+    background-image: url("/images/insumos-computacion.jpg");
     }
 
 .img-pap {
@@ -111,7 +111,7 @@ main {
     background-color: #ffffff;
 }
 
-.títulos-info-comercial {
+.titulos-info-comercial {
 font-size: 16px;
 color: #666;
 }
