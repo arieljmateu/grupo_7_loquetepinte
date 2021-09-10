@@ -6,8 +6,6 @@ main {
 .imágenes {
     height: 400px;
     padding: 0%;
-    border: solid 2px green;
-    margin: 10px 0px;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
@@ -15,57 +13,83 @@ main {
 
 .img-lib-esc {
     display: flex;
-    width: 15%;
-    height: 15%;
+    width: 37%;
+    height: 50%;
     padding: 0%;
     border: solid 2px #ebebeb;
-    margin: 10px;
+    margin: 5px;
     box-sizing: border-box;
-    flex-grow: 0.30;
+    background-image: url("/images/librería-escolar.jpg");
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
-#section1 {
-    flex-grow: 1;
+.alin-texto{
+    display: flex;
+    text-align: center;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 0 0 #666, -2px 0 0 #666, 0 2px 0 #666, 0 -2px 0 #666, 1px 1px #666, -1px -1px 0 #666, 1px -1px 0 #666, -1px 1px 0 #666;
+    color: #ffffff;
 }
 
 .img-lib-com {
-    width: 40px;
-    height: 40px;
+    display: flex;
+    width: 60%;
+    height: 50%;
     padding: 0%;
     border: solid 2px #ebebeb;
-    margin: 10px;
+    margin: 5px;
     box-sizing: border-box;
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
     background-image:url("/images/librería-comercial.jpg");
 }
 
 .img-art {
-    width: 40px;
-    height: 40px;
-    padding: 00%;
+    display: flex;
+    width: 47%;
+    height: 48%;
+    padding: 0%;
     border: solid 2px #ebebeb;
-    margin: 10px;
+    margin: 5px;
     box-sizing: border-box;
     background-image: url("/images/artística.jpg");
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
 }
     
 .img-ins-comp {
-    width: 40px;
-    height: 40px;
+    display: flex;
+    width: 24%;
+    height: 48%;
     padding: 0%;
     border: solid 2px #ebebeb;
-    margin: 10px;
+    margin: 5px;
     box-sizing: border-box;
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
     background-image: url("/images/insumos-computación.jpg");
-    }
+}
 
 .img-pap {
-    width: 40px;
-    height: 40px;
+    display: flex;
+    width: 24%;
+    height: 48%;
     padding: 0%;
     border: solid 2px #ebebeb;
-    margin: 10px;
+    margin:5px;
     box-sizing: border-box;
-    background-image: url("images/papelera.jpg");
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
+    background-image: url("/images/papelera.jpg");
 }
     
 /*section1 es la que tiene el carrusel con las marcas o banners con imágenes*/
