@@ -1,6 +1,9 @@
 
-/*border: solid red 1px;*/
+/*border: solid red 1px;/*
 
+ /** {
+    box-sizing: border-box;
+  } */
 
 .mainbox{
     display: flex;
@@ -46,62 +49,72 @@ ul.slider li:target {
 ul.slider {
     padding: 9.5vh;
 }
-.sellingbox{
-    border: solid blue 1px;
+.mainsellbox{
+    border: solid blue 2px;
     display: flex;
     flex-direction: row;
-    height: 30vh;
+    height: fit-content;
     width: 55vw;
     box-sizing: border-box;
 }
 
-.sellbox{
+.sellboxa{
     display: flex;
     flex-direction: column;
     padding: 10px;
     width: 50%;
     box-sizing: border-box;
-    border: solid orange 1px;
+    border: solid orange 2px;
 }
 
-.producto{
+.productname{
     margin: 2%;
+    border: solid black 1px;
 }
 
-.precio{
+.price{
     margin: 2%;
+    border: solid black 1px;
 }
 
-.mediodepago{
-    margin: 2%;
+.paymentmethod{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: solid black 1px;
 }
 
-.mediodepagodesplegable{
+.paymentmethoddropdown{
     margin-right: 2%;
     margin-left: 2%;
+    border: solid black 1px;
 }
 
-.cuotas{
-    margin: 2%;
+.dues{
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    border: solid black 1px;
 }
 
-.cuotasdesplegable{
+.duesdropdown{
     margin-right: 2%;
     margin-left: 2%;
+    border: solid black 1px;
 }
 
 
 
-.subsellbox{
+.subsellboxa{
     display: flex;
-    flex-direction: row;
+    flex-direction: wrap;
 }
 
 .quantity{
     margin: 4%;
 }
 
-.comprar{
+.buy{
     margin: 4%;
 }
 
@@ -110,40 +123,53 @@ ul.slider {
     flex-direction: column;
     padding: 10px;
     width: 50%;
+    height: fit-content;
     box-sizing: border-box;
-    border: solid black 1px;
+    border: solid green 2px;
 }
 
-.Especificaciones{
-    border: solid red 1px;
-    padding: 10%;
-    margin: 10%;
-    height: 20%;
-    box-sizing: border-box;
-}
-
-.descripcion{
-    border: solid red 1px;
+.itemspecs{
+    border: solid red 2px;
     padding: 1%;
     margin: 1%;
-    height: 50%;
+    height: fit-content;
     box-sizing: border-box;
 }
 
-.minicar {
+.itemspecstext{
+    color: black;
+    background:red;
+    margin: 1%;
+    box-sizing: border-box;
+}
+
+.description{
+    border: solid red 2px;
+    padding: 1%;
+    margin: 1%;
+    height: fit-content;
+    box-sizing: border-box;
+}
+
+.descriptiontext{
+    background:black;
+    color: purple;
+}
+
+.minicarousel {
     position:relative;
     display: flex;
     top: 27%;
-    border: solid red 1px;
+    border: solid red 2px;
 }
 
-.minicar ul {
+.minicarousel ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.minicar ul li {
+.minicarousel ul li {
     display: flex;
     flex-grow: 1;
     flex-wrap: wrap;
