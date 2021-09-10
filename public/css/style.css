@@ -156,7 +156,7 @@ header a {
 
 /********** FOOTER begin ******/
 footer {
-    background-color: orange;
+    background-color: white;
     display: flex;
     justify-content: space-around;
     
@@ -164,30 +164,30 @@ footer {
 
 .footMenu {
     color:white;
-    font-size: 30px;
+    font-size: 17px;
     list-style-type: none;
     margin-top: 120px;
     padding-left:130px;
+    padding-right:10px;
 }
 
 .footMenub {
     color:white;
-    font-size: 30px;
+    font-size: 17px;
     list-style-type: none;
     margin-top: 120px;
 }
 
 .logo_img{
-    height: 200px;
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 500px;
+    height: 90px
 }
 
 .footlogo {
-    color: white;
+    color: black;
     font-size: 40px;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 /********** FOOTER end   ******/
 

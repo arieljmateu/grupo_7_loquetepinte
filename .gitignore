@@ -1,5 +1,2 @@
 node_modules/*
-views/cart.html
-views/test.html
-views/index.html
-
+views/*
