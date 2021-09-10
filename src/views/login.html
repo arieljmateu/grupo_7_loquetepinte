@@ -9,12 +9,13 @@
     </head>
     <body>
         ${require('./_header.html')}
+        <main>
         <h1>Iniciar sesion</h1>
         <form>
             <div id="formulary">
                 <section id="email">
-                    <p class="label"><label for="e-mail">e-mail:</label></p>
-                    <p class="input"><input type="email" placeholder="Ingresa tu e-mail" id="e-mail" name="nombre"></p>
+                    <div class="label"><label for="e-mail">Correo electronico:</label></div>
+                    <div class="input"><input type="email" placeholder="Ingresa tu e-mail" id="e-mail" name="nombre"></div>
                     </section>
                 <section id="passwordsec">
                     <p class="label"><label for="password">Contraseña:</label></p>
@@ -31,6 +32,7 @@
                     </section>
                 </div>
             </form>
+            </main>
             ${require('./_footer.html')}
     </body>
 </html>

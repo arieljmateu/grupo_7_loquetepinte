@@ -10,11 +10,13 @@ body{
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    flex-wrap: wrap;
     font-family: "Roboto", sans-serif;
     background-color: white;
 }
-
+main {
+    width: 100%;
+    height: 40%;
+}
 h1 {
     display: flex;
     flex-direction: column;
@@ -22,6 +24,7 @@ h1 {
     flex-grow: 0.25;
     font-size: 24px;
     background-color: white;
+    text-align: center;
 }
 
 form {
@@ -30,6 +33,7 @@ form {
     flex-grow: 0.75;
     justify-content: space-around;
     width: 100%;
+    height: 100%;
     background-color: white;
 }
 
@@ -43,7 +47,7 @@ form {
 
 div .label {
     align-self: flex-start;
-    height: 25%;
+    margin-bottom: 5px;
 }
 
 div #email {
@@ -87,7 +91,7 @@ div #stay {
 }
 
 div #forgot {
-    flex-grow: 0.15;
+    flex-grow: 0.02;
     align-self: center;
 }
 
@@ -102,5 +106,5 @@ div #forgot {
 }
 
 .input {
-    flex-grow: 0.75;
+    height: 50%;
 }
