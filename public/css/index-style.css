@@ -94,18 +94,15 @@ main {
     display: flex;
     background-color: #ebebeb;
     margin: 10px 0px;
-    justify-content: space-around;   
+    justify-content: space-around;
+    align-items: center;
 }
 
 .contenedor2-marcas img{
-    height: 150px;
-    width: 14vw;
+    width: 8vw;
 }
 
-.marcas {
-    width: 15%;
-}
-
+/*Son las opciones donde estaban las imágenes como background de cada div*/
 /*.mont-blanc {
     width: 20%;
     margin-top: 15px;
