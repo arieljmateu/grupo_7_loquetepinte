@@ -92,13 +92,17 @@ main {
     height: 150px;
     box-sizing: border-box;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     background-color: #ebebeb;
     margin: 10px 0px;
-    justify-content: space-around;
+    justify-content: space-around;   
 }
 
-.mont-blanc {
+.marcas {
+    width: 15%;
+}
+
+/*.mont-blanc {
     width: 20%;
     margin-top: 15px;
     background-image: url("/images/mont-blanc.jpg");
@@ -152,7 +156,7 @@ main {
     background-image: url("/images/faber-castell.jpg");
     background-size: 190px 80px;
     background-repeat: no-repeat;
-}
+}+/
 
 /*section3 es la que tiene los 3 Cuadros con info al final del main*/
 .contenedor3-cuadros {
