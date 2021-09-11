@@ -3,9 +3,9 @@ main {
     font-family: "Roboto", sans-serif;
 }
 
-.imagenes {
-    height: 400px;
-    padding: 0%;
+/*section1 es la que tiene las imágenes con la familia de productos*/
+.contenedor1-imagenes {
+    height: 520px;
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
@@ -13,16 +13,67 @@ main {
 
 .img-lib-esc {
     display: flex;
-    width: 37%;
+    width: 39.5%;
     height: 50%;
-    padding: 0%;
     border: solid 2px #ebebeb;
-    margin: 5px;
+    margin: 5px 5px 0px 0px;
     box-sizing: border-box;
-    background-image: url("/images/librería-escolar.jpg");
+    background-image: url("/images/libreria-escolar.jpg");
     background-size: cover;
     justify-content: space-around;
     flex-direction: column;
+}
+
+.img-lib-com {
+    display: flex;
+    width: 60%;
+    height: 50%;
+    border: solid 2px #ebebeb;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
+    background-image:url("/images/libreria-comercial.jpg");
+}
+
+.img-art {
+    display: flex;
+    width: 47%;
+    height: 48%;
+    border: solid 2px #ebebeb;
+    margin: 0px 5px 5px 0px;
+    box-sizing: border-box;
+    background-image: url("/images/artistica.jpg");
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
+}
+    
+.img-ins-comp {
+    display: flex;
+    width: 26%;
+    height: 48%;
+    border: solid 2px #ebebeb;
+    margin: 0px 5px 5px 0px;
+    box-sizing: border-box;
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
+    background-image: url("/images/insumos-computacion.jpg");
+}
+
+.img-pap {
+    display: flex;
+    width: 26%;
+    height: 48%;
+    border: solid 2px #ebebeb;
+    margin:0px 0px 5px 0px;
+    box-sizing: border-box;
+    background-size: cover;
+    justify-content: space-around;
+    flex-direction: column;
+    background-image: url("/images/papelera.jpg");
 }
 
 .alin-texto{
@@ -35,74 +86,77 @@ main {
     text-shadow: 2px 0 0 #666, -2px 0 0 #666, 0 2px 0 #666, 0 -2px 0 #666, 1px 1px #666, -1px -1px 0 #666, 1px -1px 0 #666, -1px 1px 0 #666;
     color: #ffffff;
 }
-
-.img-lib-com {
-    display: flex;
-    width: 60%;
-    height: 50%;
-    padding: 0%;
-    border: solid 2px #ebebeb;
-    margin: 5px;
-    box-sizing: border-box;
-    background-size: cover;
-    justify-content: space-around;
-    flex-direction: column;
-    background-image:url("/images/librería-comercial.jpg");
-}
-
-.img-art {
-    display: flex;
-    width: 47%;
-    height: 48%;
-    padding: 0%;
-    border: solid 2px #ebebeb;
-    margin: 5px;
-    box-sizing: border-box;
-    background-image: url("/images/artística.jpg");
-    background-size: cover;
-    justify-content: space-around;
-    flex-direction: column;
-}
     
-.img-ins-comp {
-    display: flex;
-    width: 24%;
-    height: 48%;
-    padding: 0%;
-    border: solid 2px #ebebeb;
-    margin: 5px;
+/*section2 es la que tiene el carrusel con las marcas*/
+.contenedor2-marcas {
+    height: 150px;
     box-sizing: border-box;
-    background-size: cover;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #ebebeb;
+    margin: 10px 0px;
     justify-content: space-around;
-    flex-direction: column;
-    background-image: url("/images/insumos-computación.jpg");
 }
 
-.img-pap {
-    display: flex;
-    width: 24%;
-    height: 48%;
-    padding: 0%;
-    border: solid 2px #ebebeb;
-    margin:5px;
-    box-sizing: border-box;
-    background-size: cover;
-    justify-content: space-around;
-    flex-direction: column;
-    background-image: url("/images/papelera.jpg");
-}
-    
-/*section1 es la que tiene el carrusel con las marcas o banners con imágenes*/
-.contenedor-section1 {
-    padding: 5%;
-    border: solid 3px orange;
-    margin: 10px 0px;
-    background-color: burlywood;
+.mont-blanc {
+    width: 20%;
+    margin-top: 15px;
+    background-image: url("/images/mont-blanc.jpg");
+    background-size: 120px 120px;
+    background-repeat: no-repeat;
 }
 
-/*section2 es la que tiene los 3 Cuadros con info al final del main*/
-.contenedor-section2 {
-    margin: 10px 0px;
+.eterna {
+    width: 20%;
+    margin-top: 15px;
+    background-image: url("/images/eterna.png");
+    background-size: 120px 120px;
+    background-repeat: no-repeat;
+}
+
+.hp {
+    width: 20%;
+    margin-top: 15px;
+    background-image: url("/images/hp.png");
+    background-size: 120px 120px;
+    background-repeat: no-repeat;
+}
+
+.pelikan {
+    width: 20%;
+    margin-top: 30px;
+    background-image: url("/images/pelikan.png");
+    background-size: 190px 90px;
+    background-repeat: no-repeat;
+}
+
+.parker {
+    width: 20%;
+    margin-top: 15px;
+    background-image: url("/images/parker.png");
+    background-size: 120px 120px;
+    background-repeat: no-repeat;
+}
+
+.exito {
+    width: 20%;
+    margin-top: 28px;
+    background-image: url("/images/exito.jpg");
+    background-size: 120px 100px;
+    background-repeat: no-repeat;
+}
+
+.faber-castell {
+    width: 20%;
+    margin-top: 35px;
+    background-image: url("/images/faber-castell.jpg");
+    background-size: 190px 80px;
+    background-repeat: no-repeat;
+}
+
+/*section3 es la que tiene los 3 Cuadros con info al final del main*/
+.contenedor3-cuadros {
+    margin: 2.5px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -110,31 +164,32 @@ main {
 
 .cuadro1 {
     width: 32%;
-    padding: 15px 10px 10px 90px;
+    padding: 30px 10px 30px 90px;
     border: solid 2px #666;
-    margin: 5px;
+    margin: 2.5px 0px;
     box-sizing: border-box;
     background-color: #ffffff;
 }
 
 .cuadro2 {
     width: 32%;
-    padding: 10px 10px 10px 90px;
+    padding: 25px 10px 30px 90px;
     border: solid 2px #666;
-    margin: 5px;
+    margin: 2.5px 0px;
     box-sizing: border-box;
     background-color: #ffffff;
 }
 
 .cuadro3 {
     width: 32%;
-    padding: 15px 10px 10px 90px;
+    padding: 30px 10px 30px 90px;
     border: solid 2px #666;
-    margin: 5px;
+    margin: 2.5px 0px;
     box-sizing: border-box;
     background-color: #ffffff;
 }
 
+/*es el texto que está dentro de los cuadros*/
 .titulos-info-comercial {
 font-size: 16px;
 color: #666;
