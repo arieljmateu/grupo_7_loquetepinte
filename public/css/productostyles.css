@@ -18,11 +18,39 @@
 
 
 
+.carousel{
+    display: flex;
+    flex-direction: column;
+    border: solid green 2px;
+    width: 50vw;
+    
+}
+
+.minicarousel {
+    position:relative;
+    display: flex;
+    top: 27%;
+    border: solid red 2px;
+    flex-wrap: wrap;
+}
+
+.minicarousel ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+}
+
+ul.menu img{
+    height: 7vh;
+    width: 5vw;
+}
+
 ul, li {
     padding: 0;
     margin: 0;
     list-style: none inside;
 }
+
 ul.slider {
     position:relative; /*Necesitamos que el ul sea relativo*/
 
@@ -44,11 +72,13 @@ ul.slider li:target {
     opacity: 1; /*Mostramos el <li> al que apunta el enlace*/
 }
 
-
-
 ul.slider {
     padding: 9.5vh;
 }
+
+
+
+
 .mainsellbox{
     border: solid blue 2px;
     display: flex;
@@ -156,27 +186,6 @@ ul.slider {
     color: purple;
 }
 
-.minicarousel {
-    position:relative;
-    display: flex;
-    top: 27%;
-    border: solid red 2px;
-}
 
-.minicarousel ul {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.minicarousel ul li {
-    display: flex;
-    flex-grow: 1;
-    flex-wrap: wrap;
-}
-ul.menu img{
-    height: 7vh;
-    width: 5vw;
-}
 
 
