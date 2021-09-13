@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     font-family: "Roboto", sans-serif;
     background-color: white;
     margin-top: 7%;
@@ -17,25 +17,26 @@
 }
 
 
-
+/*****************CAROUSEL***********************/
 .carousel{
     display: flex;
     flex-direction: column;
     border: solid green 2px;
     width: 50vw;
-    
+    height: 35vh;
 }
 
 .minicarousel {
     position:relative;
     display: flex;
-    top: 27%;
     border: solid red 2px;
     flex-wrap: wrap;
+    top: 27%;
 }
 
 .minicarousel ul {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     width: fit-content;
 }
@@ -75,24 +76,22 @@ ul.slider li:target {
 ul.slider {
     padding: 9.5vh;
 }
+/*****************CAROUSEL***********************/
 
 
-
-
+/*****************PANEL DE INFORMACION Y COMPRA***********************/
 .mainsellbox{
     border: solid blue 2px;
     display: flex;
-    flex-direction: row;
-    height: fit-content;
-    width: 55vw;
-    box-sizing: border-box;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 50vw;
 }
 
 .sellboxa{
     display: flex;
     flex-direction: column;
     padding: 10px;
-    width: 50%;
     box-sizing: border-box;
     border: solid orange 2px;
 }
@@ -137,7 +136,13 @@ ul.slider {
 
 .subsellboxa{
     display: flex;
-    flex-direction: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.input-quantity{
+    width: fit-content;
 }
 
 .quantity{
@@ -152,7 +157,6 @@ ul.slider {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    width: 50%;
     height: fit-content;
     box-sizing: border-box;
     border: solid green 2px;
@@ -185,7 +189,25 @@ ul.slider {
     background:black;
     color: purple;
 }
+/*****************PANEL DE INFORMACION Y COMPRA***********************/
 
+/*****************CELLPHONE***********************/
+@media (min-width:361px){
+    .mainbox{
+        flex-wrap: nowrap;
+    }
+
+    .mainsellbox{
+        flex-direction: row-reverse;
+    }
+    .sellboxa{
+        width: 50%;
+    }
+    .sellboxb{
+        width: 50%;
+    }
+
+}
 
 
 
