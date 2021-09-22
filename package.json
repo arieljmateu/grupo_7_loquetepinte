@@ -2,12 +2,10 @@
   "name": "grupo_7_loquetepinte",
   "version": "1.0.0",
   "description": "E-commerce website",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "compile-html": "html-includes --src src/views --dest views",
-    "compile-html-watch": "html-includes --src src/views --dest views --watch",
-    "start": "npm run compile-html && node app.js",
-    "dev": "concurrently \"npm:compile-html-watch\" \"nodemon app.js\"",
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +19,7 @@
   },
   "homepage": "https://github.com/arieljmateu/grupo_7_loquetepinte#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {

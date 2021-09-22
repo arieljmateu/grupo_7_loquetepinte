@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-${require('./_header.html')}
+<%- include('partials/header') %> 
     <main>
         <div class="cart-container">
             <form class="cart-form" method="post">
@@ -152,6 +152,6 @@ ${require('./_header.html')}
             </div>
         </div>
     </main>
-${require('./_footer.html')}
+    <%- include('partials/footer') %>
 </body>
 </html>
