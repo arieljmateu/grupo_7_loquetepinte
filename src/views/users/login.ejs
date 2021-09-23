@@ -1,9 +1,9 @@
-<html>
-    <head>
-        <%- include('../partials/head') %>
-        <link rel="stylesheet" href="../css/loginstyles.css">
-        <title> Inicia sesion </title>  
-    </head>
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head', {
+        'title': "Inicia sesion",
+        'css': ["/css/loginstyles.css"],
+    }) %>   
     <body>
         <%- include('../partials/header') %>
         <main>

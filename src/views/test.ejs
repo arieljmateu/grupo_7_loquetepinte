@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <%- include('partials/head') %>
-    <title>Lo que te pinte</title>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Aca iría el css específico del html -->
-    </head>
+<%- include('partials/head', {
+    'title': "Lo que te pinte",
+    'css': []
+}) %>
 <body>
     <%- include('partials/header') %>
     <main>

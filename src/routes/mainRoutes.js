@@ -7,6 +7,6 @@ router.get('/', mainController.index);
 
 router.get('/cart', mainController.cart);
 
-
+router.get('/test', mainController.test);
 
 module.exports = router;

@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <%- include('partials/head') %> 
-    <title>Lo que te pinte</title>
-
-    <!-- Este es el Link para que integre la Hoja de Estilo correspondiente -->
-    <link rel="stylesheet" href="css/index-style.css">
-    
-</head>
-
+<%- include('../partials/head', {
+    'title': "Lo que te pinte",
+    'css': ["/css/index-style.css"],
+}) %>
 <body>
 <%- include('partials/header') %> 
 
