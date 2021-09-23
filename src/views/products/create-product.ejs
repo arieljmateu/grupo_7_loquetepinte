@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="css/create-products-styles.css">
+    <title>Crear y editar productos</title>
+</head>
+<body>
+    <main>
+        <form>
+            <div id="formulary">
+                <!-- Campos Obligatorios -->
+                <section class="camp">
+                    <p class="label"><label for="productName">Nombre del producto:</label></p>
+                    <p class="input"><input type="text" placeholder="Ingresa el nombre del producto" id="productName" name="productName" required></p>
+                </section>
+                <section class="camp">
+                    <p class="label"><label for="description">Descripción:</label></p>
+                    <p class="input"><input type="text" placeholder="Ingresa la descripción" id="description" name="description" required></p>
+                </section>
+                <section class="camp">
+                    <p class="label"><label for="category">Categoría:</label></p>
+                    <p class="input"><input type="text" placeholder="Ingresa la categoria" id="category" name="category" required></p>
+                </section>
+                <section class="camp">
+                    <p class="label"><label for="productImage">Imagen:</label></p>
+                    <p class="input"><input type="file" placeholder="Adjuntar imagen" accept= "image/" id="productImage" name="productImage" required></p>
+                </section>
+                <section class="camp">
+                    <p class="label"><label for="precio">Precio:</label></p>
+                    <p class="input"><input type="number" placeholder="Ingresa el precio" id="precio" name="precio" required></p>
+                </section>
+                <!-- Campos Opcionales -->
+                <section class="camp">
+                    <p class="label"><label for="color">Color:</label></p>
+                    <p class="input"><input type="text" placeholder="Color del producto" id="color" name="color"></p>
+                </section>
+                <section class="camp">
+                    <p class="label"><label for="size">Tamaño:</label></p>
+                    <p class="input"><input type="text" placeholder="Ingresa tu direccion" id="size" name="size"></p>
+                </section>
+                <section class="camp" id="regbutton">
+                    <p id="button"><button type="submit">Cargar</button></p>
+                </section>
+                </div>
+            </form>
+    </main>
+    
+</body>
+</html>
