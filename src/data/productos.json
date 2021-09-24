@@ -132,31 +132,21 @@
     {
         "id": 14,
         "name": "Atril",
-        "description": "Atril de madera.",
+        "description": "Atril de madera profesional, 1,80 mts.",
         "color": "xxx",
         "tamaño": "xxx",
-        "category": "Librería Comercial",
+        "category": "Artística",
         "image": "xxx.jpg",
-        "price": 185
+        "price": 2250
     },
     {
-        "id": 9,
-        "name": "Calculadora",
-        "description": "Calculadora escritorio Casio, display 12 dígitos.",
+        "id": 15,
+        "name": "Base de corte",
+        "description": "Base plancha, tabla de corte A3, 45x30 cm.",
         "color": "xxx",
         "tamaño": "xxx",
-        "category": "Librería Comercial",
+        "category": "Artística",
         "image": "xxx.jpg",
-        "price": 890
-    },
-    {
-        "id": 10,
-        "name": "Cesto papelero",
-        "description": "Cesto papelero metálico, ideal oficina.",
-        "color": "xxx",
-        "tamaño": "xxx",
-        "category": "Librería Comercial",
-        "image": "xxx.jpg",
-        "price": 950
-    }     
+        "price": 1890
+    }    
 ]
