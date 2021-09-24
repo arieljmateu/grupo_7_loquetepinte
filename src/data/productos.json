@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "name": "Cuaderno",
+        "description": "Cuaderno tapa dura, 42 hojas, rayado, Gloria Escolar Araña.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Escolar",
+        "image": "xxx.jpg",
+        "price": 170
+    },
+    {
+        "id": 2,
+        "name": "Cartuchera",
+        "description": "Cartuchera desplegable con cierre.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Escolar",
+        "image": "xxx.jpg",
+        "price": 1200
+    },
+    {
+        "id": 3,
+        "name": "Plasticola",
+        "description": "Adhesivo vinílico, cola blanca.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Escolar",
+        "image": "xxx.jpg",
+        "price": 230
+    },
+    {
+        "id": 4,
+        "name": "Mochila",
+        "description": "Mochila con carrito y luces led.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Escolar",
+        "image": "xxx.jpg",
+        "price": 5600
+    },
+    {
+        "id": 5,
+        "name": "Lápices de colores",
+        "description": "Lápices de colores Faber Castell supersoft, Caja x 24.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Escolar",
+        "image": "xxx.jpg",
+        "price": 750
+    },
+    {
+        "id": 6,
+        "name": "Abrochadora",
+        "description": "Abrochadora MIT, pinza metálica.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Comercial",
+        "image": "xxx.jpg",
+        "price": 1250
+    },
+    {
+        "id": 7,
+        "name": "Bolígrafo",
+        "description": "Lapicera Parker, tinta negra.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Comercial",
+        "image": "xxx.jpg",
+        "price": 1500
+    },
+    {
+        "id": 8,
+        "name": "Almoadilla para sellos",
+        "description": "Almohadilla de goma para sellos, apta para tinta al agua.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Comercial",
+        "image": "xxx.jpg",
+        "price": 185
+    },
+    {
+        "id": 9,
+        "name": "Calculadora",
+        "description": "Calculadora escritorio Casio, display 12 dígitos.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Comercial",
+        "image": "xxx.jpg",
+        "price": 890
+    },
+    {
+        "id": 10,
+        "name": "Cesto papelero",
+        "description": "Cesto papelero metálico, ideal oficina.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Comercial",
+        "image": "xxx.jpg",
+        "price": 950
+    },
+    {
+        "id": 11,
+        "name": "Pincel",
+        "description": "Pincel Bambin aficionado, cerda corta.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Artística",
+        "image": "xxx.jpg",
+        "price": 650
+    },
+    {
+        "id": 12,
+        "name": "Acrílico decorativo",
+        "description": "Pintura acrílica Eterna, x 50 ml.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Artística",
+        "image": "xxx.jpg",
+        "price": 129
+    },
+    {
+        "id": 13,
+        "name": "Acuarela",
+        "description": "Lata con 12 acuarelas Reeves.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Artística",
+        "image": "xxx.jpg",
+        "price": 980
+    },
+    {
+        "id": 14,
+        "name": "Atril",
+        "description": "Atril de madera.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Comercial",
+        "image": "xxx.jpg",
+        "price": 185
+    },
+    {
+        "id": 9,
+        "name": "Calculadora",
+        "description": "Calculadora escritorio Casio, display 12 dígitos.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Comercial",
+        "image": "xxx.jpg",
+        "price": 890
+    },
+    {
+        "id": 10,
+        "name": "Cesto papelero",
+        "description": "Cesto papelero metálico, ideal oficina.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Librería Comercial",
+        "image": "xxx.jpg",
+        "price": 950
+    }     
+]

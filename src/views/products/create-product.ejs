@@ -4,9 +4,10 @@
     'title': "Crear y editar productos",
     'css': ["/css/create-products-styles.css"],
 }) %>
+
 <body>
     <main>
-        <form>
+        <form method="POST" action="/create-product">
             <div id="formulary">
                 <!-- Campos Obligatorios -->
                 <section class="camp">
@@ -26,8 +27,8 @@
                     <p class="input"><input type="file" placeholder="Adjuntar imagen" accept= "image/" id="productImage" name="productImage" required></p>
                 </section>
                 <section class="camp">
-                    <p class="label"><label for="precio">Precio:</label></p>
-                    <p class="input"><input type="number" placeholder="Ingresa el precio" id="precio" name="precio" required></p>
+                    <p class="label"><label for="price">Precio:</label></p>
+                    <p class="input"><input type="number" placeholder="Ingresa el precio" id="price" name="price" required></p>
                 </section>
                 <!-- Campos Opcionales -->
                 <section class="camp">
@@ -43,6 +44,9 @@
                 </section>
                 </div>
             </form>
+            <section class="product-list-area">
+                
+            </section>
     </main>
     
 </body>
