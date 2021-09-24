@@ -148,5 +148,65 @@
         "category": "Artística",
         "image": "xxx.jpg",
         "price": 1890
-    }    
+    },
+    {
+        "id": 16,
+        "name": "Cartucho negro",
+        "description": "Cartucho negro HP 667, original.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Insumos Computación",
+        "image": "xxx.jpg",
+        "price": 3480
+    },
+    {
+        "id": 17,
+        "name": "Cartucho color",
+        "description": "Cartucho color HP 664, original.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Insumos Computación",
+        "image": "xxx.jpg",
+        "price": 3650
+    },
+    {
+        "id": 18,
+        "name": "DVD",
+        "description": "DVD grabable Verbatim x 4 unidades.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Insumos Computación",
+        "image": "xxx.jpg",
+        "price": 870
+    },
+    {
+        "id": 19,
+        "name": "Acuarela",
+        "description": "Lata con 12 acuarelas Reeves.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Artística",
+        "image": "xxx.jpg",
+        "price": 980
+    },
+    {
+        "id": 14,
+        "name": "Atril",
+        "description": "Atril de madera profesional, 1,80 mts.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Artística",
+        "image": "xxx.jpg",
+        "price": 2250
+    },
+    {
+        "id": 15,
+        "name": "Base de corte",
+        "description": "Base plancha, tabla de corte A3, 45x30 cm.",
+        "color": "xxx",
+        "tamaño": "xxx",
+        "category": "Artística",
+        "image": "xxx.jpg",
+        "price": 1890
+    }        
 ]
