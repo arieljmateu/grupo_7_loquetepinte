@@ -1,4 +1,8 @@
-const products = require('../data/productos.json');
+//const products = require('../data/productos.json');
+
+const fs = require('fs');
+const products = fs.readFileSync('src/data/productos.json', 'utf-8')
+const productsJson = JSON.parse(products);
 
 const controller = {
     products: (req,res) => {
@@ -8,11 +12,11 @@ const controller = {
 		return res.render('./products/create-product');
 	},
 	productsList: (req,res) => {
-		return res.render('./products/products-list', {products});
+		return res.render('./products/products-list', {productsJson});
 	},
 	addProduct: (req,res) => {
 		let newProduct = {
-			id: products.length + 1,
+			id: productsJson.length + 1,
 			nombre: req.body.name,
 			descripcion: req.body.description,
 			categoria: req.body.category,
@@ -21,7 +25,11 @@ const controller = {
 			precio: req.body.price,
 			imagen: req.body.image
 		}
-		products.push(newProduct);
+		//products.push(newProduct);
+
+		productsJson.push(newProduct);
+		let productsJSON = JSON.stringify(productsJson)
+		fs.writeFileSync('src/data/productos.json', productsJSON); 
 
 		res.render('./products/create-product');
 	}
