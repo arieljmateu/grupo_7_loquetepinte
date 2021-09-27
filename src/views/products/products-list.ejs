@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head', {
+    'title': "LoQueTePinte",
+    'css': ["/css/products-styles.css"],
+}) %>
+
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <% products.forEach (producto => { %>
+            <h2><%= producto.name %></h2>
+            <% }) %>
+        </main> 
+        <%- include('../partials/footer') %>
+</body>
+
+</html>

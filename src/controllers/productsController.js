@@ -7,6 +7,9 @@ const controller = {
 	createProduct: (req,res) => {
 		return res.render('./products/create-product');
 	},
+	productsList: (req,res) => {
+		return res.render('./products/products-list', {products});
+	},
 	addProduct: (req,res) => {
 		let newProduct = {
 			id: products.length + 1,
