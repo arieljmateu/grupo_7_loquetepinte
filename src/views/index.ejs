@@ -5,58 +5,66 @@
     'css': ["/css/index-style.css"],
 }) %>
 <body>
-<%- include('partials/header') %> 
+<%- include('partials/header') %>
 
-    <main>      
-       <section class="contenedor1-imagenes">
-           <div class="img-lib-esc"><a class="alin-texto" href="#">Librería Escolar</a></div>
-           <div class="img-lib-com"><a class="alin-texto" href="#">Librería Comercial</a></div>
-           <div class="img-art"><a class="alin-texto" href="#">Artística</a></div>
-           <div class="img-ins-comp"><a class="alin-texto" href="#">Insumos Computación</a></div>
-           <div class="img-pap"><a class="alin-texto" href="#">Papelera</a></div>   
-       </section>     
-       
-       <!--En esta opción la imagen quedaba como background desde el css-->
-       <!--section class="contenedor2-marcas">
-           <div class="mont-blanc"></div>
-           <div class="eterna"></div>
-           <div class="hp"></div>
-           <div class="pelikan"></div>
-           <div class="parker"></div>
-           <div class="exito"></div>
-           <div class="faber-castell"></div>
-       </section-->
-
-       <section class="contenedor2-marcas">
-            <div class="marcas"><img src = "/images/pelikan.png"></div>
-            <div class="marcas"><img src = "/images/eterna.png"></div>
-            <div class="marcas"><img src = "/images/faber-castell.jpg"></div>
-            <div class="marcas"><img src = "/images/hp.png"></div>
-            <div class="marcas"><img src = "/images/exito.jpg"></div>
-            <div class="marcas"><img src = "/images/mont-blanc.jpg"></div>
-            <div class="marcas"><img src = "/images/parker.png"></div>
-            <div class="marcas"><img src = "/images/autor.png"></div>
-            <div class="marcas"><img src = "/images/elmers.png"></div>
-            <div class="marcas"><img src = "/images/bic.jpg"></div>
-
-       </section>
-
-       <section class="contenedor3-cuadros"> 
-            <div class="cuadro1">
-               <h3 class="titulos-info-comercial">QUEDATE EN CASA</h3>
-               <P class="datos-info-comercial">Entregamos a domicilio y hacemos envíos a todo el país.</P>
+    <main>
+        <section class="contenedor1-imagenes">
+            <div class="link-wrapper col-6">
+                <a id="lib-escolar" class="img-link" href="#">
+                    <h3>Librería Escolar</h3>
+                </a>
             </div>
-            <div class="cuadro2">
+            <div class="link-wrapper col-6">
+                <a id="lib-comercial" class="img-link" href="#">
+                    <h3>Librería Comercial</h3>
+                </a>
+            </div>
+            <div class="link-wrapper col-4">
+                <a id="artistica" class="img-link" href="#">
+                    <h3>Artística</h3>
+                </a>
+            </div>
+            <div class="link-wrapper col-4">
+                <a id="ins-comp" class="img-link" href="#">
+                    <h3>Insumos Computación</h3>
+                </a>
+            </div>
+            <div class="link-wrapper col-4">
+                <a id="papelera" class="img-link" href="#">
+                    <h3>Papelera</h3>
+                </a>
+            </div>
+        </section>
+
+        <section class="contenedor2-marcas">
+            <img src = "/images/pelikan.png">
+            <img src = "/images/eterna.png">
+            <img src = "/images/faber-castell.jpg">
+            <img src = "/images/hp.png">
+            <img src = "/images/exito.jpg">
+            <img src = "/images/mont-blanc.jpg">
+            <img src = "/images/parker.png">
+            <img src = "/images/autor.png">
+            <img src = "/images/elmers.png">
+            <img src = "/images/bic.jpg">
+        </section>
+
+        <section class="contenedor3-cuadros">
+            <div class="cuadro">
+                <h3 class="titulos-info-comercial">QUEDATE EN CASA</h3>
+                <p class="datos-info-comercial">Entregamos a domicilio y hacemos envíos a todo el país.</p>
+            </div>
+            <div class="cuadro">
                 <h3 class="titulos-info-comercial">PAGÁ COMO QUIERAS</h3>
-                <P class="datos-info-comercial">Aceptamos todos los medios de pago. Podés pagar en Efectivo, con Transferencia Bancaria, con Tarjeta de Débito y Crédito, y con Link de Pago.</P>
+                <p class="datos-info-comercial">Aceptamos todos los medios de pago. Podés pagar en Efectivo, con Transferencia Bancaria, con Tarjeta de Débito y Crédito, y con Link de Pago.</p>
             </div>
-            <div class="cuadro3">
+            <div class="cuadro">
                 <h3 class="titulos-info-comercial">COMPRÁ SEGURO</h3>
-                <P class="datos-info-comercial">Garantizamos la seguridad en todas tus compras. Tus datos estarán siempre protegidos.</P>
+                <p class="datos-info-comercial">Garantizamos la seguridad en todas tus compras. Tus datos estarán siempre protegidos.</p>
             </div>
-       </section>
+        </section>
     </main>
 
-<%- include('partials/footer') %> 
+<%- include('partials/footer') %>
 </body>
 </html>
