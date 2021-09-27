@@ -4,13 +4,13 @@ const multer = require('multer');
 
 const productsController = require('../controllers/productsController');
 
-router.get('/products', productsController.products);
+router.get('/', productsController.index);
 
-router.get('/create-product', productsController.createProduct);
+router.get('/create', productsController.create);
 
-router.post('/create-product', productsController.addProduct);
+router.post('/create', productsController.add);
 
-router.get('/products-list', productsController.productsList);
+router.get('/:id', productsController.detail);
 
 
 

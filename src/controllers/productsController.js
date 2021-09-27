@@ -5,16 +5,16 @@ const products = fs.readFileSync('src/data/productos.json', 'utf-8')
 const productsJson = JSON.parse(products);
 
 const controller = {
-    products: (req,res) => {
-		return res.render('./products/products');
+	index: (req,res) => {
+		return res.render('./products/products', {productsJson});
 	},
-	createProduct: (req,res) => {
-		return res.render('./products/create-product');
+    detail: (req,res) => {
+		return res.render('./products/detail');
 	},
-	productsList: (req,res) => {
-		return res.render('./products/products-list', {productsJson});
+	create: (req,res) => {
+		return res.render('./products/create');
 	},
-	addProduct: (req,res) => {
+	add: (req,res) => {
 		let newProduct = {
 			id: productsJson.length + 1,
 			nombre: req.body.name,
@@ -31,7 +31,7 @@ const controller = {
 		let productsJSON = JSON.stringify(productsJson)
 		fs.writeFileSync('src/data/productos.json', productsJSON); 
 
-		res.render('./products/create-product');
+		res.render('./products/create');
 	}
 }
 
