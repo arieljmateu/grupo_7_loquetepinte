@@ -6,7 +6,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Escolar",
-        "image": "cuaderno.jpg",
+        "image": "1.jpg",
         "price": 170
     },
     {
@@ -16,7 +16,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Escolar",
-        "image": "cartuchera-escolar.jpg",
+        "image": "2.jpg",
         "price": 1200
     },
     {
@@ -26,7 +26,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Escolar",
-        "image": "plasticola.jpg",
+        "image": "3.jpg",
         "price": 230
     },
     {
@@ -36,7 +36,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Escolar",
-        "image": "mochila.jpg",
+        "image": "4.jpg",
         "price": 5600
     },
     {
@@ -46,7 +46,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Escolar",
-        "image": "lapices-colores.jpg",
+        "image": "5.jpg",
         "price": 750
     },
     {
@@ -56,7 +56,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Comercial",
-        "image": "abrochadora.jpg",
+        "image": "6.jpg",
         "price": 1250
     },
     {
@@ -66,7 +66,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Comercial",
-        "image": "boligrafo.jpg",
+        "image": "7.jpg",
         "price": 1500
     },
     {
@@ -76,7 +76,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Comercial",
-        "image": "almohadilla-sellos.jpg",
+        "image": "8.jpg",
         "price": 185
     },
     {
@@ -86,7 +86,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Comercial",
-        "image": "calculadora.jpg",
+        "image": "9.jpg",
         "price": 890
     },
     {
@@ -96,7 +96,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Librería Comercial",
-        "image": "cesto.jpg",
+        "image": "10.jpg",
         "price": 950
     },
     {
@@ -106,7 +106,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Artística",
-        "image": "pinceles.jpg",
+        "image": "11.jpg",
         "price": 650
     },
     {
@@ -116,7 +116,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Artística",
-        "image": "pintura.jpg",
+        "image": "12.jpg",
         "price": 129
     },
     {
@@ -126,7 +126,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Artística",
-        "image": "acuarela.jpg",
+        "image": "13.jpg",
         "price": 980
     },
     {
@@ -136,7 +136,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Artística",
-        "image": "atril.jpg",
+        "image": "14.jpg",
         "price": 2250
     },
     {
@@ -146,7 +146,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Artística",
-        "image": "base-de-corte.jpg",
+        "image": "15.jpg",
         "price": 1890
     },
     {
@@ -156,7 +156,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Insumos Computación",
-        "image": "cartucho-negro.jpg",
+        "image": "16.jpg",
         "price": 3480
     },
     {
@@ -166,7 +166,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Insumos Computación",
-        "image": "cartucho-color.jpg",
+        "image": "17.jpg",
         "price": 3650
     },
     {
@@ -176,7 +176,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Insumos Computación",
-        "image": "dvd.jpg",
+        "image": "18.jpg",
         "price": 870
     },
     {
@@ -186,7 +186,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Insumos Computación",
-        "image": "mouse.jpg",
+        "image": "19.jpg",
         "price": 980
     },
     {
@@ -196,7 +196,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Insumos Computación",
-        "image": "memoria.jpg",
+        "image": "20.jpg",
         "price": 1100
     },
     {
@@ -206,7 +206,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Papelera",
-        "image": "bolsa.jpg",
+        "image": "21.jpg",
         "price": 1500
     },
     {
@@ -216,7 +216,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Papelera",
-        "image": "servilletas.jpg",
+        "image": "22.jpg",
         "price": 98
     },
     {
@@ -226,7 +226,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Papelera",
-        "image": "caja.jpg",
+        "image": "23.jpg",
         "price": 870
     },
     {
@@ -236,7 +236,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Papelera",
-        "image": "plato.jpg",
+        "image": "24.jpg",
         "price": 1200
     },
     {
@@ -246,10 +246,7 @@
         "color": "xxx",
         "tamaño": "xxx",
         "category": "Papelera",
-        "image": "vaso.jpg",
+        "image": "25.jpg",
         "price": 1150
-    },
-    {
-        "id": 26
     }
 ]
