@@ -1,7 +1,6 @@
-//const products = require('../data/productos.json');
-
 const fs = require('fs');
-const products = fs.readFileSync('src/data/productos.json', 'utf-8')
+
+const products = fs.readFileSync('src/data/productos.json', 'utf-8');
 const productsJson = JSON.parse(products);
 
 const controller = {
@@ -9,13 +8,16 @@ const controller = {
 		return res.render('./products/products', {productsJson});
 	},
     detail: (req,res) => {
-		return res.render('./products/detail');
+		const productID = req.params.id;
+		const product = productsJson.find(product => product.id == productID);
+
+		return res.render('./products/detail', {product: product});
 	},
 	create: (req,res) => {
 		return res.render('./products/create');
 	},
 	add: (req,res) => {
-		let newProduct = {
+		const newProduct = {
 			id: productsJson.length + 1,
 			nombre: req.body.name,
 			descripcion: req.body.description,
@@ -25,11 +27,11 @@ const controller = {
 			precio: req.body.price,
 			imagen: req.body.image
 		}
-		//products.push(newProduct);
 
 		productsJson.push(newProduct);
-		let productsJSON = JSON.stringify(productsJson)
-		fs.writeFileSync('src/data/productos.json', productsJSON); 
+		// pretty-print JSON string
+		const productsJSON = JSON.stringify(productsJson, null, 2);
+		fs.writeFileSync('src/data/productos.json', productsJSON);
 
 		res.render('./products/create');
 	}
