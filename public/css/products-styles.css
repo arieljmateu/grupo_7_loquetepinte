@@ -5,89 +5,69 @@
     box-sizing: border-box;
   } */
 
-.mainbox{
+main {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-family: "Roboto", sans-serif;
-    background-color: white;
-    margin-top: 7%;
-    margin-bottom: 7%;
-}
-
-
-/*****************CAROUSEL***********************/
-.carousel{
-    display: flex;
-    flex-direction: column;
-    border: solid green 2px;
-    width: 50vw;
-    height: fit-content;
-}
-
-.slider{
-    height: fit-content;
-}
-
-.minicarousel {
-    position:relative;
-    display: flex;
-    border: solid red 2px;
-    flex-wrap: wrap;
-}
-
-.minicarousel ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: fit-content;
-}
-
-ul.menu img{
-    height: 50px;
-    width: 90%;
-}
-
-ul.slider img{
-    width: 90%;
+    margin: 30px 0;
 }
 
 ul, li {
-    padding: 0;
-    margin: 0;
     list-style: none inside;
 }
 
+/*****************CAROUSEL***********************/
+
 ul.slider {
     position:relative; /*Necesitamos que el ul sea relativo*/
-
+    /* padding: 9.5vh; */
+    height: 400px;
+    width: 100%;
 }
 ul.slider li {
-    opacity: 0; /*Ocultamos todos los <li>*/
-    transition: opacity 0s;
-    position: absolute; /*Posicionamos en absoluto los <li>*/
     left: 0px;
+    opacity: 0; /*Ocultamos todos los <li>*/
+    position: absolute;
+    /* transition: opacity 0.4s; */
     top: 0px;
-    border:2px solid red;
-    background:#fff;
-    
-}
-ul.slider li:first-child {
-    opacity: 1; /*Mostramos el primer <li>*/
-}
-ul.slider li:target {
-    opacity: 1; /*Mostramos el <li> al que apunta el enlace*/
 }
 
-ul.slider {
-    padding: 9.5vh;
+ul.slider img {
+    height: 400px;
+    width: 400px;
+}
+
+/* View first thumbnails */
+ul.slider li:first-child {
+    opacity: 1;
+}
+
+/*Mostramos el <li> al que apunta el enlace*/
+ul.slider li:target {
+    opacity: 1;
+}
+
+nav.minicarousel {
+    width: 400px;
+}
+
+ul.thumbnails {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+ul.thumbnails img {
+    height: 100px;
+    width: 100%;
 }
 /*****************CAROUSEL***********************/
 
 
 /*****************PANEL DE INFORMACION Y COMPRA***********************/
-.mainsellbox{
+.mainsellbox {
     border: solid blue 2px;
     display: flex;
     flex-direction: column;
@@ -95,44 +75,35 @@ ul.slider {
     width: 50vw;
 }
 
-.sellboxa{
+.sellboxa {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     border: solid orange 2px;
 }
 
-.productname{
-    margin: 2%;
-    border: solid black 1px;
-}
 
-.price{
-    margin: 2%;
-    border: solid black 1px;
-}
-
-.paymentmethod{
+.paymentmethod {
     margin-top: 2%;
     margin-left: 2%;
     margin-right: 2%;
     border: solid black 1px;
 }
 
-.paymentmethoddropdown{
+.paymentmethoddropdown {
     margin-right: 2%;
     margin-left: 2%;
     border: solid black 1px;
 }
 
-.dues{
+.dues {
     margin-top: 2%;
     margin-left: 2%;
     margin-right: 2%;
     border: solid black 1px;
 }
 
-.duesdropdown{
+.duesdropdown {
     margin-right: 2%;
     margin-left: 2%;
     border: solid black 1px;
@@ -140,26 +111,18 @@ ul.slider {
 
 
 
-.subsellboxa{
+.subsellboxa {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: border-box;
 }
 
-.input-quantity{
-    width: fit-content;
-}
-
-.quantity{
+.buy {
     margin: 4%;
 }
 
-.buy{
-    margin: 4%;
-}
-
-.sellboxb{
+.sellboxb {
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -168,7 +131,7 @@ ul.slider {
     border: solid green 2px;
 }
 
-.itemspecs{
+.itemspecs {
     border: solid red 2px;
     padding: 1%;
     margin: 1%;
@@ -176,14 +139,14 @@ ul.slider {
     box-sizing: border-box;
 }
 
-.itemspecstext{
+.itemspecstext {
     color: black;
     background:red;
     margin: 1%;
     box-sizing: border-box;
 }
 
-.description{
+.description {
     border: solid red 2px;
     padding: 1%;
     margin: 1%;
@@ -191,25 +154,64 @@ ul.slider {
     box-sizing: border-box;
 }
 
-.descriptiontext{
+.descriptiontext {
     background:black;
     color: purple;
 }
 /*****************PANEL DE INFORMACION Y COMPRA***********************/
 
+div.quantity {
+    display: inline-flex;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    margin: 5px 0;
+    padding: 10px;
+}
+
+button.quantity-button {
+    background-color: transparent;
+    border: none;
+    color: #3483fa;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+}
+
+input.input-quantity {
+    -webkit-border-radius: 0;
+    -webkit-box-shadow: none;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: center;
+    width: 30px;
+}
+
+.product-remove {
+    width: 20px;
+    font-size: 20px;
+}
+
+.product-thumbnail {
+    width: 120px;
+}
+
+
 /*****************CELLPHONE***********************/
 @media (min-width:361px){
-    .mainbox{
+    main {
         flex-wrap: nowrap;
     }
 
-    .mainsellbox{
+    .mainsellbox {
         flex-direction: row-reverse;
     }
-    .sellboxa{
+    .sellboxa {
         width: 50%;
     }
-    .sellboxb{
+    .sellboxb {
         width: 50%;
     }
 
