@@ -1,10 +1,4 @@
 
-/*border: solid red 1px;/*
-
- /** {
-    box-sizing: border-box;
-  } */
-
 main {
     display: flex;
     flex-direction: row;
@@ -21,7 +15,6 @@ ul, li {
 
 ul.slider {
     position:relative; /*Necesitamos que el ul sea relativo*/
-    /* padding: 9.5vh; */
     height: 400px;
     width: 100%;
 }
@@ -55,7 +48,7 @@ nav.minicarousel {
 ul.thumbnails {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-evenly;
 }
 
@@ -67,89 +60,21 @@ ul.thumbnails img {
 
 
 /*****************PANEL DE INFORMACION Y COMPRA***********************/
-.mainsellbox {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 50vw;
-}
-
 .sellboxa {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
 }
 
-
-.paymentmethod {
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
-    border: solid black 1px;
+.product-title {
+    padding: 10px 0;
 }
 
-.paymentmethoddropdown {
-    margin-right: 2%;
-    margin-left: 2%;
-    border: solid black 1px;
+.product-price {
+    color: #3483fa;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 0;
 }
-
-.dues {
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
-    border: solid black 1px;
-}
-
-.duesdropdown {
-    margin-right: 2%;
-    margin-left: 2%;
-    border: solid black 1px;
-}
-
-
-
-.subsellboxa {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-}
-
-.buy {
-    margin: 4%;
-}
-
-.sellboxb {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    height: fit-content;
-    box-sizing: border-box;
-}
-
-.itemspecs {
-    padding: 1%;
-    margin: 1%;
-    height: fit-content;
-    box-sizing: border-box;
-}
-
-.itemspecstext {
-    color: black;
-    margin: 1%;
-    box-sizing: border-box;
-}
-
-.description {
-    padding: 1%;
-    margin: 1%;
-    height: fit-content;
-    box-sizing: border-box;
-}
-
-
-/*****************PANEL DE INFORMACION Y COMPRA***********************/
 
 div.quantity {
     display: inline-flex;
@@ -157,6 +82,7 @@ div.quantity {
     border-radius: 8px;
     margin: 5px 0;
     padding: 10px;
+    width: 70px;
 }
 
 button.quantity-button {
@@ -180,33 +106,15 @@ input.input-quantity {
     width: 30px;
 }
 
-.product-remove {
-    width: 20px;
-    font-size: 20px;
+.cart a {
+    margin-left: 15px;
 }
 
-.product-thumbnail {
-    width: 120px;
-}
+/*****************PANEL DE INFORMACION Y COMPRA***********************/
 
-
-/*****************CELLPHONE***********************/
-@media (min-width:361px){
+/***************** TABLET ***********************/
+@media (min-width:768px){
     main {
         flex-wrap: nowrap;
     }
-
-    .mainsellbox {
-        flex-direction: row-reverse;
-    }
-    .sellboxa {
-        width: 50%;
-    }
-    .sellboxb {
-        width: 50%;
-    }
-
 }
-
-
-

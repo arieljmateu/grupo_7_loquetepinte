@@ -9,37 +9,30 @@
     <main>
         <section class="carousel">
             <ul class="slider">
-                <li id="slide1"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="product_img"></li>
-                <li id="slide2"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="product_img"></li>
-                <li id="slide3"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="product_img"></li>
+                <li id="slide1"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>"></li>
+                <li id="slide2"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>"></li>
+                <li id="slide3"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>"></li>
             </ul>
             <nav class="minicarousel">
                 <ul class="thumbnails">
-                    <li><a href="#slide1"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="product_img_carousel"></a></li>
-                    <li><a href="#slide2"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="product_img_carousel"></a></li>
-                    <li><a href="#slide3"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="product_img_carousel"></a></li>
+                    <li><a href="#slide1"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>"></a></li>
+                    <li><a href="#slide2"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>"></a></li>
+                    <li><a href="#slide3"><img src="/images/products/<%= product.image %>" alt="<%= product.name %>"></a></li>
                 </ul>
             </nav>
         </section>
         <section class="mainsellbox">
-            <div class="sellboxb">
-                <div class="itemspecs">
-                    <p class="itemspecstext">Prenda de vestir que cubre la parte superior del cuerpo, se cierra por delante y se usa encima de otras prendas más livianas como abrigo; puede ser corta y amplia y ajustarse a la cadera con un elástico o cordón, o larga hasta las caderas.</p>
-                </div>
-                <div class="description">
-                    <p class="descriptiontext">la mejor campera del mundo yo les digo ,la mejor campera del mundo yo les digo ,la mejor campera del mundo yo les digo ,la mejor campera del mundo yo les digo ,la mejor campera del mundo yo les digo , </p>
-                </div>
-            </div>
             <div class="sellboxa">
-                <h2 class="product-title"><%= product.name %></h2>
+                <h2 class="product-title"><%= product.description %></h2>
                 <h3 class="product-price">$<%= product.price %></h3>
-                <div class="quantity">
-                    <button type="submit" value="-" class="quantity-button" name="pop">-</button>
-                    <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
-                    <button type="submit" value="+" class="quantity-button" name="push">+</button>
+                <div class="cart">
+                    <div class="quantity">
+                        <button type="submit" value="-" class="quantity-button" name="pop">-</button>
+                        <input type="tel" name="quantity" id="quantity" class="input-quantity" value="1" pattern="[0-9]{0,4}" inputmode="numeric" autocomplete="off">
+                        <button type="submit" value="+" class="quantity-button" name="push">+</button>
+                    </div>
+                    <a class="btn fade-in" href="#">Agregar al carrito</a>
                 </div>
-
-                <button class="buy" type="button"><a href="views/carrito.html">Agregar al carrito</a></button>
             </div>
         </section>
     </main>
