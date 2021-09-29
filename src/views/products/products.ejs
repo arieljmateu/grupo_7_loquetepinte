@@ -2,7 +2,7 @@
 <html lang="es">
 <%- include('../partials/head', {
     'title': "LoQueTePinte",
-    'css': [],
+    'css': ["/css/products.css"],
 }) %>
 
 <body>
@@ -10,9 +10,11 @@
     <main>
         <div class="products-list">
             <% productsJson.forEach (product => { %>
-                <article>
-                    <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
-                    <h2><%= product.name %></h2>
+                <article class="product">
+                    <a href="/products/<%= product.id %>"><img class="product-image" src="/images/products/<%= product.image %>" alt="<%= product.name %>"></a>
+                    <h3><a class="title" href="/products/<%= product.id %>"><%= product.name %></a></h3>
+                    <h2 class="price">$<%= product.price %></h2>
+                    <a class="btn" href="#">Agregar al carrito</a>
                 </article>            
             <% }) %>
         </div>
