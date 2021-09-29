@@ -129,7 +129,6 @@ ul.thumbnails img {
 }
 
 .itemspecs {
-    border: solid red 2px;
     padding: 1%;
     margin: 1%;
     height: fit-content;
@@ -149,10 +148,7 @@ ul.thumbnails img {
     box-sizing: border-box;
 }
 
-.descriptiontext {
-    background:black;
-    color: purple;
-}
+
 /*****************PANEL DE INFORMACION Y COMPRA***********************/
 
 div.quantity {
