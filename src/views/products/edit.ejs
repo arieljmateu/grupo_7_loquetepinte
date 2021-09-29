@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('../partials/head', {
-    'title': "Crear productos",
+    'title': "Editar producto",
     'css': ["/css/create-products-styles.css"],
 }) %>
 
 <body>
     <main>
-        <form method="POST" action="/products/create" enctype="multipart/form-data">
+        <form method="POST" action="/products/edit/<%= product.id %> " enctype="multipart/form-data">
             <div id="formulary">
-                <!-- Campos Obligatorios -->
                 <section class="camp">
                     <p class="label"><label for="name">Nombre del producto:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa el nombre del producto" id="name" name="name" required></p>
+                    <p class="input"><input type="text" value="<%= product.name %> " id="name" name="name"></p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="description">Descripción:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa la descripción" id="description" name="description" required></p>
+                    <p class="input"><input type="text" value="<%= product.description %>" id="description" name="description"></p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="category">Categoría:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa la categoria" id="category" name="category" required></p>
+                    <p class="input"><input type="text" value="<%= product.category %>" id="category" name="category"></p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="image">Imagen:</label></p>
-                    <p class="input"><input type="file" placeholder="Adjuntar imagen" accept= "image/" id="image" name="image" required></p>
+                    <p class="input"><input type="file" value="<%= product.image %> accept= "image/" id="image" name="image"></p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="price">Precio:</label></p>
-                    <p class="input"><input type="number" placeholder="Ingresa el precio" id="price" name="price" required></p>
+                    <p class="input"><input type="number" value="<%= product.price %>" id="price" name="price"></p>
                 </section>
-                <!-- Campos Opcionales -->
                 <section class="camp">
                     <p class="label"><label for="color">Color:</label></p>
-                    <p class="input"><input type="text" placeholder="Color del producto" id="color" name="color"></p>
+                    <p class="input"><input type="text" value="<%= product.color %> id="color" name="color"></p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="size">Tamaño:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa tu direccion" id="size" name="size"></p>
+                    <p class="input"><input type="text" value="<%= product.size %> id="size" name="size"></p>
                 </section>
                 <section class="camp" id="regbutton">
                     <p id="button"><button type="submit">Cargar</button></p>

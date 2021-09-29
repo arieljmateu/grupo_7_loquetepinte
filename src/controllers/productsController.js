@@ -34,6 +34,34 @@ const controller = {
 		fs.writeFileSync('src/data/productos.json', productsJSON);
 
 		res.render('./products/create');
+	},
+	edit: (req,res) => {
+		const productID = req.params.id;
+		const product = productsJson.find(product => product.id == productID);
+
+		return res.render('./products/edit', {product: product});
+	},
+	editProduct: (req,res) => {
+		const productToEditID = req.params.id;
+		const productToEdit = productsJson.find(product => product.id == productToEditID);
+
+		const editedProduct = {
+			id: productsJson.length + 1,
+			nombre: req.body.name,
+			descripcion: req.body.description,
+			categoria: req.body.category,
+			color: req.body.color,
+			tamaño: req.body.size,
+			precio: req.body.price,
+			imagen: req.body.image
+		}
+		    productsJson[req.params.id - 1] = editedProduct;
+		
+			const productsJSON = JSON.stringify(productsJson, null, 2);
+		    fs.writeFileSync('src/data/productos.json', productsJSON);
+
+
+		res.render('./');
 	}
 }
 
