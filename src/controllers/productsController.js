@@ -46,7 +46,7 @@ const controller = {
 		const productToEdit = productsJson.find(product => product.id == productToEditID);
 
 		const editedProduct = {
-			id: req.params.id - 1,
+			id: req.params.id,
 			nombre: req.body.name,
 			descripcion: req.body.description,
 			categoria: req.body.category,
