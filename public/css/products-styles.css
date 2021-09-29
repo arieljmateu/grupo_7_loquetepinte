@@ -68,7 +68,6 @@ ul.thumbnails img {
 
 /*****************PANEL DE INFORMACION Y COMPRA***********************/
 .mainsellbox {
-    border: solid blue 2px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -79,7 +78,6 @@ ul.thumbnails img {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    border: solid orange 2px;
 }
 
 
@@ -128,7 +126,6 @@ ul.thumbnails img {
     padding: 5px;
     height: fit-content;
     box-sizing: border-box;
-    border: solid green 2px;
 }
 
 .itemspecs {
@@ -141,13 +138,11 @@ ul.thumbnails img {
 
 .itemspecstext {
     color: black;
-    background:red;
     margin: 1%;
     box-sizing: border-box;
 }
 
 .description {
-    border: solid red 2px;
     padding: 1%;
     margin: 1%;
     height: fit-content;
