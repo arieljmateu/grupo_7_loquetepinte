@@ -39,7 +39,7 @@ const controller = {
 		const productID = req.params.id;
 		const product = productsJson.find(product => product.id == productID);
 
-		return res.render('./products/edit', {product: product});
+			return res.render('./products/edit', {product: product});
 	},
 	editProduct: (req,res) => {
 		const productToEditID = req.params.id;
@@ -62,6 +62,23 @@ const controller = {
 
 
 		res.render('./');
+	},
+	delete: (req,res) => {
+		const productId = req.params.id;
+		const productToDel = productsJson.find(product => product.id == productId);
+
+		const productsNew = []
+		
+		for (let i=0; i<productsJson.length; i++) {
+			if (productsJson[i].id != productId) {
+				productsNew.push(productsJson[i]);
+			}
+		}
+		
+
+		fs.writeFileSync('src/data/productos.json', JSON.stringify(productsNew, null, " "));
+
+		res.redirect("/");
 	}
 }
 

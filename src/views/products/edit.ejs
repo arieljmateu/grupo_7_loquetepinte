@@ -42,6 +42,11 @@
                 </section>
                 </div>
             </form>
+            <form method="POST" action="/products/delete/<%= product.id %>?_method=DELETE " enctype="multipart/form-data">
+                <section class="camp" id="delbutton">
+                    <p id="delbutton"><button type="submit">Borrar</button></p>
+                </section>
+            </form>
             <section class="product-list-area">
                 <ul class="product-list"></ul>
             </section>
