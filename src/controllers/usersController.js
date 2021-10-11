@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const users = fs.readFileSync('src/data/users.json', 'utf-8');
-const usersJson = JSON.parse(users);
+const usersJson = JSON.parse(users).filter(value => JSON.stringify(value) !== '{}');
 
 const controller = {
 
