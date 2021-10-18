@@ -7,7 +7,7 @@
 
 <body>
     <main>
-        <form method="POST" action="/products/edit/<%= product.id %> " enctype="multipart/form-data">
+        <form method="POST" action="/products/edit/<%= product.id %>?_method=PUT " enctype="multipart/form-data">
             <div id="formulary">
                 <section class="camp">
                     <p class="label"><label for="name">Nombre del producto:</label></p>

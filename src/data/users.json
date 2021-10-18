@@ -9,5 +9,49 @@
     "address": "calle 2222",
     "category": "admin",
     "image": "default.png"
+  },
+  {
+    "id": 2,
+    "firstName": "Paula",
+    "lastName": "Rosendo",
+    "email": "paula_rosendo@gmail.com",
+    "password": "12345",
+    "phonenumber": "11-6123-6550",
+    "address": "Duclout 298, Monte Grande",
+    "category": "user",
+    "image": "default.png"
+  },
+  {
+    "id": 3,
+    "firstName": "Natalia",
+    "lastName": "Gutiérrez",
+    "email": "natalia.gutierrez@hotmail.com",
+    "password": "12345",
+    "phonenumber": "11-5334-2345",
+    "address": "Alem 126, Luis Guillón",
+    "category": "user",
+    "image": "default.png"
+  },
+  {
+    "id": 4,
+    "firstName": "Sandra",
+    "lastName": "Pérez",
+    "email": "sandra_perez@hotmail.com",
+    "password": "12345",
+    "phonenumber": "11-5334-6798",
+    "address": "Mariano Moreno 225, Luis Guillón",
+    "category": "user",
+    "image": "default.png"
+  },
+  {
+    "id": 5,
+    "firstName": "Marta",
+    "lastName": "Gonzalez",
+    "email": "marta.gonzalez@yahoo.com.ar",
+    "password": "12345",
+    "phonenumber": "11-4523-9889",
+    "address": "Pellegrini 180, Lomas de Zamora",
+    "category": "user",
+    "image": "default.png"
   }
 ]

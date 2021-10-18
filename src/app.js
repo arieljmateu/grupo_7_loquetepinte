@@ -1,6 +1,7 @@
 const express = require('express');
 const config = require('./config');
-const path = require('path')
+const path = require('path');
+const methodOverride = require('method-override');
 const app = express();
 
 
@@ -16,6 +17,7 @@ app.use(express.static('public'));
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+app.use(methodOverride('_method'));
 
 
 // routers
