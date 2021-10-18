@@ -14,12 +14,15 @@ const controller = {
 	
 	registerNew: (req,res) => {
 		const newUser = {
-			name: req.body.name,
-			surname: req.body.surname,
+			id: usersJson.length + 1,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
 			email: req.body.email,
 			password: req.body.password,
 			phonenumber: req.body.phonenumber,
-			adress: req.body.adress,
+			address: req.body.address,
+			category: 'user',
+			image: 'default.png'
 		}
 
 		usersJson.push(newUser);

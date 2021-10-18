@@ -1,3 +1,13 @@
 [
-  {}
+  {
+    "id": 1,
+    "firstName": "User",
+    "lastName": "Admin",
+    "email": "asda@asd.com",
+    "password": "123",
+    "phonenumber": "555-5656",
+    "address": "calle 2222",
+    "category": "admin",
+    "image": "default.png"
+  }
 ]
