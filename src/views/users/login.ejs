@@ -8,15 +8,15 @@
         <%- include('../partials/header') %>
         <main>
         <h1>Iniciar sesion</h1>
-        <form>
+        <form action="/users/login" method="POST">
             <div id="formulary">
                 <section id="email">
-                    <div class="label"><label for="e-mail">Correo electronico:</label></div>
-                    <div class="input"><input type="email" placeholder="Ingresa tu e-mail" id="e-mail" name="nombre"></div>
+                    <div class="label"><label for="email">Correo electronico:</label></div>
+                    <div class="input"><input type="email" placeholder="Ingresa tu e-mail" id="email" name="email" required></div>
                     </section>
                 <section id="passwordsec">
                     <p class="label"><label for="password">Contraseña:</label></p>
-                    <p class="input"><input type="password" placeholder="Ingresa tu contraseña" id="password" name="password"></p>
+                    <p class="input"><input type="password" placeholder="Ingresa tu contraseña" id="password" name="password" required></p>
                     </section>
                 <section id="log-in">     
                     <p class="login-button"><button type="submit">Iniciar sesion</button></p>

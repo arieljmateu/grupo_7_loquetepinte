@@ -1,4 +1,5 @@
 const fs = require('fs');
+const bcrypt = require('bcryptjs');
 
 const users = fs.readFileSync('src/data/users.json', 'utf-8');
 const usersJson = JSON.parse(users).filter(value => JSON.stringify(value) !== '{}');
@@ -8,6 +9,19 @@ const controller = {
 	login: (req,res) => {
 		return res.render('./users/login');
 	},
+
+	doLogin: (req, res) => {
+		const userToLogin = usersJson.find(user => user.email == req.body.email);
+
+		if (userToLogin) {
+			if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
+				res.redirect("/");
+			}
+		} else {
+			res.render('./users/login');
+		}
+	},
+
 	register: (req,res) => {
 		return res.render('./users/register');
 	},
@@ -18,7 +32,7 @@ const controller = {
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
 			email: req.body.email,
-			password: req.body.password,
+			password: bcrypt.hashSync(req.body.password, 10),
 			phonenumber: req.body.phonenumber,
 			address: req.body.address,
 			category: 'user',
