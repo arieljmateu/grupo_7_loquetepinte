@@ -17,8 +17,10 @@ const controller = {
 		return res.render('./products/create');
 	},
 	add: (req,res) => {
+		const lastUsedID = productsJson[productsJson.length - 1].id;
+
 		const newProduct = {
-			id: productsJson.length + 1,
+			id: lastUsedID + 1,
 			name: req.body.name,
 			description: req.body.description,
 			category: req.body.category,
