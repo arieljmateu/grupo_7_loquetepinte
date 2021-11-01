@@ -19,12 +19,12 @@ const controller = {
 	add: (req,res) => {
 		const newProduct = {
 			id: productsJson.length + 1,
-			nombre: req.body.name,
-			descripcion: req.body.description,
-			categoria: req.body.category,
+			name: req.body.name,
+			description: req.body.description,
+			category: req.body.category,
 			color: req.body.color,
-			tamaño: req.body.size,
-			precio: req.body.price,
+			size: req.body.size,
+			price: req.body.price,
 			imagen: req.body.image
 		}
 
@@ -47,12 +47,12 @@ const controller = {
 
 		const editedProduct = {
 			id: req.params.id,
-			nombre: req.body.name,
-			descripcion: req.body.description,
-			categoria: req.body.category,
+			name: req.body.name,
+			description: req.body.description,
+			category: req.body.category,
 			color: req.body.color,
-			tamaño: req.body.size,
-			precio: req.body.price,
+			size: req.body.size,
+			price: req.body.price,
 			imagen: req.body.image
 		}
 		    productsJson[req.params.id - 1] = editedProduct;

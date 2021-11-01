@@ -4,7 +4,7 @@
         "name": "Cuaderno",
         "description": "Cuaderno tapa dura, 42 hojas, rayado, Gloria Escolar Araña.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Escolar",
         "image": "1.jpg",
         "price": 170
@@ -14,7 +14,7 @@
         "name": "Cartuchera",
         "description": "Cartuchera desplegable con cierre.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Escolar",
         "image": "2.jpg",
         "price": 1200
@@ -24,7 +24,7 @@
         "name": "Plasticola",
         "description": "Adhesivo vinílico, cola blanca.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Escolar",
         "image": "3.jpg",
         "price": 230
@@ -34,7 +34,7 @@
         "name": "Mochila",
         "description": "Mochila Gremond con carrito reforzada, unisex.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Escolar",
         "image": "4.jpg",
         "price": 5600
@@ -44,7 +44,7 @@
         "name": "Lápices de colores",
         "description": "Lápices de colores Faber Castell supersoft, Caja x 60.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Escolar",
         "image": "5.jpg",
         "price": 750
@@ -54,7 +54,7 @@
         "name": "Abrochadora",
         "description": "Abrochadora MIT, pinza metálica.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Comercial",
         "image": "6.jpg",
         "price": 1250
@@ -64,7 +64,7 @@
         "name": "Bolígrafo",
         "description": "Lapicera Parker, tinta negra.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Comercial",
         "image": "7.jpg",
         "price": 1500
@@ -74,7 +74,7 @@
         "name": "Almoadilla para sellos",
         "description": "Almohadilla de goma para sellos, apta para tinta al agua.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Comercial",
         "image": "8.jpg",
         "price": 185
@@ -84,7 +84,7 @@
         "name": "Calculadora",
         "description": "Calculadora escritorio Casio, display 12 dígitos.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Comercial",
         "image": "9.jpg",
         "price": 890
@@ -94,7 +94,7 @@
         "name": "Cesto papelero",
         "description": "Cesto papelero metálico, ideal oficina.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Librería Comercial",
         "image": "10.jpg",
         "price": 950
@@ -104,7 +104,7 @@
         "name": "Pinceles",
         "description": "Set de 6 pinceles sintéticos.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Artística",
         "image": "11.jpg",
         "price": 650
@@ -114,7 +114,7 @@
         "name": "Acrílico decorativo",
         "description": "Pintura acrílica Eterna, x 250 ml.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Artística",
         "image": "12.jpg",
         "price": 129
@@ -124,7 +124,7 @@
         "name": "Acuarela",
         "description": "Lata con 12 acuarelas Reeves.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Artística",
         "image": "13.jpg",
         "price": 980
@@ -134,7 +134,7 @@
         "name": "Atril",
         "description": "Atril de madera profesional, 1,80 mts.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Artística",
         "image": "14.jpg",
         "price": 2250
@@ -144,7 +144,7 @@
         "name": "Base de corte",
         "description": "Base plancha, tabla de corte A3, 45x30 cm.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Artística",
         "image": "15.jpg",
         "price": 1890
@@ -154,7 +154,7 @@
         "name": "Cartucho negro",
         "description": "Cartucho negro HP, original.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Insumos Computación",
         "image": "16.jpg",
         "price": 3480
@@ -164,7 +164,7 @@
         "name": "Cartucho color",
         "description": "Cartucho color HP, original.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Insumos Computación",
         "image": "17.jpg",
         "price": 3650
@@ -174,7 +174,7 @@
         "name": "DVD",
         "description": "DVD grabable Verbatim x 4 unidades.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Insumos Computación",
         "image": "18.jpg",
         "price": 870
@@ -184,7 +184,7 @@
         "name": "Mouse óptico",
         "description": "Mouse inalámbrico Logitech 170, gris y negro.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Insumos Computación",
         "image": "19.jpg",
         "price": 980
@@ -194,7 +194,7 @@
         "name": "Memoria 8GB",
         "description": "Tarjeta de memoria micro SD, clase 10.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Insumos Computación",
         "image": "20.jpg",
         "price": 1100
@@ -204,7 +204,7 @@
         "name": "Bolsa Kraft",
         "description": "Bolsa de papel madera con manija, 34 x 17 x 49 cm. Paquete x 50 unidades",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Papelera",
         "image": "21.jpg",
         "price": 1500
@@ -214,7 +214,7 @@
         "name": "Servilletas",
         "description": "Servilletas de papel, 30 x 40 cm., paquete x 50 unidades.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Papelera",
         "image": "22.jpg",
         "price": 98
@@ -224,7 +224,7 @@
         "name": "Caja",
         "description": "Caja de crtón para envíos, 20 x 20 x 20 cm. Paquete x 25 unidades.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Papelera",
         "image": "23.jpg",
         "price": 870
@@ -234,7 +234,7 @@
         "name": "Platos",
         "description": "Plato biodegradable x 20 cm. Paquete x 20 unidades.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Papelera",
         "image": "24.jpg",
         "price": 1200
@@ -244,7 +244,7 @@
         "name": "Vasos",
         "description": "Vaso descartable con tapa, 200 ml. Paquete x 20 unidades.",
         "color": "xxx",
-        "tamaño": "xxx",
+        "size": "xxx",
         "category": "Papelera",
         "image": "25.jpg",
         "price": 1150
