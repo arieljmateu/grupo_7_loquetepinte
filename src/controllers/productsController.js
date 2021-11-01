@@ -35,7 +35,7 @@ const controller = {
 		const productsJSON = JSON.stringify(productsJson, null, 2);
 		fs.writeFileSync('src/data/productos.json', productsJSON);
 
-		res.render('./products/create');
+		res.redirect(`/products/${newProduct.id}`);
 	},
 	edit: (req,res) => {
 		const productID = req.params.id;
@@ -63,7 +63,7 @@ const controller = {
 		    fs.writeFileSync('src/data/productos.json', productsJSON);
 
 
-		res.render('./');
+		res.redirect(`/products/${productToEditID}`);
 	},
 	delete: (req,res) => {
 		const productId = req.params.id;
