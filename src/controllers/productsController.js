@@ -27,7 +27,7 @@ const controller = {
 			color: req.body.color,
 			size: req.body.size,
 			price: req.body.price,
-			imagen: req.body.image
+			image: req.file.filename
 		}
 
 		productsJson.push(newProduct);
@@ -55,7 +55,7 @@ const controller = {
 			color: req.body.color,
 			size: req.body.size,
 			price: req.body.price,
-			imagen: req.body.image
+			image: req.file.filename
 		}
 		    productsJson[req.params.id - 1] = editedProduct;
 		

@@ -1,15 +1,25 @@
 const express = require ('express');
-const router = express.Router()
+const router = express.Router();
 const multer = require('multer');
 
 const MAX_FILE_SIZE = 20971520; // in bytes
 
+//Configuration for Multer
 const uploads = multer({
-    dest: 'public/images/products/',
-    limits: {
-        fileSize: MAX_FILE_SIZE
-    }
+    storage: multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, "public/images/products/");
+        },
+        filename: (req, file, cb) => {
+            const ext = file.mimetype.split("/")[1];
+            cb(null, `${file.fieldname}-${Date.now()}.${ext}`);
+        },
+        limits: {
+            fileSize: MAX_FILE_SIZE
+        }
+    })
 });
+
 
 const productsController = require('../controllers/productsController');
 
