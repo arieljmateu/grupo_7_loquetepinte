@@ -18,10 +18,11 @@
                         placeholder="Ingresa tu nombre" 
                         id="firstName" 
                         name="firstName"
-                        value= "<%= locals.oldData ? oldData.firstName : null %>">
+                        value= "<%= locals.oldData ? oldData.firstName : null %>"
+                        required>
                     </p>
                     <% if (locals.errors && errors.firstName) { %>
-                        <div>
+                        <div class="input-invalid">
                             <%= errors.firstName.msg %>
                         </div>
                         <% } %>
@@ -34,26 +35,28 @@
                         placeholder="Ingresa tu apellido" 
                         id="lastName" 
                         name="lastName"
-                        value= "<%= locals.oldData ? oldData.lastName : null %>">
+                        value= "<%= locals.oldData ? oldData.lastName : null %>"
+                        required>
                     </p>
                     <% if (locals.errors && errors.lastName) { %>
-                        <div>
+                        <div class="input-invalid">
                             <%= errors.lastName.msg %>
                         </div>
                         <% } %>
                 </section>
                 <section class="camp">
-                    <p class="label"><label for="email">Correo electronico:</label></p>
+                    <p class="label"><label for="email">Correo electrónico:</label></p>
                     <p class="input">
                         <input 
                         type="email" 
                         placeholder="Ingresa tu e-mail" 
                         id="email" 
                         name="email"
-                        value= "<%= locals.oldData ? oldData.email : null %>">
+                        value= "<%= locals.oldData ? oldData.email : null %>"
+                        required>
                     </p>
                     <% if (locals.errors && errors.email) { %>
-                        <div>
+                        <div class="input-invalid">
                             <%= errors.email.msg %>
                         </div>
                         <% } %>
@@ -65,26 +68,27 @@
                         type="password" 
                         placeholder="Ingresa tu contraseña" 
                         id="password" 
-                        name="password">
+                        name="password"
+                        required>
                     </p>
                     <% if (locals.errors && errors.password) { %>
-                        <div>
+                        <div class="input-invalid">
                             <%= errors.password.msg %>
                         </div>
                         <% } %>
                 </section>
                 <section class="camp">
-                    <p class="label"><label for="phonenumber">Telefono:</label></p>
+                    <p class="label"><label for="phonenumber">Teléfono:</label></p>
                     <p class="input">
                         <input 
                         type="text" 
-                        placeholder="Ingresa tu numero de telefono" 
+                        placeholder="Ingresa tu número de teléfono" 
                         id="phonenumber" 
                         name="phonenumber"
                         value= "<%= locals.oldData ? oldData.phonenumber : null %>"> 
                     </p>
                     <% if (locals.errors && errors.phonenumber) { %>
-                        <div>
+                        <div class="input-invalid">
                             <%= errors.phonenumber.msg %>
                         </div>
                         <% } %>
@@ -96,26 +100,27 @@
                         type="password" 
                         placeholder="Por favor repeti tu contraseña" 
                         id="password2" 
-                        name="password2">
+                        name="password2"
+                        required>
                     </p>
                     <% if (locals.errors && errors.password2) { %>
-                        <div>
+                        <div class="input-invalid">
                             <%= errors.password2.msg %>
                         </div>
                         <% } %>
                 </section>
                 <section class="camp">
-                    <p class="label"><label for="address">Direccion:</label></p>
+                    <p class="label"><label for="address">Dirección:</label></p>
                     <p class="input">
                         <input 
                         type="text" 
-                        laceholder="Ingresa tu direccion" 
+                        laceholder="Ingresa tu dirección" 
                         id="address" 
                         name="address"
                         value= "<%= locals.oldData ? oldData.address : null %>">
                     </p>
                     <% if (locals.errors && errors.address) { %>
-                        <div>
+                        <div class="input-invalid">
                             <%= errors.address.msg %>
                         </div>
                         <% } %>
@@ -124,7 +129,7 @@
                     <p class="label"><label for="address">Imagen de Perfil:</label></p>
                     <p class="input"><input type="file" placeholder="Selecciona una foto de perfil" id="image" name="image"></p>
                     <% if (locals.errors && errors.image) { %>
-                        <div>
+                        <div class="input-invalid">
                             <%= errors.image.msg %>
                         </div>
                         <% } %>
