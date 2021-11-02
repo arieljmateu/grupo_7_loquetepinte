@@ -19,6 +19,11 @@ const controller = {
 			if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
+
+				if (req.body.remember-user) {
+					res.cookie('userEmail', req.body.email, {maxAge: ((((1000*60)*60)*24)*365)})
+				}
+
 				res.redirect("./profile");
 			}
 		 else {
@@ -104,6 +109,7 @@ const controller = {
 	},
 
 	logout: (req,res) => {
+		res.clearCookie('userEmail');
 		req.session.destroy();
 		return res.redirect('/');
 	}

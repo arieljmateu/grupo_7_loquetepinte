@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const app = express();
 const session = require('express-session');
 const userLoggedMiddleware = require('../src/middlewares/userLoggedMiddleware');
+const cookies = require('cookie-parser');
 
 
 // set view engine
@@ -25,6 +26,7 @@ app.use(session( {
     resave: false,
     saveUninitialized: false
 }))
+app.use(cookies());
 app.use(userLoggedMiddleware);
 
 
