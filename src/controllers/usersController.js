@@ -37,8 +37,10 @@ const controller = {
 			})
 		}
 
+		const lastUsedID = usersJson[usersJson.length - 1].id;
+
 		const newUser = {
-			id: usersJson.length + 1,
+			id: lastUsedID + 1,
 			firstName: req.body.firstName,
 			lastName: req.body.lastName,
 			email: req.body.email,
