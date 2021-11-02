@@ -3,7 +3,8 @@ const config = require('./config');
 const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
-const session = require('express-session')
+const session = require('express-session');
+const userLoggedMiddleware = require('../src/middlewares/userLoggedMiddleware');
 
 
 // set view engine
@@ -24,6 +25,7 @@ app.use(session( {
     resave: false,
     saveUninitialized: false
 }))
+app.use(userLoggedMiddleware);
 
 
 // routers

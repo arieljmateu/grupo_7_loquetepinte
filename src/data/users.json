@@ -1,68 +1,79 @@
 [
-  {
-    "id": 1,
-    "firstName": "User",
-    "lastName": "Admin",
-    "email": "asda@asd.com",
-    "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
-    "phonenumber": "555-5656",
-    "address": "calle 2222",
-    "category": "admin",
-    "image": "default.png"
-  },
-  {
-    "id": 2,
-    "firstName": "Paula",
-    "lastName": "Rosendo",
-    "email": "paula_rosendo@gmail.com",
-    "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
-    "phonenumber": "11-6123-6550",
-    "address": "Duclout 298, Monte Grande",
-    "category": "user",
-    "image": "default.png"
-  },
-  {
-    "id": 3,
-    "firstName": "Natalia",
-    "lastName": "Gutiérrez",
-    "email": "natalia.gutierrez@hotmail.com",
-    "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
-    "phonenumber": "11-5334-2345",
-    "address": "Alem 126, Luis Guillón",
-    "category": "user",
-    "image": "default.png"
-  },
-  {
-    "id": 4,
-    "firstName": "Sandra",
-    "lastName": "Pérez",
-    "email": "sandra_perez@hotmail.com",
-    "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
-    "phonenumber": "11-5334-6798",
-    "address": "Mariano Moreno 225, Luis Guillón",
-    "category": "user",
-    "image": "default.png"
-  },
-  {
-    "id": 5,
-    "firstName": "Marta",
-    "lastName": "Gonzalez",
-    "email": "marta.gonzalez@yahoo.com.ar",
-    "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
-    "phonenumber": "11-4523-9889",
-    "address": "Pellegrini 180, Lomas de Zamora",
-    "category": "user",
-    "image": "default.png"
-  },
-  {
-    "id": 6,
-    "firstName": "Pablo",
-    "lastName": "Menichini",
-    "email": "pablo@tmp-mail.com",
-    "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
-    "phonenumber": "123123",
-    "address": "Calle 123",
-    "category": "user",
-    "image": "default.png"
-  }
+ {
+  "id": 1,
+  "firstName": "User",
+  "lastName": "Admin",
+  "email": "asda@asd.com",
+  "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
+  "phonenumber": "555-5656",
+  "address": "calle 2222",
+  "category": "admin",
+  "image": "default.png"
+ },
+ {
+  "id": 2,
+  "firstName": "Paula",
+  "lastName": "Rosendo",
+  "email": "paula_rosendo@gmail.com",
+  "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
+  "phonenumber": "11-6123-6550",
+  "address": "Duclout 298, Monte Grande",
+  "category": "user",
+  "image": "default.png"
+ },
+ {
+  "id": 3,
+  "firstName": "Natalia",
+  "lastName": "Gutiérrez",
+  "email": "natalia.gutierrez@hotmail.com",
+  "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
+  "phonenumber": "11-5334-2345",
+  "address": "Alem 126, Luis Guillón",
+  "category": "user",
+  "image": "default.png"
+ },
+ {
+  "id": 4,
+  "firstName": "Sandra",
+  "lastName": "Pérez",
+  "email": "sandra_perez@hotmail.com",
+  "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
+  "phonenumber": "11-5334-6798",
+  "address": "Mariano Moreno 225, Luis Guillón",
+  "category": "user",
+  "image": "default.png"
+ },
+ {
+  "id": 5,
+  "firstName": "Marta",
+  "lastName": "Gonzalez",
+  "email": "marta.gonzalez@yahoo.com.ar",
+  "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
+  "phonenumber": "11-4523-9889",
+  "address": "Pellegrini 180, Lomas de Zamora",
+  "category": "user",
+  "image": "default.png"
+ },
+ {
+  "id": 6,
+  "firstName": "Pablo",
+  "lastName": "Menichini",
+  "email": "pablo@tmp-mail.com",
+  "password": "$2a$10$dq9kxSXXKF0KRiOOVmZcE.JxOnJ4M916rz8v376Tix.iisZUCsBHa",
+  "phonenumber": "123123",
+  "address": "Calle 123",
+  "category": "user",
+  "image": "default.png"
+ },
+ {
+  "id": 7,
+  "firstName": "Ariel",
+  "lastName": "Mateu",
+  "email": "arieljmateu@gmail.com",
+  "password": "$2a$10$a2g9qxam856m1hfe1QzQ7.KDsVSuXf3N5htQaV1sIBl.oaJU/dsuS",
+  "phonenumber": "2216100799",
+  "password2": "35204585",
+  "address": "136 entre 530 y 531",
+  "image": "1635878085972_img.jpg"
+ }
 ]
