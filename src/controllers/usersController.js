@@ -1,5 +1,6 @@
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
+const {validationResult} = require('express-validator');
 
 const users = fs.readFileSync('src/data/users.json', 'utf-8');
 const usersJson = JSON.parse(users).filter(value => JSON.stringify(value) !== '{}');
@@ -27,6 +28,15 @@ const controller = {
 	},
 	
 	registerNew: (req,res) => {
+		const validations = validationResult(req);
+        
+		if (validations.errors.length > 0) {
+			return res.render('./users/register', {
+				errors: validations.mapped(),
+				oldData: req.body
+			})
+		}
+
 		const newUser = {
 			id: usersJson.length + 1,
 			firstName: req.body.firstName,
@@ -45,6 +55,12 @@ const controller = {
 		fs.writeFileSync('src/data/users.json', usersJSON);
 
 		res.render('./users/login');
+	},
+
+	profile: (req,res) => {
+		const userID = req.params.id;
+		const user = usersJson.find(user => user.id == userID);
+		return res.render('./users/profile', {user: user});
 	}
 
 }

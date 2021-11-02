@@ -3,6 +3,7 @@ const config = require('./config');
 const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
+const session = require('express-session')
 
 
 // set view engine
@@ -18,6 +19,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
+app.use(session( {secret: "Lo que nos pinte"}))
 
 
 // routers
