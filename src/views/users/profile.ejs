@@ -1,1 +1,16 @@
-<a>Perfil</a>
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/head', {
+        'title': "Perfil",
+        'css': ["/css/loginstyles.css"],
+    }) %>   
+    <body>
+        <%- include('../partials/header') %>
+        <main>
+            <h2>Hola <%= user.firstName %></h2>
+            <img src="../../../public/images/<%= user.image %>">
+            <div><%= user.email %> </div>
+        </main>
+        <%- include('../partials/footer') %>
+</body>
+</html>

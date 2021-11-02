@@ -23,7 +23,7 @@ const uploads = multer({storage});
 
 const usersController = require('../controllers/usersController');
 
-const validations = [
+let validations = [
     body('firstName').notEmpty().withMessage('Debes escribir un nombre'),
     body('lastName').notEmpty().withMessage('Debes escribir un apellido'),
     body('email')
@@ -31,8 +31,7 @@ const validations = [
     .isEmail().withMessage('Debes escribir una direccion de correo valida'),
     body('password').notEmpty().withMessage('Debes escribir una contraseña'),
     body('password2')
-    .notEmpty().withMessage('Debes confirmar tu contraseña')
-    .equals(body('password')).withMessage('Las contraseñas deben coincidir'),
+    .notEmpty().withMessage('Debes confirmar tu contraseña'),
     body('address').notEmpty().withMessage('Debes escribir una direccion'),
     body('image').custom((value, {req}) =>{
        let file = req.file;
@@ -48,18 +47,25 @@ const validations = [
        
        return true;
     })
-];
+]
+
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddelware');
 
 
-router.get('/login', usersController.login);
+
+
+router.get('/login', guestMiddleware, usersController.login);
 
 router.post('/login', usersController.doLogin);
 
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 
 router.post('/register', uploads.single('image'), validations, usersController.registerNew);
 
-router.get("/profile/:id", usersController.profile);
+router.get("/profile", authMiddleware, usersController.profile);
+
+router.get('/logout', usersController.logout)
 
 
 

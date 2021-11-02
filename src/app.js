@@ -19,7 +19,11 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
-app.use(session( {secret: "Lo que nos pinte"}))
+app.use(session( {
+    secret: "Lo que nos pinte",
+    resave: false,
+    saveUninitialized: false
+}))
 
 
 // routers
