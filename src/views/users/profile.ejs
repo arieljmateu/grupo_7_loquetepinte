@@ -7,9 +7,9 @@
     <body>
         <%- include('../partials/header') %>
         <main>
-            <h2>Hola <%= user.firstName %></h2>
-            <img src="/images/users/<%= user.image %>">
-            <div><%= user.email %> </div>
+            <h2>Hola <%= userLogged.firstName %></h2>
+            <img src="/images/users/<%= userLogged.image %>">
+            <div><%= userLogged.email %> </div>
         </main>
         <%- include('../partials/footer') %>
 </body>

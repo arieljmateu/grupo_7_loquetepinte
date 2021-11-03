@@ -82,30 +82,11 @@ const controller = {
 
 		User.create(userToCreate);
 
-		/* const newUser = {
-			id: usersJson.length + 1,
-			firstName: req.body.firstName,
-			lastName: req.body.lastName,
-			email: req.body.email,
-			password: bcrypt.hashSync(req.body.password, 10),
-			phonenumber: req.body.phonenumber,
-			address: req.body.address,
-			category: 'user',
-			image: 'default.png'
-		}
-
-		usersJson.push(newUser);
-		// pretty-print JSON string
-		const usersJSON = JSON.stringify(usersJson, null, 2);
-		fs.writeFileSync('src/data/users.json', usersJSON); */
-
-		res.render('./users/login');
+		res.redirect('/users/login');
 	},
 
 	profile: (req,res) => {
-		return res.render('./users/profile', {
-			user: req.session.userLogged
-		});
+		return res.render('./users/profile');
 	},
 
 	logout: (req,res) => {
