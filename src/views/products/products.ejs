@@ -8,6 +8,11 @@
 <body>
     <%- include('../partials/header') %>
     <main>
+        <% if (locals.userLogged && locals.userLogged.category==='admin' ) { %>
+            <div class="add-product">
+                <a class="btn" href="/products/create/">Cargar producto</a>        
+            </div>
+        <% } %>
         <div class="products-list">
             <% productsJson.forEach (product => { %>
                 <article class="product">
@@ -15,6 +20,9 @@
                     <h3><a class="title" href="/products/<%= product.id %>"><%= product.name %></a></h3>
                     <h2 class="price">$<%= product.price %></h2>
                     <a class="btn" href="#">Agregar al carrito</a>
+                    <% if (locals.userLogged && locals.userLogged.category === 'admin') { %>
+                        <a class="btn" href="/products/edit/<%= product.id %>">Editar</a>
+                    <% } %>
                 </article>            
             <% }) %>
         </div>

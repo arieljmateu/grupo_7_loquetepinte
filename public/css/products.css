@@ -1,3 +1,7 @@
+.add-product {
+    padding: 20px;
+}
+
 .products-list {
     display: flex;
     flex-wrap: wrap;
