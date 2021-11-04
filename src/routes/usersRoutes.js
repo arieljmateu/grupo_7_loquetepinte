@@ -51,25 +51,21 @@ let validations = [
     })
 ]
 
-const guestMiddleware = require('../middlewares/guestMiddleware');
-const authMiddleware = require('../middlewares/authMiddelware');
+
+const { isGuest, isUser } = require('../middlewares/authMiddleware');
 
 
-
-
-router.get('/login', guestMiddleware, usersController.login);
+router.get('/login', isGuest, usersController.login);
 
 router.post('/login', usersController.doLogin);
 
-router.get('/register', guestMiddleware, usersController.register);
+router.get('/register', isGuest, usersController.register);
 
 router.post('/register', uploads.single('image'), validations, usersController.registerNew);
 
-router.get("/profile", authMiddleware, usersController.profile);
+router.get("/profile", isUser, usersController.profile);
 
-router.get('/logout', usersController.logout)
-
-
+router.get('/logout', isUser, usersController.logout)
 
 
 module.exports = router;

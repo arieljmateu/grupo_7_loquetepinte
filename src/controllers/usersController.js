@@ -15,8 +15,8 @@ const controller = {
 	doLogin: (req, res) => {
 		const userToLogin = User.findByField('email', req.body.email);
 
-		if (userToLogin) {
-			if (bcrypt.compareSync(req.body.password, userToLogin.password)) {
+		if (userToLogin &&
+			bcrypt.compareSync(req.body.password, userToLogin.password)) {
 				delete userToLogin.password;
 				req.session.userLogged = userToLogin;
 
@@ -25,8 +25,7 @@ const controller = {
 				}
 
 				res.redirect("./profile");
-			}
-		 else {
+		} else {
 			res.render('./users/login', {
 				errors: {
 					email: {
@@ -35,16 +34,6 @@ const controller = {
 				}
 			});
 		}
-	} else {
-		return res.render('./users/login', {
-			errors: {
-				email: {
-					msg: 'El usuario no se encuentra en la base de datos'
-				}
-			}
-		
-	})
-}
 },
 
 	register: (req,res) => {
@@ -75,9 +64,14 @@ const controller = {
 		}
 
 		let userToCreate = {
-			...req.body,
+			firstName: req.body.firstName,
+			lastName: req.body.lastName,
+			email: req.body.email,
+			phonenumber: req.body.phonenumber,
+			address: req.body.address,
 			password: bcrypt.hashSync(req.body.password, 10),
-			image: req.file.filename
+			image: req.file.filename,
+			category: 'user' // temporaly hardcoded
 		};
 
 		User.create(userToCreate);

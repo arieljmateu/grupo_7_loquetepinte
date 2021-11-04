@@ -1,6 +1,7 @@
 const express = require ('express');
 const router = express.Router();
 const multer = require('multer');
+const { isAdmin }  = require('../middlewares/authMiddleware');
 
 const MAX_FILE_SIZE = 20971520; // in bytes
 
@@ -25,17 +26,17 @@ const productsController = require('../controllers/productsController');
 
 router.get('/', productsController.index);
 
-router.get('/create', productsController.create);
+router.get('/create', isAdmin, productsController.create);
 
-router.post('/create', uploads.single('image'), productsController.add);
+router.post('/create', isAdmin, uploads.single('image'), productsController.add);
 
 router.get('/:id', productsController.detail);
 
-router.get('/edit/:id', productsController.edit);
+router.get('/edit/:id', isAdmin, productsController.edit);
 
-router.put('/edit/:id', uploads.single('image'), productsController.editProduct);
+router.put('/edit/:id', isAdmin, uploads.single('image'), productsController.editProduct);
 
-router.delete('/delete/:id', productsController.delete);
+router.delete('/delete/:id', isAdmin, productsController.delete);
 
 
 
