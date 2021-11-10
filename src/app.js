@@ -1,5 +1,4 @@
 const express = require('express');
-const config = require('./config');
 const path = require('path');
 const methodOverride = require('method-override');
 const app = express();
@@ -7,6 +6,11 @@ const session = require('express-session');
 const userLoggedMiddleware = require('../src/middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser');
 
+// load process variables from .env if not in production
+// (in production they should be set as enviroment variables)
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 
 // set view engine
 app.set('views', path.join (__dirname , 'views'));
@@ -41,8 +45,8 @@ app.use('/users', usersRoutes);
 
 
 // init server
-const server = app.listen(config.app.port, config.app.host , () => {
-    console.log(`Running on http://${config.app.host}:${config.app.port}`);
+const server = app.listen(process.env.APP_PORT, process.env.APP_HOST, () => {
+    console.log(`Running on http://${process.env.APP_HOST}:${process.env.APP_PORT}`);
 }).on('error', (e) => {
    console.error(e.message);
 });
