@@ -209,12 +209,12 @@ CREATE TABLE `users` (
   `address` varchar(100) DEFAULT NULL,
   `telephone` varchar(50) DEFAULT NULL,
   `avatar` varchar(50) NOT NULL,
-  `rol_id` int(10) unsigned NOT NULL,
+  `role_id` int(10) unsigned NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `rol_id` (`rol_id`),
-  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `role_id` (`role_id`),
+  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

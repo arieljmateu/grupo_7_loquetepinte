@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const alias = 'Rol';
+    const alias = 'Role';
     const cols = {
         id: {
             type: dataTypes.INTEGER.UNSIGNED,
@@ -21,14 +21,14 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: 'updated_at',
     };
 
-    const Rol = sequelize.define(alias, cols, config);
+    const Role = sequelize.define(alias, cols, config);
 
-    Rol.associate = models => {
-        Rol.hasMany(models.User, {
+    Role.associate = models => {
+        Role.hasMany(models.User, {
             as: "users",
-            foreignKey: "rol_id"
+            foreignKey: "role_id"
         });
     };
 
-    return Rol;
+    return Role;
 };

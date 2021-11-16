@@ -52,9 +52,9 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.associate = models => {
-        User.belongsTo(models.Rol, {
-            as: "rol",
-            foreignKey: "rol_id"
+        User.belongsTo(models.Role, {
+            as: "role",
+            foreignKey: "role_id"
         });
     };
 
