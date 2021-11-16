@@ -19,8 +19,16 @@
                     <p class="input"><input type="text" placeholder="Ingresa la descripción" id="description" name="description" required></p>
                 </section>
                 <section class="camp">
-                    <p class="label"><label for="category">Categoría:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa la categoria" id="category" name="category" required></p>
+                    <p class="label"><label for="category_id">Categoría:</label></p>
+                    <p class="input">
+                        <select name="category_id">
+                            <% categories.forEach(category => { %>
+                                <option value="<%= category.id %>">
+                                    <%= category.name %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="image">Imagen:</label></p>
@@ -32,12 +40,28 @@
                 </section>
                 <!-- Campos Opcionales -->
                 <section class="camp">
-                    <p class="label"><label for="color">Color:</label></p>
-                    <p class="input"><input type="text" placeholder="Color del producto" id="color" name="color"></p>
+                    <p class="label"><label for="color_id">Color:</label></p>
+                    <p class="input">
+                        <select name="color_id">
+                            <% colors.forEach(color => { %>
+                                <option value="<%= color.id %>">
+                                    <%= color.name %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </p>
                 </section>
                 <section class="camp">
-                    <p class="label"><label for="size">Tamaño:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa tu direccion" id="size" name="size"></p>
+                    <p class="label"><label for="size_id">Tamaño:</label></p>
+                    <p class="input">
+                        <select name="size_id">
+                            <% sizes.forEach(size => { %>
+                                <option value="<%= size.id %>">
+                                    <%= size.name %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </p>
                 </section>
                 <section class="camp" id="regbutton">
                     <p id="button"><button type="submit">Cargar</button></p>

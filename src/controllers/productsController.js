@@ -1,86 +1,108 @@
-const fs = require('fs');
-
-const products = fs.readFileSync('src/data/productos.json', 'utf-8');
-const productsJson = JSON.parse(products);
+const db = require('../database/models');
 
 const controller = {
 	index: (req,res) => {
-		return res.render('./products/products', {productsJson});
+		db.Product.findAll()
+			.then(productsJson => res.render('products/products', {productsJson}))
+			.catch(res.send);
 	},
     detail: (req,res) => {
 		const productID = req.params.id;
-		const product = productsJson.find(product => product.id == productID);
-
-		return res.render('./products/detail', {product: product});
+		db.Product.findByPk(productID)
+			.then(product => {
+				if (product) {
+					res.render('products/detail', {product: product})
+				} else {
+					res.redirect('/products');
+				}
+			})
+			.catch(res.send);
 	},
 	create: (req,res) => {
-		return res.render('./products/create');
+		const pColors = db.Color.findAll();
+		const pSizes = db.Size.findAll();
+		const pCategories = db.Category.findAll();
+		const pDiscounts = db.Discount.findAll();
+
+		Promise.all([pColors, pSizes, pCategories, pDiscounts])
+			.then( ([colors, sizes, categories, discounts]) => {
+				res.render('products/create', {colors, sizes, categories, discounts})
+			})
+			.catch(res.send);
 	},
 	add: (req,res) => {
-		const lastUsedID = productsJson[productsJson.length - 1].id;
-
-		const newProduct = {
-			id: lastUsedID + 1,
+		db.Product.create({
 			name: req.body.name,
 			description: req.body.description,
-			category: req.body.category,
-			color: req.body.color,
-			size: req.body.size,
+			category_id: req.body.category_id,
+			color_id: req.body.color_id,
+			size_id: req.body.size_id,
 			price: req.body.price,
 			image: req.file.filename
-		}
-
-		productsJson.push(newProduct);
-		// pretty-print JSON string
-		const productsJSON = JSON.stringify(productsJson, null, 2);
-		fs.writeFileSync('src/data/productos.json', productsJSON);
-
-		res.redirect(`/products/${newProduct.id}`);
+		})
+			.then(createdProduct => {
+				res.redirect(`/products/${createdProduct.id}`);
+			})
+			.catch(res.send);
 	},
 	edit: (req,res) => {
 		const productID = req.params.id;
-		const product = productsJson.find(product => product.id == productID);
+		const pProduct = db.Product.findByPk(productID);
+		const pColors = db.Color.findAll();
+		const pSizes = db.Size.findAll();
+		const pCategories = db.Category.findAll();
+		const pDiscounts = db.Discount.findAll();
 
-			return res.render('./products/edit', {product: product});
+		Promise.all([pProduct, pColors, pSizes, pCategories, pDiscounts])
+			.then( ([product, colors, sizes, categories, discounts]) => {
+				if (product) {
+					res.render('./products/edit', {product, colors, sizes, categories, discounts})
+				} else {
+					res.redirect('/products');
+				}
+			})
+			.catch(res.send);
 	},
 	editProduct: (req,res) => {
 		const productToEditID = req.params.id;
-		const productToEdit = productsJson.find(product => product.id == productToEditID);
 
 		const editedProduct = {
-			id: req.params.id,
 			name: req.body.name,
 			description: req.body.description,
-			category: req.body.category,
-			color: req.body.color,
-			size: req.body.size,
+			category_id: req.body.category_id,
+			color_id: req.body.color_id,
+			size_id: req.body.size_id,
 			price: req.body.price,
 			image: req.file.filename
-		}
-		    productsJson[req.params.id - 1] = editedProduct;
+		};
+
+		db.Product.update(editedProduct, {
+			where: {id: productToEditID}
+		})
+			.then(nrRows => {
+				if (nrRows == 1) {
+					res.redirect(`/products/${productToEditID}`);
+				} else {
+					res.redirect(`/products/edit/${productToEditID}`);
+				}
+			})
+			.catch(res.send);
 		
-			const productsJSON = JSON.stringify(productsJson, null, 2);
-		    fs.writeFileSync('src/data/productos.json', productsJSON);
-
-
-		res.redirect(`/products/${productToEditID}`);
 	},
 	delete: (req,res) => {
 		const productId = req.params.id;
-		const productToDel = productsJson.find(product => product.id == productId);
 
-		const productsNew = []
-		
-		for (let i=0; i<productsJson.length; i++) {
-			if (productsJson[i].id != productId) {
-				productsNew.push(productsJson[i]);
-			}
-		}
-		
-
-		fs.writeFileSync('src/data/productos.json', JSON.stringify(productsNew, null, " "));
-
-		res.redirect("/");
+		db.Product.destroy({
+			where: { id: productId }
+		})
+			.then(nrRows => {
+				if (nrRows == 1) {
+					res.redirect("/");
+				} else {
+					res.redirect(`/products/edit/${productId}`);
+				}
+			})
+			.catch(res.send);
 	}
 }
 
