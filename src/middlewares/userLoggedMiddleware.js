@@ -1,14 +1,8 @@
 const User = require('../models/User');
 
-function userLoggedMiddleware (req, res, next) {  
-    let emailInCookie = req.cookies.userEmail;
-    let userFromCookie = User.findByField('email', emailInCookie);
-
-    if (userFromCookie) {
-        delete userFromCookie.password;
-        req.session.userLogged = userFromCookie;
-    }
-
+// We set credentials in res.locals if user is logged in.
+// So it can be access by EJS.
+function userLoggedMiddleware(req, res, next) {
     if (req.session.userLogged) {
         res.locals.userLogged = req.session.userLogged;
     }

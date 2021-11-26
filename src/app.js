@@ -1,10 +1,15 @@
 const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
-const app = express();
 const session = require('express-session');
-const userLoggedMiddleware = require('../src/middlewares/userLoggedMiddleware');
 const cookies = require('cookie-parser');
+
+const userLoggedMiddleware   = require('./middlewares/userLoggedMiddleware');
+const cookieLogingMiddleware = require('./middlewares/cookieLogingMiddleware');
+const errorMiddleware = require('./middlewares/errorMiddleware');
+
+const app = express();
+
 
 // load process variables from .env if not in production
 // (in production they should be set as enviroment variables)
@@ -31,7 +36,9 @@ app.use(session( {
     saveUninitialized: false
 }))
 app.use(cookies());
+app.use(cookieLogingMiddleware);
 app.use(userLoggedMiddleware);
+app.use(errorMiddleware);
 
 
 // routers

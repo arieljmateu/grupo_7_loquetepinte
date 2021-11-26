@@ -2,8 +2,35 @@ const db = require('../database/models');
 
 const controller = {
 	index: (req,res) => {
-		db.Product.findAll()
-			.then(productsJson => res.render('products/products', {productsJson}))
+		const whereClause = {};
+		let query = '';
+		if (req.query.q) {
+			// https://thispointer.com/javascript-replace-multiple-spaces-with-a-single-space/
+			query = req.query.q.trim().replace(/\s+/g, " ");
+			const wordsSearch = query.split(" ");
+
+			if (wordsSearch.length === 1) {
+				whereClause['where'] = {
+					name: {
+						[db.Sequelize.Op.like]: `%${wordsSearch[0]}%`
+					}
+				}	
+			} else {
+				// transform words to array of clauses to be used in [Op.and]
+				const opAndClauses = wordsSearch.reduce((ac, val) => [...ac, 
+					{ name: { 
+								[db.Sequelize.Op.like]: `%${val}%`
+							}
+					}], []);
+
+				whereClause['where'] = {
+					[db.Sequelize.Op.and]: opAndClauses
+				}
+			}
+		}
+console.log(whereClause)
+		db.Product.findAll(whereClause)
+			.then(productsJson => res.render('products/products', {productsJson, query}))
 			.catch(res.send);
 	},
     detail: (req,res) => {

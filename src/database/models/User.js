@@ -17,6 +17,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         email: {
             type: dataTypes.STRING(80),
+            unique: true,
             allowNull: false
         },
         hashed_password: {
@@ -35,18 +36,21 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false
         },
-        rol_id: {
+        role_id: {
             type: dataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
         // created_at: dataTypes.DATETIME,
         // updated_at: dataTypes.DATETIME,
+        // deleted_at: dataTypes.DATETIME,
     };
     const config = {
         tableName: 'users',
         timestamps: true,
+        paranoid: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
+        deletedAt: 'deleted_at'
     };
 
     const User = sequelize.define(alias, cols, config);

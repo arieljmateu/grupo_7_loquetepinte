@@ -13,6 +13,10 @@
                 <a class="btn" href="/products/create/">Cargar producto</a>        
             </div>
         <% } %>
+        <form class="search-form" action="/products/" method="GET">
+            <input class="input" name="q" type="text" placeholder="Buscar producto" required>
+            <button class="button-search" type="submit"><span class="fa fa-search"></span></button>
+        </form>    
         <div class="products-list">
             <% productsJson.forEach (product => { %>
                 <article class="product">
