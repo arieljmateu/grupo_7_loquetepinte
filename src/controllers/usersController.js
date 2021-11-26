@@ -1,10 +1,8 @@
-const fs = require('fs');
+
 const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator');
 const User = require('../models/User');
 
-const users = fs.readFileSync('src/data/users.json', 'utf-8');
-const usersJson = JSON.parse(users).filter(value => JSON.stringify(value) !== '{}');
 
 const controller = {
 
