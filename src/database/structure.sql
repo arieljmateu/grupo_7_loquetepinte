@@ -212,7 +212,7 @@ CREATE TABLE `users` (
   `role_id` int(10) unsigned NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `deleted at`datetime NOT NULL,
+  `deleted_at`datetime NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`),
   KEY `role_id` (`role_id`),
