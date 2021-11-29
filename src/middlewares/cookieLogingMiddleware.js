@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../services/User');
 
 
 // If exists cookie with user's email then we automagically log them in

@@ -4,9 +4,9 @@ const controller = {
 	index: (req,res) => {
 		const whereClause = {};
 		let query = '';
-		if (req.query.q) {
+		if (req.query.search) {
 			// https://thispointer.com/javascript-replace-multiple-spaces-with-a-single-space/
-			query = req.query.q.trim().replace(/\s+/g, " ");
+			query = req.query.search.trim().replace(/\s+/g, " ");
 			const wordsSearch = query.split(" ");
 
 			if (wordsSearch.length === 1) {

@@ -1,4 +1,4 @@
-const User = require('../models/User');
+const User = require('../services/User');
 
 // We set credentials in res.locals if user is logged in.
 // So it can be access by EJS.
