@@ -13,11 +13,17 @@
                 <a class="btn" href="/products/create/">Cargar producto</a>        
             </div>
         <% } %>
-        <form class="search-form" action="/products/" method="GET">
-            <input class="input" name="q" type="text" placeholder="Buscar producto" required>
-            <button class="button-search" type="submit"><span class="fa fa-search"></span></button>
-        </form>    
         <div class="products-list">
+            <% if (productsJson.length === 0) { %>
+                <div>
+                    <h2>No se encontraron resultados para <%= query %></h2>
+                </div>
+                <% } else { %>
+                <% if (query) { %>
+                    <div>
+                        <h4>Se encontraron <%= productsJson.length %> resultados para <%= query %></h4>
+                    </div>
+                <% } %>
             <% productsJson.forEach (product => { %>
                 <article class="product">
                     <a href="/products/<%= product.id %>"><img class="product-image" src="/images/products/<%= product.image %>" alt="<%= product.name %>"></a>
@@ -28,7 +34,7 @@
                         <a class="btn" href="/products/edit/<%= product.id %>">Editar</a>
                     <% } %>
                 </article>            
-            <% }) %>
+            <% }) } %>
         </div>
     </main> 
     <%- include('../partials/footer') %>

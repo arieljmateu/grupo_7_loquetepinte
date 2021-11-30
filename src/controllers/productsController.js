@@ -28,7 +28,7 @@ const controller = {
 				}
 			}
 		}
-console.log(whereClause)
+
 		db.Product.findAll(whereClause)
 			.then(productsJson => res.render('products/products', {productsJson, query}))
 			.catch(res.send);
