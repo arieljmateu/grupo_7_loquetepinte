@@ -9,16 +9,14 @@ const User = {
 
     update: function(userData) {
         const columns = Object.keys(userData).filter(key => key != 'id');
-console.log(userData)
+
         return db.User.update(
-            { userData },
+            userData,
             { 
                 where: { id: userData.id },
                 fields: columns
             }
-        ).then((rows) => { console.log(rows);
-            return db.User.findByPk(userData.id)
-        });
+        ).then((rows) => db.User.findByPk(userData.id));
     },
 
     delete: function(id) {

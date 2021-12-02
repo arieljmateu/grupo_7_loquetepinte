@@ -128,7 +128,6 @@ const controller = {
 		// we let DB check for duplicate emails
 		User.update(userToUpdate)
 			.then(updatedUser => {
-		// console.log(updatedUser);
 				res.redirect('/users/profile');
 			})
 			.catch(errors => {
@@ -142,7 +141,7 @@ const controller = {
 						oldData: req.body
 					});
 				}
-console.log(errors);
+
 				// let errorMiddleware handle this error
 				next();
 			});	},
