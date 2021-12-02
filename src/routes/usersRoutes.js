@@ -25,8 +25,8 @@ const uploads = multer({storage});
 const usersController = require('../controllers/usersController');
 
 let validations = [
-    body('firstName').notEmpty().withMessage('Debes escribir un nombre'),
-    body('lastName').notEmpty().withMessage('Debes escribir un apellido'),
+    body('first_name').notEmpty().withMessage('Debes escribir un nombre'),
+    body('last_name').notEmpty().withMessage('Debes escribir un apellido'),
     body('email')
         .notEmpty().withMessage('Debes escribir un email').bail()
         .isEmail().withMessage('Debes escribir una dirección de correo válida'),
@@ -65,7 +65,7 @@ router.post('/register', uploads.single('image'), validations, usersController.r
 
 router.get("/profile", isUser, usersController.profile);
 
-router.post("/profile", uploads.single('image'), validations, isUser, usersController.update);
+router.post("/edit/:id", uploads.single('image'), validations, isUser, usersController.update);
 
 router.get('/logout', isUser, usersController.logout);
 

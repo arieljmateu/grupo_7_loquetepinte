@@ -17,10 +17,6 @@ h2 {
     text-align: center;
 }
 
-.hidden {
-    display: none;
-}
-
 #formulary {
     display: flex;
     flex-direction: column;

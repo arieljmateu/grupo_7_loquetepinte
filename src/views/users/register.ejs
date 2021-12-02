@@ -11,36 +11,36 @@
         <form method="POST" action="/users/register" enctype="multipart/form-data">
             <div id="formulary">
                 <section class="camp">
-                    <p class="label"><label for="firstName">Nombre:</label></p>
+                    <p class="label"><label for="first_name">Nombre:</label></p>
                     <p class="input">
                         <input 
                         type="text" 
                         placeholder="Ingresa tu nombre" 
-                        id="firstName" 
-                        name="firstName"
-                        value= "<%= locals.oldData ? oldData.firstName : null %>"
+                        id="first_name" 
+                        name="first_name"
+                        value= "<%= locals.oldData ? oldData.first_name : null %>"
                         required>
                     </p>
-                    <% if (locals.errors && errors.firstName) { %>
+                    <% if (locals.errors && errors.first_name) { %>
                         <div class="input-invalid">
-                            <%= errors.firstName.msg %>
+                            <%= errors.first_name.msg %>
                         </div>
                         <% } %>
                 </section>
                 <section class="camp">
-                    <p class="label"><label for="lastName">Apellido:</label></p>
+                    <p class="label"><label for="last_name">Apellido:</label></p>
                     <p class="input">
                         <input 
                         type="text" 
                         placeholder="Ingresa tu apellido" 
-                        id="lastName" 
-                        name="lastName"
-                        value= "<%= locals.oldData ? oldData.lastName : null %>"
+                        id="last_name" 
+                        name="last_name"
+                        value= "<%= locals.oldData ? oldData.last_name : null %>"
                         required>
                     </p>
-                    <% if (locals.errors && errors.lastName) { %>
+                    <% if (locals.errors && errors.last_name) { %>
                         <div class="input-invalid">
-                            <%= errors.lastName.msg %>
+                            <%= errors.last_name.msg %>
                         </div>
                         <% } %>
                 </section>
@@ -78,18 +78,18 @@
                         <% } %>
                 </section>
                 <section class="camp">
-                    <p class="label"><label for="phonenumber">Teléfono:</label></p>
+                    <p class="label"><label for="telephone">Teléfono:</label></p>
                     <p class="input">
                         <input 
                         type="text" 
                         placeholder="Ingresa tu número de teléfono" 
-                        id="phonenumber" 
-                        name="phonenumber"
-                        value= "<%= locals.oldData ? oldData.phonenumber : null %>"> 
+                        id="telephone" 
+                        name="telephone"
+                        value= "<%= locals.oldData ? oldData.telephone : null %>"> 
                     </p>
-                    <% if (locals.errors && errors.phonenumber) { %>
+                    <% if (locals.errors && errors.telephone) { %>
                         <div class="input-invalid">
-                            <%= errors.phonenumber.msg %>
+                            <%= errors.telephone.msg %>
                         </div>
                         <% } %>
                 </section>

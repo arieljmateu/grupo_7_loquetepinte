@@ -58,6 +58,9 @@ a {
     opacity: 0.6;
 }
 
+.hidden {
+    display: none;
+}
 
 /********* HEADER begin **********/
 .header-container {

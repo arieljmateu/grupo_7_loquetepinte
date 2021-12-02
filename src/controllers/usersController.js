@@ -58,10 +58,10 @@ const controller = {
 		}
 
 		const userToCreate = {
-			first_name: req.body.firstName,
-			last_name: req.body.lastName,
+			first_name: req.body.first_name,
+			last_name: req.body.last_name,
 			email: req.body.email,
-			telephone: req.body.phonenumber,
+			telephone: req.body.telephone,
 			address: req.body.address,
 			hashed_password: bcrypt.hashSync(req.body.password, 10),
 			avatar: req.file.filename,
@@ -98,6 +98,7 @@ const controller = {
 		const validations = validationResult(req);
 
 		if (validations.errors.length > 0) {
+			console.log(validations.errors)
 
 			return res.render('./users/profile', {
 				errors: validations.mapped(),
@@ -106,19 +107,28 @@ const controller = {
 		}
 
 		const userToUpdate = {
-			first_name: req.body.firstName,
-			last_name: req.body.lastName,
+			first_name: req.body.first_name,
+			last_name: req.body.last_name,
 			email: req.body.email,
-			telephone: req.body.phonenumber,
+			telephone: req.body.telephone,
 			address: req.body.address,
 			hashed_password: bcrypt.hashSync(req.body.password, 10),
 			avatar: req.file.filename,
-			role_id: 2 // temporaly hardcoded to user
+			role_id: req.session.userLogged.role_id
 		};
-console.log(userToUpdate);
+
+		// Check which data has changed
+		Object.keys(userToUpdate).forEach(key => {
+			if (userToUpdate[key] == req.session.userLogged[key]) {
+				delete userToUpdate[key];
+			}
+		});
+		userToUpdate['id'] = parseInt(req.params.id);
+
 		// we let DB check for duplicate emails
 		User.update(userToUpdate)
 			.then(updatedUser => {
+		// console.log(updatedUser);
 				res.redirect('/users/profile');
 			})
 			.catch(errors => {
@@ -132,7 +142,7 @@ console.log(userToUpdate);
 						oldData: req.body
 					});
 				}
-
+console.log(errors);
 				// let errorMiddleware handle this error
 				next();
 			});	},
