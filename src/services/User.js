@@ -7,6 +7,13 @@ const User = {
         return db.User.create(userData);
     },
 
+    update: function(userData) {
+        return db.User.update(
+            { userData },
+            { where: { id: userData.id }}
+        );
+    },
+
     delete: function(id) {
         return db.User.destoy({where: {id: id} });
     }

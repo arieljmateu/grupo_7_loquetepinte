@@ -65,7 +65,9 @@ router.post('/register', uploads.single('image'), validations, usersController.r
 
 router.get("/profile", isUser, usersController.profile);
 
-router.get('/logout', isUser, usersController.logout)
+router.post("/profile", uploads.single('image'), validations, isUser, usersController.update);
+
+router.get('/logout', isUser, usersController.logout);
 
 
 module.exports = router;

@@ -94,6 +94,49 @@ const controller = {
 		return res.render('./users/profile');
 	},
 
+	update: (req, res) => {
+		const validations = validationResult(req);
+
+		if (validations.errors.length > 0) {
+
+			return res.render('./users/profile', {
+				errors: validations.mapped(),
+				oldData: req.body
+			})
+		}
+
+		const userToUpdate = {
+			first_name: req.body.firstName,
+			last_name: req.body.lastName,
+			email: req.body.email,
+			telephone: req.body.phonenumber,
+			address: req.body.address,
+			hashed_password: bcrypt.hashSync(req.body.password, 10),
+			avatar: req.file.filename,
+			role_id: 2 // temporaly hardcoded to user
+		};
+console.log(userToUpdate);
+		// we let DB check for duplicate emails
+		User.update(userToUpdate)
+			.then(updatedUser => {
+				res.redirect('/users/profile');
+			})
+			.catch(errors => {
+				if (errors.name === "SequelizeUniqueConstraintError" ) {
+					return res.render('./users/profile', {
+						errors: {
+							email: {
+								msg: 'Este email ya se encuentra registrado'
+							}
+						},
+						oldData: req.body
+					});
+				}
+
+				// let errorMiddleware handle this error
+				next();
+			});	},
+
 	logout: (req, res) => {
 		res.clearCookie('userEmail');
 		req.session.destroy();
