@@ -8,35 +8,58 @@
 <body>
     <main>
         <form method="POST" action="/products/create" enctype="multipart/form-data">
-            <div id="formulary">
+            <div id="formulary">                 
                 <!-- Campos Obligatorios -->
                 <section class="camp">
                     <p class="label"><label for="name">Nombre del producto:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa el nombre del producto" id="name" name="name" required></p>
+                    <p class="input"><input type="text" placeholder="Ingresa el nombre del producto" id="name" name="name" required value="<%= locals.old && old.name ? old.name : '' %>"></p>
+                    <% if (locals.errors && errors.name) { %>
+                    <div class="text-danger">
+                        <%= errors.name.msg %>
+                    </div>
+                    <% } %>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="description">Descripción:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa la descripción" id="description" name="description" required></p>
+                    <p class="input"><input type="text" placeholder="Ingresa la descripción" id="description" name="description" required value="<%= locals.old && old.description ? old.description : '' %>"></p>
+                    <% if (locals.errors && errors.description) { %>
+                    <div class="text-danger">
+                        <%= errors.description.msg %>
+                    </div>
+                    <% } %>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="category_id">Categoría:</label></p>
                     <p class="input">
                         <select name="category_id">
                             <% categories.forEach(category => { %>
-                                <option value="<%= category.id %>">
+                                <option 
+                                value="<%= category.id %>"
+                                <%= locals.old && (category_id === category_id) ? 'selected' : null %>>
                                     <%= category.name %>
                                 </option>
                             <% }) %>
                         </select>
                     </p>
+                    <% if (locals.errors && errors.category_id) { %>
+                        <div class="text-danger">
+                            <%= errors.category_id.msg %>
+                        </div>
+                    <% } %>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="image">Imagen:</label></p>
                     <p class="input"><input type="file" placeholder="Adjuntar imagen" accept= "image/" id="image" name="image" required></p>
+                    <div class="text-danger"></div>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="price">Precio:</label></p>
-                    <p class="input"><input type="number" placeholder="Ingresa el precio" id="price" name="price" required></p>
+                    <p class="input"><input type="number" placeholder="Ingresa el precio" id="price" name="price" required value="<%= locals.old && old.price ? old.price : '' %>"></p>
+                    <% if (locals.errors && errors.price) { %>
+                        <div class="text-danger">
+                            <%= errors.price.msg %>
+                        </div>
+                        <% } %>
                 </section>
                 <!-- Campos Opcionales -->
                 <section class="camp">
@@ -44,24 +67,38 @@
                     <p class="input">
                         <select name="color_id">
                             <% colors.forEach(color => { %>
-                                <option value="<%= color.id %>">
+                                <option 
+                                value="<%= color.id %>"
+                                <%= locals.old && (color_id === old.color_id) ? 'selected' : null %>>
                                     <%= color.name %>
                                 </option>
                             <% }) %>
                         </select>
                     </p>
+                    <% if (locals.errors && errors.color_id) { %>
+                        <div class="text-danger">
+                            <%= errors.color_id.msg %>
+                        </div>
+                        <% } %>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="size_id">Tamaño:</label></p>
                     <p class="input">
                         <select name="size_id">
                             <% sizes.forEach(size => { %>
-                                <option value="<%= size.id %>">
+                                <option 
+                                value="<%= size.id %>"
+                                <%= locals.old && (size_id === old.size_id) ? 'selected' : null %>>
                                     <%= size.name %>
                                 </option>
                             <% }) %>
                         </select>
                     </p>
+                    <% if (locals.errors && errors.size_id) { %>
+                        <div class="text-danger">
+                            <%= errors.size_id.msg %>
+                        </div>
+                        <% } %>
                 </section>
                 <section class="camp" id="regbutton">
                     <p id="button"><button type="submit">Cargar</button></p>

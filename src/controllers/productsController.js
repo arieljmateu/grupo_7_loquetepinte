@@ -1,3 +1,4 @@
+const {validationResult} = require('express-validator');
 const db = require('../database/models');
 
 const controller = {
@@ -58,6 +59,8 @@ const controller = {
 			.catch(res.send);
 	},
 	add: (req,res) => {
+		let errors = validationResult(req);
+		if (errors.isEmpty()) {
 		db.Product.create({
 			name: req.body.name,
 			description: req.body.description,
@@ -71,6 +74,18 @@ const controller = {
 				res.redirect(`/products/${createdProduct.id}`);
 			})
 			.catch(res.send);
+		} else {
+			const pColors = db.Color.findAll();
+		const pSizes = db.Size.findAll();
+		const pCategories = db.Category.findAll();
+		const pDiscounts = db.Discount.findAll();
+
+		Promise.all([pColors, pSizes, pCategories, pDiscounts])
+			.then( ([colors, sizes, categories, discounts]) => {
+				res.render('products/create', {colors, sizes, categories, discounts}, {errors:errors.array(), old:req.body})
+			})
+			.catch(res.send);
+		}
 	},
 	edit: (req,res) => {
 		const productID = req.params.id;
@@ -91,6 +106,8 @@ const controller = {
 			.catch(res.send);
 	},
 	editProduct: (req,res) => {
+		let errors = validationResult(req);
+		if (errors.isEmpty()) {
 		const productToEditID = req.params.id;
 
 		const editedProduct = {
@@ -114,7 +131,24 @@ const controller = {
 				}
 			})
 			.catch(res.send);
-		
+		} else {
+			const productID = req.params.id;
+		const pProduct = db.Product.findByPk(productID);
+		const pColors = db.Color.findAll();
+		const pSizes = db.Size.findAll();
+		const pCategories = db.Category.findAll();
+		const pDiscounts = db.Discount.findAll();
+
+		Promise.all([pProduct, pColors, pSizes, pCategories, pDiscounts])
+			.then( ([product, colors, sizes, categories, discounts]) => {
+				if (product) {
+					res.render('./products/edit', {product, colors, sizes, categories, discounts}, {errors:errors.array(), old:req.body})
+				} else {
+					res.redirect('/products');
+				}
+			})
+			.catch(res.send);
+		}
 	},
 	delete: (req,res) => {
 		const productId = req.params.id;
