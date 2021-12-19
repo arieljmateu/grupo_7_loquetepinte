@@ -14,7 +14,7 @@ const validateAdd = [
     .isLength({min:20, max: undefined}).withMessage('La descripcion debe tener al menos 20 caracteres'),
     body('category_id').notEmpty().withMessage('El campo categoria debe ser completado'),
     body('price').notEmpty().withMessage('El campo precio debe ser completado'),
-    body(image).custom((value, {req}) => {
+    body('image').custom((value, {req}) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
         
