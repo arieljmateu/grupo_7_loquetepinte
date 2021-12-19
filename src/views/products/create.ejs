@@ -50,7 +50,11 @@
                 <section class="camp">
                     <p class="label"><label for="image">Imagen:</label></p>
                     <p class="input"><input type="file" placeholder="Adjuntar imagen" accept= "image/" id="image" name="image" required></p>
-                    <div class="text-danger"></div>
+                    <% if (locals.errors && errors.image) { %>
+                        <div class="text-danger">
+                            <%= errors.image.msg %>
+                        </div>
+                    <% } %>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="price">Precio:</label></p>

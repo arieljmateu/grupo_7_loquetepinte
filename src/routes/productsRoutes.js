@@ -12,7 +12,13 @@ const validateAdd = [
     .isLength({min:5, max: undefined}).withMessage('El nombre debe tener al menos 5 caracteres'),
     body('description').notEmpty().withMessage('El campo descripcion debe ser completado').bail()
     .isLength({min:20, max: undefined}).withMessage('La descripcion debe tener al menos 20 caracteres'),
-    body('category_id').notEmpty().withMessage('El campo categoria debe ser completado'),
+    body('category_id').notEmpty().withMessage('El campo categoria debe ser completado').bail()
+    .custom((value, {req}) => {
+        let categories = ['Artística', 'Insumos Computación', 'Librería Comercial', 'Librería Escolar', 'Papelera'];
+        if(!categories.includes(body.category_id)) {
+            throw new Error ('Las categorias validas son ${categories.join(', ')}')
+        }
+    }),
     body('price').notEmpty().withMessage('El campo precio debe ser completado'),
     body('image').custom((value, {req}) => {
         let file = req.file;
@@ -26,11 +32,59 @@ const validateAdd = [
             throw new Error ('Las extensiones validas son .jpg, .jpeg, .png o .gif')
         }}
         return true;
+    }),
+    body('color_id').custom((value, {req}) => {
+        let colors = ['Blanco', 'Negro', 'Rojo', 'Verde', 'Azul', 'Amarillo'];
+        if(!colors.includes(body.color_id)) {
+            throw new Error ('Los colores validos son ${colors.join(', ')}')
+        }
+    }),
+    body('size_id').custom((value, {req}) => {
+        let sizes = ['Chico', 'Mediano', 'Grande'];
+        if(!sizes.includes(body.size_id)) {
+            throw new Error ('Los tamaños validos son ${sizes.join(', ')}')
+        }
     })
 ];
 
 const validateEditProduct = [
-
+    body('name').notEmpty().withMessage('El campo nombre debe ser completado').bail()
+    .isLength({min:5, max: undefined}).withMessage('El nombre debe tener al menos 5 caracteres'),
+    body('description').notEmpty().withMessage('El campo descripcion debe ser completado').bail()
+    .isLength({min:20, max: undefined}).withMessage('La descripcion debe tener al menos 20 caracteres'),
+    body('category_id').notEmpty().withMessage('El campo categoria debe ser completado').bail()
+    .custom((value, {req}) => {
+        let categories = ['Artística', 'Insumos Computación', 'Librería Comercial', 'Librería Escolar', 'Papelera'];
+        if(!categories.includes(body.category_id)) {
+            throw new Error ('Las categorias validas son ${categories.join(', ')}')
+        }
+    }),
+    body('price').notEmpty().withMessage('El campo precio debe ser completado'),
+    body('image').custom((value, {req}) => {
+        let file = req.file;
+        let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+        
+        if(!file) {
+            throw new Error ('Debe subirse una imagen')
+        } else {
+            let fileExtension = path.extname(file.originalname);
+            if(!acceptedExtensions.includes(fileExtension)) {
+            throw new Error ('Las extensiones validas son .jpg, .jpeg, .png o .gif')
+        }}
+        return true;
+    }),
+    body('color_id').custom((value, {req}) => {
+        let colors = ['Blanco', 'Negro', 'Rojo', 'Verde', 'Azul', 'Amarillo'];
+        if(!colors.includes(body.color_id)) {
+            throw new Error ('Los colores validos son ${colors.join(', ')}')
+        }
+    }),
+    body('size_id').custom((value, {req}) => {
+        let sizes = ['Chico', 'Mediano', 'Grande'];
+        if(!sizes.includes(body.size_id)) {
+            throw new Error ('Los tamaños validos son ${sizes.join(', ')}')
+        }
+    })
 ];
 
 //Configuration for Multer
