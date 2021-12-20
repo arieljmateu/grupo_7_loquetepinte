@@ -8,7 +8,8 @@
         <%- include('../partials/header') %>
         <main>
         <h1>Crea tu cuenta</h1>
-        <form method="POST" action="/users/register" enctype="multipart/form-data">
+        <form class=formu method="POST" action="/users/register" enctype="multipart/form-data">
+            <li class="error"></li>
             <div id="formulary">
                 <section class="camp">
                     <p class="label"><label for="first_name">Nombre:</label></p>
@@ -19,7 +20,7 @@
                         id="first_name" 
                         name="first_name"
                         value= "<%= locals.oldData ? oldData.first_name : null %>"
-                        required>
+                        >
                     </p>
                     <% if (locals.errors && errors.first_name) { %>
                         <div class="input-invalid">
@@ -141,5 +142,6 @@
             </form>
             </main> 
             <%- include('../partials/footer') %>
+            <script src= "/js/registerValidation.js"></script>
     </body>
 </html>
