@@ -7,6 +7,22 @@ main {
     background-color: #ebebeb;
 }
 
+select {
+    width: 50%;
+    align-self: center;
+}
+
+input {
+    width: 50%;
+    align-self: center;
+}
+
+
 .text-danger {
     color: red;
+}
+
+p.input {
+    display: flex;
+    flex-direction: column;
 }

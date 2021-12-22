@@ -98,8 +98,6 @@ const controller = {
 		const validations = validationResult(req);
 
 		if (validations.errors.length > 0) {
-			console.log(validations.errors)
-
 			return res.render('./users/profile', {
 				errors: validations.mapped(),
 				oldData: req.body

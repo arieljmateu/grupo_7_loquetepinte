@@ -61,30 +61,30 @@ const controller = {
 	add: (req,res) => {
 		let errors = validationResult(req);
 		if (errors.isEmpty()) {
-		db.Product.create({
-			name: req.body.name,
-			description: req.body.description,
-			category_id: req.body.category_id,
-			color_id: req.body.color_id,
-			size_id: req.body.size_id,
-			price: req.body.price,
-			image: req.file.filename
-		})
-			.then(createdProduct => {
-				res.redirect(`/products/${createdProduct.id}`);
+			db.Product.create({
+				name: req.body.name,
+				description: req.body.description,
+				category_id: req.body.category_id,
+				color_id: req.body.color_id,
+				size_id: req.body.size_id,
+				price: req.body.price,
+				image: req.file.filename
 			})
-			.catch(res.send);
+				.then(createdProduct => {
+					res.redirect(`/products/${createdProduct.id}`);
+				})
+				.catch(res.send);
 		} else {
 			const pColors = db.Color.findAll();
-		const pSizes = db.Size.findAll();
-		const pCategories = db.Category.findAll();
-		const pDiscounts = db.Discount.findAll();
+			const pSizes = db.Size.findAll();
+			const pCategories = db.Category.findAll();
+			const pDiscounts = db.Discount.findAll();
 
-		Promise.all([pColors, pSizes, pCategories, pDiscounts])
-			.then( ([colors, sizes, categories, discounts]) => {
-				res.render('products/create', {colors, sizes, categories, discounts}, {errors:errors.array(), old:req.body})
-			})
-			.catch(res.send);
+			Promise.all([pColors, pSizes, pCategories, pDiscounts])
+				.then( ([colors, sizes, categories, discounts]) => {
+					res.render('products/create', {colors, sizes, categories, discounts, errors: errors.mapped(), old: req.body})
+				})
+				.catch(res.send);
 		}
 	},
 	edit: (req,res) => {
@@ -107,47 +107,43 @@ const controller = {
 	},
 	editProduct: (req,res) => {
 		let errors = validationResult(req);
-		if (errors.isEmpty()) {
 		const productToEditID = req.params.id;
 
-		const editedProduct = {
-			name: req.body.name,
-			description: req.body.description,
-			category_id: req.body.category_id,
-			color_id: req.body.color_id,
-			size_id: req.body.size_id,
-			price: req.body.price,
-			image: req.file.filename
-		};
+		if (errors.isEmpty()) {
 
-		db.Product.update(editedProduct, {
-			where: {id: productToEditID}
-		})
-			.then(nrRows => {
-				if (nrRows == 1) {
-					res.redirect(`/products/${productToEditID}`);
-				} else {
-					res.redirect(`/products/edit/${productToEditID}`);
-				}
+			const editedProduct = {
+				name: req.body.name,
+				description: req.body.description,
+				category_id: req.body.category_id,
+				color_id: req.body.color_id,
+				size_id: req.body.size_id,
+				price: req.body.price,
+				image: req.file.filename
+			};
+
+			db.Product.update(editedProduct, {
+				where: {id: productToEditID}
 			})
-			.catch(res.send);
+				.then(nrRows => {
+					if (nrRows == 1) {
+						res.redirect(`/products/${productToEditID}`);
+					} else {
+						res.redirect(`/products/edit/${productToEditID}`);
+					}
+				})
+				.catch(res.send);
 		} else {
-			const productID = req.params.id;
-		const pProduct = db.Product.findByPk(productID);
-		const pColors = db.Color.findAll();
-		const pSizes = db.Size.findAll();
-		const pCategories = db.Category.findAll();
-		const pDiscounts = db.Discount.findAll();
+			const pProduct = db.Product.findByPk(productToEditID)
+			const pColors = db.Color.findAll();
+			const pSizes = db.Size.findAll();
+			const pCategories = db.Category.findAll();
+			const pDiscounts = db.Discount.findAll();
 
-		Promise.all([pProduct, pColors, pSizes, pCategories, pDiscounts])
-			.then( ([product, colors, sizes, categories, discounts]) => {
-				if (product) {
-					res.render('./products/edit', {product, colors, sizes, categories, discounts}, {errors:errors.array(), old:req.body})
-				} else {
-					res.redirect('/products');
-				}
-			})
-			.catch(res.send);
+			Promise.all([pProduct, pColors, pSizes, pCategories, pDiscounts])
+				.then( ([product, colors, sizes, categories, discounts]) => {
+					return res.render('./products/edit', {product, colors, sizes, categories, discounts, errors: errors.mapped(), old: req.body})
+				})
+				.catch(res.send);
 		}
 	},
 	delete: (req,res) => {

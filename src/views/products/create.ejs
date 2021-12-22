@@ -7,26 +7,30 @@
 
 <body>
     <main>
-        <form method="POST" action="/products/create" enctype="multipart/form-data">
+        <form id="form" method="POST" action="/products/create" enctype="multipart/form-data">
             <div id="formulary">                 
                 <!-- Campos Obligatorios -->
                 <section class="camp">
                     <p class="label"><label for="name">Nombre del producto:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa el nombre del producto" id="name" name="name" required value="<%= locals.old && old.name ? old.name : '' %>"></p>
-                    <% if (locals.errors && errors.name) { %>
-                    <div class="text-danger">
-                        <%= errors.name.msg %>
-                    </div>
-                    <% } %>
+                    <p class="input">
+                        <input type="text" placeholder="Ingresa el nombre del producto" id="name" name="name" value="<%= locals.old && old.name ? old.name : '' %>">
+                        <span class="text-danger">
+                            <% if (locals.errors && errors.name) { %>
+                                <%= errors.name.msg %>
+                            <% } %>
+                        </span>
+                    </p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="description">Descripción:</label></p>
-                    <p class="input"><input type="text" placeholder="Ingresa la descripción" id="description" name="description" required value="<%= locals.old && old.description ? old.description : '' %>"></p>
-                    <% if (locals.errors && errors.description) { %>
-                    <div class="text-danger">
-                        <%= errors.description.msg %>
-                    </div>
-                    <% } %>
+                    <p class="input">
+                        <input type="text" placeholder="Ingresa la descripción" id="description" name="description" value="<%= locals.old && old.description ? old.description : '' %>">
+                        <span class="text-danger">
+                            <% if (locals.errors && errors.description) { %>
+                                <%= errors.description.msg %>
+                            <% } %>
+                        </span>
+                    </p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="category_id">Categoría:</label></p>
@@ -40,30 +44,34 @@
                                 </option>
                             <% }) %>
                         </select>
+                        <span class="text-danger">
+                            <% if (locals.errors && errors.category_id) { %>
+                                <%= errors.category_id.msg %>
+                            <% } %>
+                        </span>
                     </p>
-                    <% if (locals.errors && errors.category_id) { %>
-                        <div class="text-danger">
-                            <%= errors.category_id.msg %>
-                        </div>
-                    <% } %>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="image">Imagen:</label></p>
-                    <p class="input"><input type="file" placeholder="Adjuntar imagen" accept= "image/" id="image" name="image" required></p>
-                    <% if (locals.errors && errors.image) { %>
-                        <div class="text-danger">
-                            <%= errors.image.msg %>
-                        </div>
-                    <% } %>
+                    <p class="input">
+                        <input type="file" placeholder="Adjuntar imagen" accept= "image/" id="image" name="image">
+                        <span class="text-danger">
+                            <% if (locals.errors && errors.image) { %>
+                                <%= errors.image.msg %>
+                            <% } %>
+                        </span>
+                    </p>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="price">Precio:</label></p>
-                    <p class="input"><input type="number" placeholder="Ingresa el precio" id="price" name="price" required value="<%= locals.old && old.price ? old.price : '' %>"></p>
-                    <% if (locals.errors && errors.price) { %>
-                        <div class="text-danger">
-                            <%= errors.price.msg %>
-                        </div>
-                        <% } %>
+                    <p class="input">
+                        <input type="number" placeholder="Ingresa el precio" id="price" name="price" value="<%= locals.old && old.price ? old.price : '' %>">
+                        <span class="text-danger">
+                            <% if (locals.errors && errors.price) { %>
+                                <%= errors.price.msg %>
+                            <% } %>
+                        </span>
+                    </p>
                 </section>
                 <!-- Campos Opcionales -->
                 <section class="camp">
@@ -78,12 +86,12 @@
                                 </option>
                             <% }) %>
                         </select>
+                        <span class="text-danger">
+                            <% if (locals.errors && errors.color_id) { %>
+                                <%= errors.color_id.msg %>
+                            <% } %>
+                        </span>
                     </p>
-                    <% if (locals.errors && errors.color_id) { %>
-                        <div class="text-danger">
-                            <%= errors.color_id.msg %>
-                        </div>
-                        <% } %>
                 </section>
                 <section class="camp">
                     <p class="label"><label for="size_id">Tamaño:</label></p>
@@ -97,12 +105,12 @@
                                 </option>
                             <% }) %>
                         </select>
+                        <span class="text-danger">
+                            <% if (locals.errors && errors.size_id) { %>
+                                <%= errors.size_id.msg %>
+                            <% } %>
+                        </span>
                     </p>
-                    <% if (locals.errors && errors.size_id) { %>
-                        <div class="text-danger">
-                            <%= errors.size_id.msg %>
-                        </div>
-                        <% } %>
                 </section>
                 <section class="camp" id="regbutton">
                     <p id="button"><button type="submit">Cargar</button></p>
@@ -113,6 +121,6 @@
                 <ul class="product-list"></ul>
             </section>
     </main>
-    
+    <script src= "/js/productValidation.js"></script>    
 </body>
 </html>

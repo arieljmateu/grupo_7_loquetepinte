@@ -1,3 +1,9 @@
+main input {
+    width: 100%;
+    align-self: center;
+    height: 30px;
+}
+
 .add-product {
     padding: 20px;
 }
@@ -30,3 +36,4 @@
     color: #00008f;
     padding: 10px 0;
 }
+

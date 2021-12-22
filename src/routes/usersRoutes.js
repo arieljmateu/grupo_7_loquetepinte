@@ -1,9 +1,9 @@
 const express = require ('express');
 const multer = require('multer');
-const path = require('path')
-const { body } = require('express-validator')
+const path = require('path');
+const { body } = require('express-validator');
 
-const router = express.Router()
+const router = express.Router();
 
 const MAX_FILE_SIZE = 20971520; // in bytes
 
@@ -25,30 +25,34 @@ const uploads = multer({storage});
 const usersController = require('../controllers/usersController');
 
 let validations = [
-    body('first_name').notEmpty().withMessage('Debes escribir un nombre'),
-    body('last_name').notEmpty().withMessage('Debes escribir un apellido'),
+    body('first_name')
+        .notEmpty().withMessage('Debes escribir un nombre'),
+    body('last_name')
+        .notEmpty().withMessage('Debes escribir un apellido'),
     body('email')
         .notEmpty().withMessage('Debes escribir un email').bail()
         .isEmail().withMessage('Debes escribir una dirección de correo válida'),
-    body('password').notEmpty().withMessage('Debes escribir una contraseña'),
+    body('password')
+        .notEmpty().withMessage('Debes escribir una contraseña')
+        .matches(/^(?=(?:.*\d))(?=.*[A-Z])(?=.*[a-z])(?=.*[.,*!?¿¡/#$%&])\S{8,64}$/).withMessage('Debes contener al menos 1 minúscula, 1 mayúscula, 1 número y 1 caracter especial'),
     body('password2')
         .notEmpty().withMessage('Debes confirmar tu contraseña')
         .not().equals(body('password')).withMessage('Las contraseñas deben coincidir'),
-    body('address').notEmpty().withMessage('Debes escribir una dirección'),
-    body('image').custom((value, {req}) =>{
-       let file = req.file;
-       let acceptedExtensions = ['.jpg', '.png', '.gif'];
-       if (!file) {
-           throw new Error('Tienes que subir una imagen')
-       } else {
-        let fileExtension = path.extname(file.originalname);
-        if (!acceptedExtensions.includes(fileExtension)) {
-            throw new Error('Solo pueden subirse imágenes .jpg, .png o .gif')
-        }
-       }
+    body('image')
+        .custom((value, {req}) => {
+            let acceptedExtensions = ['.jpg', '.png', '.gif'];
+
+            if (!req.file) {
+                throw new Error('Tienes que subir una imagen')
+            } else {
+                let fileExtension = path.extname(req.file.originalname);
+                if (!acceptedExtensions.includes(fileExtension)) {
+                    throw new Error('Solo pueden subirse imágenes .jpg, .png o .gif')
+                }
+           }
        
-       return true;
-    })
+           return true;
+        })
 ]
 
 
