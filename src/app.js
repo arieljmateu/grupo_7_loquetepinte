@@ -45,10 +45,12 @@ app.use(errorMiddleware);
 const mainRoutes     = require('./routes/mainRoutes');
 const productsRoutes = require('./routes/productsRoutes');
 const usersRoutes    = require('./routes/usersRoutes');
+const apiRoutes      = require('./routes/apiRoutes');
 
 app.use('/', mainRoutes);
 app.use('/products', productsRoutes);
 app.use('/users', usersRoutes);
+app.use('/api', apiRoutes);
 
 
 // init server
