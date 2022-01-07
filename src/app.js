@@ -10,6 +10,9 @@ const errorMiddleware = require('./middlewares/errorMiddleware');
 
 const app = express();
 
+//set format for json res
+app.set('json spaces', 2);
+
 
 // load process variables from .env if not in production
 // (in production they should be set as enviroment variables)

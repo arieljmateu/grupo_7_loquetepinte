@@ -36,16 +36,57 @@ module.exports = {
             })
     },
     productList: (req, res ) => {
-        res.json({ok: true});
+        db.Product.findAll({
+            attributes: ['id', 'name', 'description', 'price', 'image', 'color_id', 'size_id', 'category_id', 'discount_id'],
+            include: [
+                {model: db.Category, as: 'category'}
+            ],
+            raw: true // we only want dataValues
+        })
+            .then(products => {
+                let countByCategory = {}
+                products.forEach(product => {
+                    if (!countByCategory[product['category.name']]){
+                        countByCategory[product['category.name']]=1; 
+                    } else {
+                        countByCategory[product['category.name']]++;
+                    } //creates an object with the categories and amounts of products in them
+                });
+                res.json({
+                    count: products.length,
+                    countByCategory,
+                    products: products.map(product => ({...product, detail: `${URL}/api/products/${product.id}`}))
+                });
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({errors: err});
+            })
     },
     productDetails: (req, res) => {
-        db.Product.findByPk(req.params.id /*, {
-            attributes: { exclude: ['color_id', 'category_id', 'description', 'price', 'image'] },
+        db.Product.findByPk(req.params.id , {
+            attributes: ['id', 'name', 'description', 'price', 'image', 'color_id', 'size_id', 'category_id', 'discount_id'],
+            include: [
+                {model: db.Category, as: 'category'},
+                {model: db.Color, as: 'color'},
+                {model: db.Size, as: 'size'},
+                {model: db.Discount, as: 'discount'}
+            ],
             raw: true // we only want dataValues
-        }*/)
+        })
             .then(product => {
-           //     product.image = `${URL}/images/products/${product.image}`;
-                res.json({product})
+                product.image = `${URL}/images/products/${product.image}`;
+                res.json({
+                    id: product.id,
+                    name: product.name,
+                    description: product.description,
+                    price: product.price,
+                    image: product.image,
+                    color: product['color.name'],        
+                    size: product['size.name'],         
+                    category: product['category.name'],          
+                    discount: product['discount.discount_percent']
+                })
             })
             .catch(err => {
                 console.log(err);
