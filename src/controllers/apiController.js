@@ -6,11 +6,16 @@ const URL = `http://${process.env.APP_HOST}:${process.env.APP_PORT}`;
 
 module.exports = {
     userList:  (req, res ) => {
+        const limit = parseInt(req.query.limit) || null;
+        const offset  = parseInt(req.query.offset) || 0;
+
         db.User.findAll({
             attributes: ['id', 'first_name', 'last_name', 'email'],
+            offset: offset,
+            limit: limit,
             raw: true // we only want dataValues
         })
-            .then(users => {                  
+            .then(users => {
                 res.json({
                     count: users.length,
                     users: users.map(user => ({...user, detail: `${URL}/api/users/${user.id}`}))
@@ -36,26 +41,39 @@ module.exports = {
             })
     },
     productList: (req, res ) => {
+        const limit = parseInt(req.query.limit) || null;
+        const offset  = parseInt(req.query.offset) || 0;
+
         db.Product.findAll({
-            attributes: ['id', 'name', 'description', 'price', 'image', 'color_id', 'size_id', 'category_id', 'discount_id'],
+            attributes: ['id', 'name', 'description'],
             include: [
-                {model: db.Category, as: 'category'}
+                {model: db.Category, as: 'category', attributes: ['name']}
             ],
-            raw: true // we only want dataValues
+            offset: offset,
+            limit: limit,
+                raw: true // we only want dataValues
         })
             .then(products => {
                 let countByCategory = {}
-                products.forEach(product => {
+                products.forEach((product, idx) => {
                     if (!countByCategory[product['category.name']]){
-                        countByCategory[product['category.name']]=1; 
+                        countByCategory[product['category.name']]=1;
                     } else {
                         countByCategory[product['category.name']]++;
                     } //creates an object with the categories and amounts of products in them
+
+                    delete products[idx]['category.name'];
                 });
+
                 res.json({
                     count: products.length,
                     countByCategory,
-                    products: products.map(product => ({...product, detail: `${URL}/api/products/${product.id}`}))
+                    products: products.map(product => (
+                        {
+                            ...product,
+                            dbRelations: ['color_id', 'size_id', 'category_id', 'discount_id'],
+                            detail: `${URL}/api/products/${product.id}`
+                        })),
                 });
             })
             .catch(err => {
@@ -82,9 +100,12 @@ module.exports = {
                     description: product.description,
                     price: product.price,
                     image: product.image,
-                    color: product['color.name'],        
-                    size: product['size.name'],         
-                    category: product['category.name'],          
+                    color: product['color.name'],
+                    color_id: product.color_id,
+                    size: product['size.name'],
+                    size_id: product.size_id,
+                    category: product['category.name'],
+                    category_id: product.category_id,
                     discount: product['discount.discount_percent']
                 })
             })
