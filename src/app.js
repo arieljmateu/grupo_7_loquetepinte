@@ -3,6 +3,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const cors = require('cors');
 
 const userLoggedMiddleware   = require('./middlewares/userLoggedMiddleware');
 const cookieLogingMiddleware = require('./middlewares/cookieLogingMiddleware');
@@ -13,6 +14,7 @@ const app = express();
 //set format for json res
 app.set('json spaces', 2);
 
+app.use(cors());
 
 // load process variables from .env if not in production
 // (in production they should be set as enviroment variables)
