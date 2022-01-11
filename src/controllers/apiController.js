@@ -5,26 +5,50 @@ const URL = `http://${process.env.APP_HOST}:${process.env.APP_PORT}`;
 
 
 module.exports = {
-    userList:  (req, res ) => {
-        const limit = parseInt(req.query.limit) || null;
-        const offset  = parseInt(req.query.offset) || 0;
+    userList: async (req, res ) => {
+        let page = parseInt(req.query.page) || null;
+        let offset = null;
+        let pagination = {};
+        const limit = parseInt(req.query.limit) || 10;
 
-        db.User.findAll({
-            attributes: ['id', 'first_name', 'last_name', 'email'],
-            offset: offset,
-            limit: limit,
-            raw: true // we only want dataValues
-        })
-            .then(users => {
-                res.json({
-                    count: users.length,
-                    users: users.map(user => ({...user, detail: `${URL}/api/users/${user.id}`}))
-                });
-            })
-            .catch(err => {
+        try {
+            if (page) {
+                const userCount = await db.User.count();
+                const pagesCount = Math.ceil(userCount / limit);
+                const endpoint = `${URL}${req.baseUrl}${req.path}`;
+
+                page = Math.min(Math.max(page, 1), pagesCount);
+                prevPage = page > 1 ? page - 1 : null;
+                nextPage = page < pagesCount ? page + 1 : null;
+                offset = (page - 1) * limit;
+                pagination = {
+                    first: `${endpoint}?page=1&limit=${limit}`,
+                    prev: prevPage ? 
+                        `${endpoint}?page=${prevPage}&limit=${limit}` :
+                        null,
+                    next: nextPage ? 
+                        `${endpoint}?page=${nextPage}&limit=${limit}` :
+                        null,
+                    last: `${endpoint}?page=${pagesCount}&limit=${limit}`,
+                }
+            }
+
+            const users = await db.User.findAll({
+                attributes: ['id', 'first_name', 'last_name', 'email'],
+                offset: offset,
+                limit: page ? limit : null,
+                raw: true // we only want dataValues
+            });
+
+            res.json({
+                links: pagination,
+                count: users.length,
+                users: users.map(user => ({...user, detail: `${URL}/api/users/${user.id}`}))
+            });
+        } catch(err) {
                 console.log(err);
                 res.status(500).json({errors: err});
-            })
+        }
     },
     userDetails: (req, res) => {
         db.User.findByPk(req.params.id, {
@@ -44,11 +68,35 @@ module.exports = {
                 res.status(500).json({errors: err});
             })
     },
-    productList: (req, res ) => {
-        const limit = parseInt(req.query.limit) || null;
-        const offset  = parseInt(req.query.offset) || 0;
+    productList: async (req, res ) => {
+        let page = parseInt(req.query.page) || null;
+        let offset = null;
+        let pagination = {};
+        const limit = parseInt(req.query.limit) || 10;
 
-        db.Product.findAll({
+        try {
+            if (page) {
+                const prodCount = await db.Product.count();
+                const pagesCount = Math.ceil(prodCount / limit);
+                const endpoint = `${URL}${req.baseUrl}${req.path}`;
+
+                page = Math.min(Math.max(page, 1), pagesCount);
+                prevPage = page > 1 ? page - 1 : null;
+                nextPage = page < pagesCount ? page + 1 : null;
+                offset = (page - 1) * limit;
+                pagination = {
+                    first: `${endpoint}?page=1&limit=${limit}`,
+                    prev: prevPage ?
+                        `${endpoint}?page=${prevPage}&limit=${limit}` :
+                        null,
+                    next: nextPage ?
+                        `${endpoint}?page=${nextPage}&limit=${limit}` :
+                        null,
+                    last: `${endpoint}?page=${pagesCount}&limit=${limit}`,
+                }
+            }
+
+            const products = await db.Product.findAll({
             attributes: ['id', 'name', 'description'],
             include: [
                 {model: db.Category, as: 'category', attributes: ['name']}
@@ -56,34 +104,34 @@ module.exports = {
             offset: offset,
             limit: limit,
                 raw: true // we only want dataValues
-        })
-            .then(products => {
-                let countByCategory = {}
-                products.forEach((product, idx) => {
-                    if (!countByCategory[product['category.name']]){
-                        countByCategory[product['category.name']]=1;
-                    } else {
-                        countByCategory[product['category.name']]++;
-                    } //creates an object with the categories and amounts of products in them
+            });
 
-                    delete products[idx]['category.name'];
-                });
+            let countByCategory = {}
+            products.forEach((product, idx) => {
+                if (!countByCategory[product['category.name']]){
+                    countByCategory[product['category.name']]=1;
+                } else {
+                    countByCategory[product['category.name']]++;
+                } //creates an object with the categories and amounts of products in them
 
-                res.json({
-                    count: products.length,
-                    countByCategory,
-                    products: products.map(product => (
-                        {
-                            ...product,
-                            dbRelations: ['color_id', 'size_id', 'category_id', 'discount_id'],
-                            detail: `${URL}/api/products/${product.id}`
-                        })),
-                });
-            })
-            .catch(err => {
+                delete products[idx]['category.name'];
+            });
+
+            res.json({
+                links: pagination,
+                count: products.length,
+                countByCategory,
+                products: products.map(product => (
+                    {
+                        ...product,
+                        dbRelations: ['color_id', 'size_id', 'category_id', 'discount_id'],
+                        detail: `${URL}/api/products/${product.id}`
+                    })),
+            });
+        } catch (err) {
                 console.log(err);
                 res.status(500).json({errors: err});
-            })
+        }
     },
     productDetails: (req, res) => {
         db.Product.findByPk(req.params.id , {
