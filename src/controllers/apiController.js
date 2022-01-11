@@ -32,8 +32,12 @@ module.exports = {
             raw: true // we only want dataValues
         })
             .then(user => {
-                user.avatar = `${URL}/images/users/${user.avatar}`;
-                res.json(user)
+                if (user) {
+                    user['avatar'] = `${URL}/images/users/${user.avatar}`;
+                    res.json(user)    
+                } else {
+                    res.status(404).json({error: "User not found"});
+                }
             })
             .catch(err => {
                 console.log(err);
