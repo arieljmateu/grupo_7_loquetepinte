@@ -160,7 +160,49 @@ const controller = {
 				}
 			})
 			.catch(res.send);
-	}
+	},
+	category: async (req,res) => {
+		const categoryId = req.params.id;
+		const pCategory = await db.Category.findByPk(categoryId);
+		const whereClause = {};
+		let query = '';
+		if (req.query.search) {
+			// https://thispointer.com/javascript-replace-multiple-spaces-with-a-single-space/
+			query = req.query.search.trim().replace(/\s+/g, " ");
+			const wordsSearch = query.split(" ");
+
+			if (wordsSearch.length === 1) {
+				whereClause['where'] = {
+					name: {
+						[db.Sequelize.Op.like]: `%${wordsSearch[0]}%`
+					},
+					category_id: Number(categoryId)
+				}	
+			} else {
+				// transform words to array of clauses to be used in [Op.and]
+				const opAndClauses = wordsSearch.reduce((ac, val) => [...ac, 
+					{ name: { 
+								[db.Sequelize.Op.like]: `%${val}%`
+							}
+					}], []);
+
+				whereClause['where'] = {
+					[db.Sequelize.Op.and]: opAndClauses,
+					category_id: Number(categoryId)
+				}
+			}
+		} else {
+			whereClause['where'] = {
+				category_id: Number(categoryId)
+			}
+		}
+		
+		db.Product.findAll(whereClause)
+		.then(productsJson =>{
+				res.render(`./products/category`, {productsJson, query, Category: pCategory})
+				})
+			.catch(res.send);
+	},
 }
 
 

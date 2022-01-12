@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head', {
+    'title': "LoQueTePinte",
+    'css': ["/css/products.css"],
+}) %>
+
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <h1 class="cat-title"><%= Category.name %></h1>
+        <div class="products-list">
+            <% if (productsJson.length === 0) { %>
+                <div>
+                    <h2>No se encontraron resultados para <%= query %></h2>
+                </div>
+                <% } else { %>
+                <% if (query) { %>
+                    <div>
+                        <h4>Se encontraron <%= productsJson.length %> resultados para <%= query %></h4>
+                    </div>
+                <% } %>
+            <% productsJson.forEach (product => { %>
+                <article class="product">
+                    <a href="/products/<%= product.id %>"><img class="product-image" src="/images/products/<%= product.image %>" alt="<%= product.name %>"></a>
+                    <h3><a class="title" href="/products/<%= product.id %>"><%= product.name %></a></h3>
+                    <h2 class="price">$<%= product.price %></h2>
+                    <a class="btn" href="#">Agregar al carrito</a>
+                    <% if (locals.userLogged && locals.userLogged.role_id == 1) { %>
+                        <a class="btn" href="/products/edit/<%= product.id %>">Editar</a>
+                    <% } %>
+                </article>            
+            <% }) } %>
+        </div>
+    </main> 
+    <%- include('../partials/footer') %>
+</body>
+
+</html>

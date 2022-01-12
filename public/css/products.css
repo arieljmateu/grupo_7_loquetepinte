@@ -37,3 +37,7 @@ main input {
     padding: 10px 0;
 }
 
+.cat-title {
+    text-align: center;
+    color: #00008f;
+}

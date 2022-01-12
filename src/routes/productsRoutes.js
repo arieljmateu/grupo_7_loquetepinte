@@ -62,13 +62,15 @@ router.get('/create', isAdmin, productsController.create);
 
 router.post('/create', isAdmin, uploads.single('image'), validations, productsController.add);
 
-router.get('/:id', productsController.detail);
-
 router.get('/edit/:id', isAdmin, productsController.edit);
 
 router.put('/edit/:id', isAdmin, uploads.single('image'), validations, productsController.editProduct);
 
 router.delete('/delete/:id', isAdmin, productsController.delete);
+
+router.get('/category/:id', productsController.category);
+
+router.get('/:id', productsController.detail);
 
 
 
