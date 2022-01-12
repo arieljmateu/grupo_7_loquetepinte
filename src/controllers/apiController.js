@@ -73,7 +73,7 @@ module.exports = {
         let offset = null;
         let pagination = {};
         const limit = parseInt(req.query.limit) || 10;
-
+        console.log('page:', page)
         try {
             if (page) {
                 const prodCount = await db.Product.count();
@@ -97,12 +97,12 @@ module.exports = {
             }
 
             const products = await db.Product.findAll({
-            attributes: ['id', 'name', 'description'],
-            include: [
-                {model: db.Category, as: 'category', attributes: ['name']}
-            ],
-            offset: offset,
-            limit: limit,
+                attributes: ['id', 'name', 'description'],
+                include: [
+                    {model: db.Category, as: 'category', attributes: ['name']}
+                ],
+                offset: offset,
+                limit: page ? limit : null,
                 raw: true // we only want dataValues
             });
 
